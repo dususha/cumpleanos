@@ -63,7 +63,31 @@
       height: auto;
       display: block;
     }
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
 
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.cat {
+  animation: float 3s ease-in-out infinite;
+}
+
+.cake {
+  animation: float 4s ease-in-out infinite;
+}
+
+.gift {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.flower {
+  animation: float 4.5s ease-in-out infinite;
+}
     /* Положение предметов */
 
     .gift {
