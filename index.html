@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Поздравление</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #f6f1e8;
+    }
+
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .title {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    .title p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    /* Все кликабельные предметы */
+
+    .object {
+      position: absolute;
+      cursor: pointer;
+
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+    }
+
+    .object:hover {
+      transform: scale(1.08) rotate(2deg);
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,.15));
+    }
+
+    .object img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Расположение отдельных предметов */
+
+    .gift {
+      width: 180px;
+      left: 12%;
+      top: 35%;
+    }
+
+    .cake {
+      width: 220px;
+      left: 40%;
+      top: 55%;
+    }
+
+    .cat {
+      width: 190px;
+      right: 10%;
+      top: 30%;
+    }
+
+    .flower {
+      width: 150px;
+      left: 28%;
+      top: 20%;
+    }
+
+    /* Окно с видео */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+
+      background: rgba(0,0,0,.75);
+
+      z-index: 100;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .video-box {
+      position: relative;
+
+      width: min(900px, 90vw);
+      aspect-ratio: 16 / 9;
+
+      background: black;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .close {
+      position: absolute;
+
+      top: -45px;
+      right: 0;
+
+      border: 0;
+      background: none;
+
+      color: white;
+      font-size: 36px;
+
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+
+      .title h1 {
+        font-size: 30px;
+      }
+
+      .gift {
+        width: 120px;
+        left: 5%;
+      }
+
+      .cake {
+        width: 150px;
+        left: 33%;
+        top: 60%;
+      }
+
+      .cat {
+        width: 130px;
+        right: 5%;
+      }
+
+      .flower {
+        width: 100px;
+        left: 35%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="scene">
+
+  <div class="title">
+    <h1>С днём рождения!</h1>
+    <p>Нажимай на предметы ✨</p>
+  </div>
+
+
+  <!-- ПОДАРОК -->
+
+  <div
+    class="object gift"
+    data-video="https://www.youtube.com/embed/VIDEO_ID_1"
+  >
+    <img src="images/gift.png" alt="Подарок">
+  </div>
+
+
+  <!-- ТОРТ -->
+
+  <div
+    class="object cake"
+    data-video="https://www.youtube.com/embed/VIDEO_ID_2"
+  >
+    <img src="images/cake.png" alt="Торт">
+  </div>
+
+
+  <!-- КОТ -->
+
+  <div
+    class="object cat"
+    data-video="https://www.youtube.com/embed/VIDEO_ID_3"
+  >
+    <img src="images/cat.png" alt="Кот">
+  </div>
+
+
+  <!-- ЦВЕТОК -->
+
+  <div
+    class="object flower"
+    data-video="https://www.youtube.com/embed/VIDEO_ID_4"
+  >
+    <img src="images/flower.png" alt="Цветок">
+  </div>
+
+</div>
+
+
+<!-- МОДАЛЬНОЕ ОКНО -->
+
+<div class="modal" id="modal">
+
+  <div class="video-box">
+
+    <button class="close" id="close">
+      ×
+    </button>
+
+    <iframe
+      id="video"
+      src=""
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const objects = document.querySelectorAll('.object');
+
+const modal = document.getElementById('modal');
+const video = document.getElementById('video');
+const closeButton = document.getElementById('close');
+
+
+objects.forEach(object => {
+
+  object.addEventListener('click', () => {
+
+    const videoURL = object.dataset.video;
+
+    video.src = videoURL + '?autoplay=1';
+
+    modal.classList.add('active');
+
+  });
+
+});
+
+
+function closeVideo() {
+
+  modal.classList.remove('active');
+
+  // останавливаем видео
+  video.src = '';
+
+}
+
+
+closeButton.addEventListener('click', closeVideo);
+
+
+modal.addEventListener('click', event => {
+
+  if (event.target === modal) {
+    closeVideo();
+  }
+
+});
+
+
+document.addEventListener('keydown', event => {
+
+  if (event.key === 'Escape') {
+    closeVideo();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
