@@ -72,6 +72,8 @@
       font-weight: normal;
     }
 
+    /* ОСНОВНЫЕ КАРТИНКИ */
+
     .object {
       position: absolute;
       z-index: 1;
@@ -92,18 +94,14 @@
         filter 0.25s ease;
     }
 
-   .object:hover {
-  z-index: 999;
-}
+    .object:hover {
+      z-index: 999;
+    }
 
-.object:hover img {
-  transform: rotate(var(--rot, 0deg)) scale(1.15);
-  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.25));
-}
-.decor {
-  position: absolute;
-  pointer-events: none;
-}
+    .object:hover img {
+      transform: rotate(var(--rot, 0deg)) scale(1.15);
+      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.25));
+    }
 
     @keyframes float {
       0%, 100% {
@@ -114,6 +112,80 @@
         transform: translateY(-14px);
       }
     }
+
+
+    /* ПРИВЕТЫ С ОЛИМПА */
+
+    .greeting {
+      position: absolute;
+      z-index: 3;
+      cursor: pointer;
+      animation: greeting-float 4s ease-in-out infinite;
+    }
+
+    .greeting img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+    }
+
+    .greeting:hover {
+      z-index: 999;
+    }
+
+    .greeting:hover img {
+      transform: scale(1.22);
+      filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+    }
+
+    @keyframes greeting-float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .luck {
+      width: 55px;
+      left: 11%;
+      top: 470px;
+      animation-duration: 3.4s;
+    }
+
+    .love {
+      width: 60px;
+      left: 34%;
+      top: 500px;
+      animation-duration: 4.1s;
+    }
+
+    .rest {
+      width: 50px;
+      left: 54%;
+      top: 820px;
+      animation-duration: 3.7s;
+    }
+
+    .joy {
+      width: 58px;
+      left: 75%;
+      top: 610px;
+      animation-duration: 4.4s;
+    }
+
+    .adventure {
+      width: 60px;
+      left: 27%;
+      top: 930px;
+      animation-duration: 3.9s;
+    }
+
 
     /* 16 КАРТИНОК */
 
@@ -261,7 +333,8 @@
       --dur: 3.8s;
     }
 
-    /* ОКНО С ВИДЕО */
+
+    /* МОДАЛЬНОЕ ОКНО */
 
     .modal {
       position: fixed;
@@ -283,12 +356,26 @@
       width: min(900px, 92vw);
       aspect-ratio: 16 / 9;
       background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .video-box iframe {
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    #message {
+      display: none;
+      width: 100%;
+      color: white;
+      font-family: "Satyr SP", serif;
+      font-size: 42px;
+      line-height: 1.2;
+      text-align: center;
+      padding: 50px;
     }
 
     .close {
@@ -302,6 +389,7 @@
       line-height: 1;
       cursor: pointer;
     }
+
 
     /* МОБИЛЬНАЯ ВЕРСИЯ */
 
@@ -322,6 +410,11 @@
 
       .title p {
         font-size: 18px;
+      }
+
+      #message {
+        font-size: 30px;
+        padding: 30px;
       }
 
       .eos {
@@ -419,6 +512,38 @@
         left: 58%;
         top: 1870px;
       }
+
+      /* Пасхалки на телефоне */
+
+      .luck {
+        width: 42px;
+        left: 10%;
+        top: 330px;
+      }
+
+      .love {
+        width: 45px;
+        left: 77%;
+        top: 520px;
+      }
+
+      .rest {
+        width: 40px;
+        left: 38%;
+        top: 970px;
+      }
+
+      .joy {
+        width: 45px;
+        left: 76%;
+        top: 1220px;
+      }
+
+      .adventure {
+        width: 44px;
+        left: 8%;
+        top: 1460px;
+      }
     }
 
   </style>
@@ -432,40 +557,48 @@
       <h1>С днём рождения!</h1>
       <p>Добрые речи подруг и друзей здесь Светлане Светлоликой с любовью собраны</p>
     </div>
+
+
+    <!-- ПРИВЕТЫ С ОЛИМПА -->
+
     <div
-  class="greeting luck"
-  data-message="🍀 О, да сопутствует случай тебе благосклонный."
->
-  <img src="./luck.png" alt="Luck">
-</div>
+      class="greeting luck"
+      data-message="🍀 О, да сопутствует случай тебе благосклонный."
+    >
+      <img src="./luck.png" alt="Luck">
+    </div>
 
-<div
-  class="greeting love"
-  data-message="💘 Да умножит Киприда любовь и веселье."
->
-  <img src="./love.png" alt="Love">
-</div>
+    <div
+      class="greeting love"
+      data-message="💘 Да умножит Киприда любовь и веселье."
+    >
+      <img src="./love.png" alt="Love">
+    </div>
 
-<div
-  class="greeting rest"
-  data-message="🌙 Сладостен сон; почивай же без всякой тревоги."
->
-  <img src="./rest.png" alt="Rest">
-</div>
+    <div
+      class="greeting rest"
+      data-message="🌙 Сладостен сон; почивай же без всякой тревоги."
+    >
+      <img src="./rest.png" alt="Rest">
+    </div>
 
-<div
-  class="greeting joy"
-  data-message="✨ Смех да пребудет с тобой, и пиры, и отрада."
->
-  <img src="./joy.png" alt="Joy">
-</div>
+    <div
+      class="greeting joy"
+      data-message="✨ Смех да пребудет с тобой, и пиры, и отрада."
+    >
+      <img src="./joy.png" alt="Joy">
+    </div>
 
-<div
-  class="greeting adventure"
-  data-message="🏺 Странствуй отважно, но мимо циклопов по возможности."
->
-  <img src="./adventure.png" alt="Adventure">
-</div>
+    <div
+      class="greeting adventure"
+      data-message="🏺 Странствуй отважно, но мимо циклопов по возможности."
+    >
+      <img src="./adventure.png" alt="Adventure">
+    </div>
+
+
+    <!-- ОСНОВНЫЕ КАРТИНКИ -->
+
     <div
       class="object eos"
       data-video="https://www.youtube.com/embed/n92WoYu_kIg"
@@ -496,12 +629,12 @@
       <img src="./persephone.jpg" alt="Persephone">
     </div>
 
-   <div
-  class="object hestia"
-  data-video="https://www.youtube.com/embed/rIFX2fCCWto"
->
-  <img src="./hestia.png" alt="Hestia">
-</div>
+    <div
+      class="object hestia"
+      data-video="https://www.youtube.com/embed/rIFX2fCCWto"
+    >
+      <img src="./hestia.png" alt="Hestia">
+    </div>
 
     <div class="object selene">
       <img src="./selene.jpg" alt="Selene">
@@ -541,8 +674,13 @@
 
   </main>
 
+
+  <!-- МОДАЛЬНОЕ ОКНО -->
+
   <div class="modal" id="modal">
+
     <div class="video-box">
+
       <button
         class="close"
         id="close"
@@ -559,13 +697,18 @@
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen>
       </iframe>
+
+      <div id="message"></div>
+
     </div>
+
   </div>
+
 
   <script>
 
     const objects =
-      document.querySelectorAll("[data-video]");
+      document.querySelectorAll("[data-video], [data-message]");
 
     const modal =
       document.getElementById("modal");
@@ -573,8 +716,12 @@
     const video =
       document.getElementById("video");
 
+    const message =
+      document.getElementById("message");
+
     const closeButton =
       document.getElementById("close");
+
 
     objects.forEach(object => {
 
@@ -583,35 +730,72 @@
         const videoURL =
           object.dataset.video;
 
-        video.src =
-          videoURL + "?autoplay=1";
+        const messageText =
+          object.dataset.message;
 
-        modal.classList.add("active");
+
+        if (videoURL) {
+
+          message.style.display = "none";
+          message.textContent = "";
+
+          video.style.display = "block";
+          video.src = videoURL + "?autoplay=1";
+
+          modal.classList.add("active");
+        }
+
+
+        if (messageText) {
+
+          video.src = "";
+          video.style.display = "none";
+
+          message.textContent = messageText;
+          message.style.display = "block";
+
+          modal.classList.add("active");
+        }
 
       });
 
     });
 
-    function closeVideo() {
+
+    function closeModal() {
+
       modal.classList.remove("active");
+
       video.src = "";
+      video.style.display = "block";
+
+      message.textContent = "";
+      message.style.display = "none";
+
     }
+
 
     closeButton.addEventListener(
       "click",
-      closeVideo
+      closeModal
     );
 
+
     modal.addEventListener("click", function (event) {
+
       if (event.target === modal) {
-        closeVideo();
+        closeModal();
       }
+
     });
 
+
     document.addEventListener("keydown", function (event) {
+
       if (event.key === "Escape") {
-        closeVideo();
+        closeModal();
       }
+
     });
 
   </script>
