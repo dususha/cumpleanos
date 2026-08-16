@@ -114,32 +114,33 @@
     }
 
 
-    /* ПРИВЕТЫ С ОЛИМПА */
+  /* ПРИВЕТЫ С ОЛИМПА */
 
-    .greeting {
-      position: absolute;
-      z-index: 30;
-      cursor: pointer;
-      animation: greeting-float 4s ease-in-out infinite;
-    }
+.greeting {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  animation: greeting-float 4s ease-in-out infinite;
+}
 
-    .greeting img {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
-    }
+.greeting img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
 
-    .greeting:hover {
-      z-index: 1001;
-    }
+.greeting:hover {
+  z-index: 1001;
+}
 
-   .greeting:hover img {
+.greeting:hover img {
   animation: wiggle 0.6s ease-in-out 1;
   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
 }
+
 @keyframes wiggle {
   0% {
     transform: rotate(0deg) scale(1);
@@ -165,50 +166,204 @@
     transform: rotate(0deg) scale(1);
   }
 }
-    @keyframes greeting-float {
-      0%, 100% {
-        transform: translateY(0);
-      }
 
-      50% {
-        transform: translateY(-6px);
-      }
-    }
+@keyframes greeting-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
 
-    .luck {
-      width: 55px;
-      left: 11%;
-      top: 470px;
-      animation-duration: 3.4s;
-    }
+  50% {
+    transform: translateY(-6px);
+  }
+}
 
-    .love {
-      width: 60px;
-      left: 34%;
-      top: 500px;
-      animation-duration: 4.1s;
-    }
 
-    .rest {
-      width: 50px;
-      left: 54%;
-      top: 820px;
-      animation-duration: 3.7s;
-    }
+/* Пасхалки специально стоят в свободных промежутках */
 
-    .joy {
-      width: 58px;
-      left: 75%;
-      top: 610px;
-      animation-duration: 4.4s;
-    }
+.luck {
+  width: 52px;
+  left: 24%;
+  top: 330px;
+  animation-duration: 3.4s;
+}
 
-    .adventure {
-      width: 60px;
-      left: 27%;
-      top: 930px;
-      animation-duration: 3.9s;
-    }
+.love {
+  width: 56px;
+  left: 51%;
+  top: 500px;
+  animation-duration: 4.1s;
+}
+
+.rest {
+  width: 48px;
+  left: 16%;
+  top: 790px;
+  animation-duration: 3.7s;
+}
+
+.joy {
+  width: 54px;
+  left: 84%;
+  top: 580px;
+  animation-duration: 4.4s;
+}
+
+.adventure {
+  width: 55px;
+  left: 52%;
+  top: 970px;
+  animation-duration: 3.9s;
+}
+
+
+/* 16 ОСНОВНЫХ КАРТИНОК */
+
+.eos {
+  width: 280px;
+  left: 2%;
+  top: 205px;
+  z-index: 4;
+  --rot: -7deg;
+  --dur: 3.7s;
+}
+
+.artemis {
+  width: 210px;
+  left: 27%;
+  top: 205px;
+  z-index: 5;
+  --rot: -4deg;
+  --dur: 3.9s;
+}
+
+.demeter {
+  width: 215px;
+  left: 50%;
+  top: 205px;
+  z-index: 6;
+  --rot: -7deg;
+  --dur: 4.1s;
+}
+
+.themis {
+  width: 270px;
+  left: 73%;
+  top: 200px;
+  z-index: 7;
+  --rot: -6deg;
+  --dur: 4.6s;
+}
+
+
+.hestia {
+  width: 285px;
+  left: 4%;
+  top: 480px;
+  z-index: 8;
+  --rot: 6deg;
+  --dur: 4.3s;
+}
+
+.hera {
+  width: 195px;
+  left: 31%;
+  top: 470px;
+  z-index: 9;
+  --rot: 8deg;
+  --dur: 4.8s;
+}
+
+.persephone {
+  width: 205px;
+  left: 54%;
+  top: 470px;
+  z-index: 10;
+  --rot: 5deg;
+  --dur: 3.6s;
+}
+
+.circe {
+  width: 205px;
+  left: 77%;
+  top: 480px;
+  z-index: 11;
+  --rot: 8deg;
+  --dur: 3.9s;
+}
+
+
+.selene {
+  width: 200px;
+  left: 5%;
+  top: 760px;
+  z-index: 12;
+  --rot: 7deg;
+  --dur: 3.8s;
+}
+
+.hecate {
+  width: 205px;
+  left: 28%;
+  top: 750px;
+  z-index: 13;
+  --rot: -8deg;
+  --dur: 4.5s;
+}
+
+.nike {
+  width: 195px;
+  left: 52%;
+  top: 750px;
+  z-index: 14;
+  --rot: 4deg;
+  --dur: 3.5s;
+}
+
+.iris {
+  width: 205px;
+  left: 76%;
+  top: 750px;
+  z-index: 15;
+  --rot: -5deg;
+  --dur: 4.7s;
+}
+
+
+.cassandra {
+  width: 200px;
+  left: 7%;
+  top: 1030px;
+  z-index: 16;
+  --rot: 7deg;
+  --dur: 3.7s;
+}
+
+.apollo {
+  width: 220px;
+  left: 31%;
+  top: 1020px;
+  z-index: 17;
+  --rot: -4deg;
+  --dur: 4.2s;
+}
+
+.hermes {
+  width: 205px;
+  left: 57%;
+  top: 1035px;
+  z-index: 18;
+  --rot: 6deg;
+  --dur: 3.8s;
+}
+
+.calypso {
+  width: 210px;
+  left: 79%;
+  top: 1020px;
+  z-index: 19;
+  --rot: -7deg;
+  --dur: 4.4s;
+}
 
 
     /* 16 КАРТИНОК */
