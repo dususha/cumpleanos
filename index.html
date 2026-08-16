@@ -47,7 +47,6 @@
       min-height: 100vh;
       font-family: Arial, sans-serif;
       background: #f3eee4;
-
       cursor: url("./cursor1.png") 16 16, auto;
     }
 
@@ -59,10 +58,8 @@
     .scene {
       position: relative;
       width: 100%;
-      min-height: 1750px;
-
+      min-height: 1300px;
       overflow: hidden;
-
       padding-top: 180px;
     }
 
@@ -73,22 +70,16 @@
 
     .title {
       position: absolute;
-
       top: 35px;
       left: 50%;
-
       transform: translateX(-50%);
-
       width: 92%;
-
       text-align: center;
-
       z-index: 50;
     }
 
     .title h1 {
       margin: 0;
-
       font-family: "Satyr SP", serif;
       font-size: 72px;
       font-weight: normal;
@@ -97,7 +88,6 @@
 
     .title p {
       margin: 10px 0 0;
-
       font-family: "UbuntuLI", serif;
       font-size: 14px;
       font-weight: normal;
@@ -110,26 +100,20 @@
 
     .object {
       position: absolute;
+      z-index: 10;
 
       animation:
         float var(--dur, 4s)
         ease-in-out
         infinite;
-
-      z-index: 10;
     }
-
-
-    /* Кликабельные картинки с видео */
 
     .object[data-video] {
       cursor: pointer;
     }
 
-
     .object img {
       display: block;
-
       width: 100%;
       height: auto;
 
@@ -140,9 +124,6 @@
         transform 0.25s ease,
         filter 0.25s ease;
     }
-
-
-    /* При наведении картинка выходит немного вперёд */
 
     .object:hover {
       z-index: 20;
@@ -161,8 +142,6 @@
     }
 
 
-    /* Мягкое движение вверх-вниз */
-
     @keyframes float {
 
       0%,
@@ -173,8 +152,8 @@
       50% {
         transform: translateY(-12px);
       }
-    }
 
+    }
 
 
     /* =========================
@@ -183,9 +162,7 @@
 
     .greeting {
       position: absolute;
-
       z-index: 30;
-
       cursor: pointer;
 
       animation:
@@ -195,10 +172,8 @@
         infinite;
     }
 
-
     .greeting img {
       display: block;
-
       width: 100%;
       height: auto;
 
@@ -207,18 +182,9 @@
         filter 0.25s ease;
     }
 
-
-    /*
-      Пасхалка всегда выше основной картинки,
-      поэтому на неё можно нажать.
-    */
-
     .greeting:hover {
       z-index: 40;
     }
-
-
-    /* Активное покачивание при наведении */
 
     .greeting:hover img {
       animation:
@@ -272,6 +238,7 @@
           rotate(0deg)
           scale(1);
       }
+
     }
 
 
@@ -279,206 +246,163 @@
 
       0%,
       100% {
-        transform:
-          translateY(0);
+        transform: translateY(0);
       }
 
       50% {
-        transform:
-          translateY(-6px);
+        transform: translateY(-6px);
       }
+
     }
 
 
+    /* ==================================================
+       DESKTOP — ПЛОТНЫЙ КОЛЛАЖ
+    ================================================== */
 
-    /* =========================
-       DESKTOP:
-       ОСНОВНЫЕ КАРТИНКИ
-    ========================= */
-
-
-    /* ---------- РЯД 1 ---------- */
 
     .eos {
-      width: 260px;
-
-      left: 2%;
-      top: 210px;
-
+      width: 290px;
+      left: 1%;
+      top: 205px;
       --rot: -7deg;
       --dur: 3.7s;
     }
 
 
     .artemis {
-      width: 205px;
-
-      left: 28%;
-      top: 215px;
-
+      width: 225px;
+      left: 24%;
+      top: 235px;
       --rot: -4deg;
       --dur: 3.9s;
     }
 
 
     .demeter {
-      width: 210px;
-
-      left: 52%;
-      top: 210px;
-
+      width: 235px;
+      left: 46%;
+      top: 205px;
       --rot: -7deg;
       --dur: 4.1s;
     }
 
 
     .themis {
-      width: 255px;
-
-      left: 76%;
-      top: 205px;
-
+      width: 285px;
+      left: 69%;
+      top: 225px;
       --rot: -6deg;
       --dur: 4.6s;
     }
 
 
 
-    /* ---------- РЯД 2 ---------- */
-
     .hestia {
-      width: 270px;
-
-      left: 4%;
-      top: 550px;
-
+      width: 300px;
+      left: 7%;
+      top: 425px;
       --rot: 6deg;
       --dur: 4.3s;
     }
 
 
     .hera {
-      width: 190px;
-
+      width: 215px;
       left: 31%;
-      top: 560px;
-
+      top: 450px;
       --rot: 8deg;
       --dur: 4.8s;
     }
 
 
     .persephone {
-      width: 200px;
-
-      left: 54%;
-      top: 550px;
-
+      width: 225px;
+      left: 51%;
+      top: 420px;
       --rot: 5deg;
       --dur: 3.6s;
     }
 
 
     .circe {
-      width: 205px;
-
-      left: 77%;
-      top: 560px;
-
+      width: 235px;
+      left: 73%;
+      top: 455px;
       --rot: 8deg;
       --dur: 3.9s;
     }
 
 
 
-    /* ---------- РЯД 3 ---------- */
-
     .selene {
-      width: 200px;
-
-      left: 5%;
-      top: 890px;
-
+      width: 225px;
+      left: 2%;
+      top: 655px;
       --rot: 7deg;
       --dur: 3.8s;
     }
 
 
     .hecate {
-      width: 205px;
-
-      left: 29%;
-      top: 900px;
-
+      width: 235px;
+      left: 24%;
+      top: 680px;
       --rot: -8deg;
       --dur: 4.5s;
     }
 
 
     .nike {
-      width: 195px;
-
-      left: 53%;
-      top: 890px;
-
+      width: 220px;
+      left: 47%;
+      top: 650px;
       --rot: 4deg;
       --dur: 3.5s;
     }
 
 
     .iris {
-      width: 205px;
-
-      left: 77%;
-      top: 900px;
-
+      width: 235px;
+      left: 69%;
+      top: 680px;
       --rot: -5deg;
       --dur: 4.7s;
     }
 
 
 
-    /* ---------- РЯД 4 ---------- */
-
     .cassandra {
-      width: 200px;
-
-      left: 6%;
-      top: 1230px;
-
+      width: 220px;
+      left: 9%;
+      top: 875px;
       --rot: 7deg;
       --dur: 3.7s;
     }
 
 
     .apollo {
-      width: 220px;
-
-      left: 30%;
-      top: 1220px;
-
+      width: 250px;
+      left: 29%;
+      top: 900px;
       --rot: -4deg;
       --dur: 4.2s;
     }
 
 
     .hermes {
-      width: 205px;
-
-      left: 55%;
-      top: 1235px;
-
+      width: 230px;
+      left: 53%;
+      top: 870px;
       --rot: 6deg;
       --dur: 3.8s;
     }
 
 
     .calypso {
-      width: 210px;
-
-      left: 78%;
-      top: 1220px;
-
+      width: 235px;
+      left: 75%;
+      top: 900px;
       --rot: -7deg;
       --dur: 4.4s;
     }
@@ -486,60 +410,45 @@
 
 
     /* =========================
-       DESKTOP:
-       ПАСХАЛКИ
-
-       Они находятся В ПРОМЕЖУТКАХ
-       между рядами.
+       ПАСХАЛКИ DESKTOP
     ========================= */
 
-
     .luck {
-      width: 50px;
-
-      left: 19%;
-      top: 480px;
-
+      width: 52px;
+      left: 22%;
+      top: 385px;
       animation-duration: 3.4s;
     }
 
 
     .love {
-      width: 55px;
-
-      left: 47%;
-      top: 500px;
-
+      width: 56px;
+      left: 66%;
+      top: 395px;
       animation-duration: 4.1s;
     }
 
 
     .rest {
       width: 48px;
-
-      left: 17%;
-      top: 830px;
-
+      left: 19%;
+      top: 625px;
       animation-duration: 3.7s;
     }
 
 
     .joy {
-      width: 52px;
-
-      left: 72%;
-      top: 830px;
-
+      width: 54px;
+      left: 65%;
+      top: 625px;
       animation-duration: 4.4s;
     }
 
 
     .adventure {
-      width: 55px;
-
-      left: 48%;
-      top: 1170px;
-
+      width: 56px;
+      left: 47%;
+      top: 845px;
       animation-duration: 3.9s;
     }
 
@@ -551,7 +460,6 @@
 
     .modal {
       position: fixed;
-
       inset: 0;
 
       display: none;
@@ -566,7 +474,6 @@
 
       z-index: 1000;
     }
-
 
     .modal.active {
       display: flex;
@@ -586,7 +493,6 @@
         #1f1b18;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
     }
@@ -595,12 +501,9 @@
     .video-box iframe {
       width: 100%;
       height: 100%;
-
       border: 0;
     }
 
-
-    /* Текст пасхалки */
 
     #message {
       display: none;
@@ -619,9 +522,7 @@
         serif;
 
       font-size: 42px;
-
       line-height: 1.25;
-
       text-align: center;
 
       padding: 50px;
@@ -636,20 +537,15 @@
 
     .close {
       position: absolute;
-
       top: -50px;
       right: 0;
 
       border: 0;
+      background: transparent;
 
-      background:
-        transparent;
-
-      color:
-        #c96b32;
+      color: #c96b32;
 
       font-size: 42px;
-
       line-height: 1;
 
       cursor: pointer;
@@ -657,9 +553,9 @@
 
 
 
-    /* ==========================================
-       ПЛАНШЕТ / НЕБОЛЬШОЙ ЭКРАН
-    ========================================== */
+    /* ==================================================
+       СРЕДНИЕ ЭКРАНЫ
+    ================================================== */
 
     @media
     (min-width: 701px)
@@ -667,173 +563,162 @@
     (max-width: 1050px) {
 
       .scene {
-        min-height: 2600px;
+        min-height: 1850px;
       }
 
 
-      /*
-        На небольшом ноутбуке вместо
-        четырёх картинок в ряд —
-        две картинки.
-      */
-
-
       .eos {
-        width: 230px;
-        left: 8%;
+        width: 240px;
+        left: 3%;
         top: 200px;
       }
 
       .artemis {
         width: 190px;
-        left: 62%;
-        top: 220px;
+        left: 34%;
+        top: 235px;
       }
-
 
       .demeter {
         width: 200px;
-        left: 10%;
-        top: 500px;
+        left: 57%;
+        top: 200px;
       }
 
       .themis {
         width: 240px;
-        left: 60%;
-        top: 490px;
+        left: 75%;
+        top: 235px;
       }
 
 
+
       .hestia {
-        width: 245px;
+        width: 255px;
         left: 7%;
-        top: 800px;
+        top: 470px;
       }
 
       .hera {
         width: 185px;
-        left: 63%;
-        top: 820px;
+        left: 34%;
+        top: 490px;
       }
-
 
       .persephone {
         width: 190px;
-        left: 10%;
-        top: 1110px;
+        left: 56%;
+        top: 465px;
       }
 
       .circe {
         width: 195px;
-        left: 63%;
-        top: 1120px;
+        left: 76%;
+        top: 500px;
       }
+
 
 
       .selene {
         width: 190px;
-        left: 8%;
-        top: 1420px;
+        left: 3%;
+        top: 740px;
       }
 
       .hecate {
         width: 195px;
-        left: 62%;
-        top: 1410px;
+        left: 28%;
+        top: 765px;
       }
-
 
       .nike {
         width: 185px;
-        left: 10%;
-        top: 1730px;
+        left: 53%;
+        top: 735px;
       }
 
       .iris {
         width: 195px;
-        left: 62%;
-        top: 1740px;
+        left: 75%;
+        top: 770px;
       }
+
 
 
       .cassandra {
         width: 190px;
         left: 8%;
-        top: 2040px;
+        top: 1020px;
       }
 
       .apollo {
-        width: 205px;
-        left: 61%;
-        top: 2030px;
+        width: 210px;
+        left: 31%;
+        top: 1040px;
       }
-
 
       .hermes {
         width: 195px;
-        left: 10%;
-        top: 2320px;
+        left: 56%;
+        top: 1010px;
       }
 
       .calypso {
         width: 195px;
-        left: 62%;
-        top: 2320px;
+        left: 77%;
+        top: 1045px;
       }
 
 
-      /* Пасхалки */
 
       .luck {
         width: 46px;
-        left: 47%;
+        left: 27%;
         top: 430px;
       }
 
       .love {
         width: 48px;
-        left: 46%;
-        top: 740px;
+        left: 70%;
+        top: 430px;
       }
 
       .rest {
         width: 44px;
-        left: 47%;
-        top: 1350px;
+        left: 22%;
+        top: 705px;
       }
 
       .joy {
         width: 48px;
-        left: 46%;
-        top: 1960px;
+        left: 69%;
+        top: 705px;
       }
 
       .adventure {
         width: 48px;
-        left: 47%;
-        top: 2260px;
+        left: 48%;
+        top: 980px;
       }
 
     }
 
 
 
-    /* ==========================================
+    /* ==================================================
        МОБИЛЬНАЯ ВЕРСИЯ
-    ========================================== */
+    ================================================== */
 
     @media (max-width: 700px) {
 
       .scene {
-        min-height: 2750px;
-
+        min-height: 2050px;
         padding-top: 160px;
       }
 
 
       .title {
         top: 22px;
-
         width: 94%;
       }
 
@@ -845,236 +730,178 @@
 
       .title p {
         font-size: 15px;
-
         line-height: 1.35;
       }
 
 
       #message {
         font-size: 28px;
-
         padding: 30px;
-
         line-height: 1.3;
       }
 
 
 
       /* =====================
-         РЯД 1
+         MOBILE КОЛЛАЖ
       ===================== */
 
       .eos {
-        width: 155px;
-
-        left: 3%;
+        width: 175px;
+        left: -2%;
         top: 180px;
       }
 
 
       .artemis {
-        width: 135px;
-
-        left: 58%;
-        top: 195px;
+        width: 150px;
+        left: 54%;
+        top: 225px;
       }
 
 
 
-      /* =====================
-         РЯД 2
-      ===================== */
-
       .hestia {
-        width: 175px;
-
+        width: 200px;
         left: 4%;
-        top: 480px;
+        top: 390px;
       }
 
 
       .themis {
-        width: 170px;
-
-        left: 54%;
-        top: 485px;
+        width: 190px;
+        left: 50%;
+        top: 420px;
       }
 
 
 
-      /* =====================
-         РЯД 3
-      ===================== */
-
       .hera {
-        width: 135px;
-
-        left: 7%;
-        top: 780px;
+        width: 150px;
+        left: 2%;
+        top: 640px;
       }
 
 
       .demeter {
-        width: 145px;
-
-        left: 57%;
-        top: 770px;
+        width: 165px;
+        left: 52%;
+        top: 620px;
       }
 
 
 
-      /* =====================
-         РЯД 4
-      ===================== */
-
       .persephone {
-        width: 140px;
-
-        left: 5%;
-        top: 1080px;
+        width: 155px;
+        left: 8%;
+        top: 850px;
       }
 
 
       .circe {
-        width: 140px;
-
-        left: 58%;
-        top: 1090px;
+        width: 155px;
+        left: 56%;
+        top: 875px;
       }
 
 
 
-      /* =====================
-         РЯД 5
-      ===================== */
-
       .selene {
-        width: 140px;
-
-        left: 8%;
-        top: 1380px;
+        width: 155px;
+        left: 0%;
+        top: 1070px;
       }
 
 
       .hecate {
-        width: 145px;
-
-        left: 56%;
-        top: 1370px;
+        width: 165px;
+        left: 52%;
+        top: 1050px;
       }
 
 
 
-      /* =====================
-         РЯД 6
-      ===================== */
-
       .nike {
-        width: 135px;
-
-        left: 6%;
-        top: 1680px;
+        width: 150px;
+        left: 7%;
+        top: 1280px;
       }
 
 
       .iris {
-        width: 145px;
-
-        left: 57%;
-        top: 1690px;
+        width: 165px;
+        left: 55%;
+        top: 1300px;
       }
 
 
 
-      /* =====================
-         РЯД 7
-      ===================== */
-
       .cassandra {
-        width: 140px;
-
-        left: 7%;
-        top: 1980px;
+        width: 155px;
+        left: 1%;
+        top: 1510px;
       }
 
 
       .apollo {
-        width: 155px;
+        width: 175px;
+        left: 50%;
+        top: 1490px;
+      }
 
-        left: 54%;
-        top: 1970px;
+
+
+      .hermes {
+        width: 160px;
+        left: 8%;
+        top: 1720px;
+      }
+
+
+      .calypso {
+        width: 160px;
+        left: 57%;
+        top: 1740px;
       }
 
 
 
       /* =====================
-         РЯД 8
+         ПАСХАЛКИ MOBILE
       ===================== */
-
-      .hermes {
-        width: 145px;
-
-        left: 6%;
-        top: 2280px;
-      }
-
-
-      .calypso {
-        width: 145px;
-
-        left: 58%;
-        top: 2280px;
-      }
-
-
-
-      /*
-       ================================
-       ПАСХАЛКИ НА ТЕЛЕФОНЕ
-
-       Они специально стоят
-       В ПУСТЫХ ЗОНАХ между рядами.
-       ================================
-      */
-
 
       .luck {
         width: 42px;
-
-        left: 84%;
-        top: 410px;
+        left: 44%;
+        top: 350px;
       }
 
 
       .love {
         width: 44px;
-
-        left: 3%;
-        top: 710px;
+        left: 84%;
+        top: 590px;
       }
 
 
       .rest {
         width: 40px;
-
-        left: 84%;
-        top: 1310px;
+        left: 43%;
+        top: 820px;
       }
 
 
       .joy {
         width: 44px;
-
         left: 3%;
-        top: 1910px;
+        top: 1240px;
       }
 
 
       .adventure {
         width: 44px;
-
-        left: 83%;
-        top: 2580px;
+        left: 43%;
+        top: 1680px;
       }
 
     }
@@ -1101,8 +928,7 @@
       </h1>
 
       <p>
-        Добрые речи подруг и друзей здесь
-        Светлане Светлоликой с любовью собраны
+        Добрые речи подруг и друзей здесь Светлане Светлоликой с любовью собраны
       </p>
 
     </div>
@@ -1112,7 +938,6 @@
     <!-- =====================
          ПРИВЕТЫ С ОЛИМПА
     ====================== -->
-
 
     <div
       class="greeting luck"
@@ -1200,45 +1025,37 @@
 
 
     <div class="object artemis">
-
       <img
         src="./artemis.png"
         alt="Artemis"
       >
-
     </div>
 
 
 
     <div class="object hera">
-
       <img
         src="./hera.png"
         alt="Hera"
       >
-
     </div>
 
 
 
     <div class="object demeter">
-
       <img
         src="./demeter.png"
         alt="Demeter"
       >
-
     </div>
 
 
 
     <div class="object persephone">
-
       <img
         src="./persephone.png"
         alt="Persephone"
       >
-
     </div>
 
 
@@ -1256,34 +1073,28 @@
 
 
     <div class="object selene">
-
       <img
         src="./selene.png"
         alt="Selene"
       >
-
     </div>
 
 
 
     <div class="object hecate">
-
       <img
         src="./hecate.png"
         alt="Hecate"
       >
-
     </div>
 
 
 
     <div class="object nike">
-
       <img
         src="./nike.png"
         alt="Nike"
       >
-
     </div>
 
 
@@ -1301,56 +1112,46 @@
 
 
     <div class="object circe">
-
       <img
         src="./circe.png"
         alt="Circe"
       >
-
     </div>
 
 
 
     <div class="object calypso">
-
       <img
         src="./calypso.png"
         alt="Calypso"
       >
-
     </div>
 
 
 
     <div class="object cassandra">
-
       <img
         src="./cassandra.png"
         alt="Cassandra"
       >
-
     </div>
 
 
 
     <div class="object apollo">
-
       <img
         src="./apollo.png"
         alt="Apollo"
       >
-
     </div>
 
 
 
     <div class="object hermes">
-
       <img
         src="./hermes.png"
         alt="Hermes"
       >
-
     </div>
 
 
@@ -1361,7 +1162,6 @@
   <!-- =====================
        МОДАЛЬНОЕ ОКНО
   ====================== -->
-
 
   <div
     class="modal"
@@ -1405,7 +1205,6 @@
        JAVASCRIPT
   ====================== -->
 
-
   <script>
 
     const objects =
@@ -1448,7 +1247,7 @@
 
 
           /* =====================
-             ОТКРЫВАЕМ ВИДЕО
+             ВИДЕО
           ====================== */
 
           if (videoURL) {
@@ -1478,7 +1277,7 @@
 
 
           /* =====================
-             ОТКРЫВАЕМ ПАСХАЛКУ
+             ПАСХАЛКА
           ====================== */
 
           if (messageText) {
@@ -1549,8 +1348,6 @@
 
 
 
-    /* Клик по фону */
-
     modal.addEventListener(
       "click",
       function (event) {
@@ -1565,8 +1362,6 @@
     );
 
 
-
-    /* ESC */
 
     document.addEventListener(
       "keydown",
