@@ -58,7 +58,7 @@
     .scene {
       position: relative;
       width: 100%;
-      min-height: 1300px;
+      min-height: 1420px;
       overflow: hidden;
       padding-top: 180px;
     }
@@ -117,8 +117,7 @@
       width: 100%;
       height: auto;
 
-      transform:
-        rotate(var(--rot, 0deg));
+      transform: rotate(var(--rot, 0deg));
 
       transition:
         transform 0.25s ease,
@@ -143,7 +142,6 @@
 
 
     @keyframes float {
-
       0%,
       100% {
         transform: translateY(0);
@@ -152,7 +150,6 @@
       50% {
         transform: translateY(-12px);
       }
-
     }
 
 
@@ -204,39 +201,27 @@
     @keyframes wiggle {
 
       0% {
-        transform:
-          rotate(0deg)
-          scale(1);
+        transform: rotate(0deg) scale(1);
       }
 
       20% {
-        transform:
-          rotate(-14deg)
-          scale(1.12);
+        transform: rotate(-14deg) scale(1.12);
       }
 
       40% {
-        transform:
-          rotate(12deg)
-          scale(1.12);
+        transform: rotate(12deg) scale(1.12);
       }
 
       60% {
-        transform:
-          rotate(-9deg)
-          scale(1.12);
+        transform: rotate(-9deg) scale(1.12);
       }
 
       80% {
-        transform:
-          rotate(6deg)
-          scale(1.08);
+        transform: rotate(6deg) scale(1.08);
       }
 
       100% {
-        transform:
-          rotate(0deg)
-          scale(1);
+        transform: rotate(0deg) scale(1);
       }
 
     }
@@ -257,196 +242,189 @@
 
 
     /* ==================================================
-       DESKTOP — ПЛОТНЫЙ КОЛЛАЖ
+       DESKTOP — РАСКИДАННЫЙ КОЛЛАЖ
     ================================================== */
 
 
+    /* ВЕРХНЯЯ ЗОНА */
+
     .eos {
-      width: 290px;
+      width: 300px;
       left: 1%;
-      top: 205px;
+      top: 220px;
       --rot: -7deg;
       --dur: 3.7s;
     }
 
-
     .artemis {
-      width: 225px;
-      left: 24%;
-      top: 235px;
+      width: 220px;
+      left: 23%;
+      top: 270px;
       --rot: -4deg;
       --dur: 3.9s;
     }
 
-   .demeter {
-  width: 235px;
-  left: 69%;
-  top: 225px;
-  --rot: -7deg;
-  --dur: 4.1s;
-}
+    .themis {
+      width: 285px;
+      left: 45%;
+      top: 210px;
+      --rot: -6deg;
+      --dur: 4.6s;
+    }
 
-.themis {
-  width: 285px;
-  left: 46%;
-  top: 205px;
-  --rot: -6deg;
-  --dur: 4.6s;
-}
+    .demeter {
+      width: 235px;
+      left: 78%;
+      top: 245px;
+      --rot: -7deg;
+      --dur: 4.1s;
+    }
 
 
+    /* ВТОРАЯ ЗОНА */
 
     .hestia {
-      width: 300px;
-      left: 7%;
-      top: 425px;
+      width: 310px;
+      left: 5%;
+      top: 470px;
       --rot: 6deg;
       --dur: 4.3s;
     }
 
-
     .hera {
       width: 215px;
-      left: 31%;
-      top: 450px;
+      left: 33%;
+      top: 500px;
       --rot: 8deg;
       --dur: 4.8s;
     }
 
-
     .persephone {
       width: 225px;
-      left: 51%;
-      top: 420px;
+      left: 56%;
+      top: 455px;
       --rot: 5deg;
       --dur: 3.6s;
     }
 
-
     .circe {
-      width: 235px;
-      left: 73%;
-      top: 455px;
+      width: 245px;
+      left: 82%;
+      top: 500px;
       --rot: 8deg;
       --dur: 3.9s;
     }
 
 
+    /* ТРЕТЬЯ ЗОНА */
 
     .selene {
-      width: 225px;
-      left: 2%;
-      top: 655px;
+      width: 235px;
+      left: -1%;
+      top: 720px;
       --rot: 7deg;
       --dur: 3.8s;
     }
 
-
     .hecate {
-      width: 235px;
+      width: 240px;
       left: 24%;
-      top: 680px;
+      top: 750px;
       --rot: -8deg;
       --dur: 4.5s;
     }
 
-
     .nike {
-      width: 220px;
-      left: 47%;
-      top: 650px;
+      width: 225px;
+      left: 50%;
+      top: 700px;
       --rot: 4deg;
       --dur: 3.5s;
     }
 
-
     .iris {
-      width: 235px;
-      left: 69%;
-      top: 680px;
+      width: 245px;
+      left: 76%;
+      top: 745px;
       --rot: -5deg;
       --dur: 4.7s;
     }
 
 
+    /* НИЖНЯЯ ЗОНА */
 
     .cassandra {
-      width: 220px;
-      left: 9%;
-      top: 875px;
+      width: 225px;
+      left: 5%;
+      top: 980px;
       --rot: 7deg;
       --dur: 3.7s;
     }
 
-
     .apollo {
-      width: 250px;
+      width: 255px;
       left: 29%;
-      top: 900px;
+      top: 1010px;
       --rot: -4deg;
       --dur: 4.2s;
     }
 
-
     .hermes {
-      width: 230px;
-      left: 53%;
-      top: 870px;
+      width: 235px;
+      left: 55%;
+      top: 960px;
       --rot: 6deg;
       --dur: 3.8s;
     }
 
-
     .calypso {
-      width: 235px;
-      left: 75%;
-      top: 900px;
+      width: 245px;
+      left: 80%;
+      top: 1020px;
       --rot: -7deg;
       --dur: 4.4s;
     }
 
 
 
-    /* =========================
+    /* ==================================================
        ПАСХАЛКИ DESKTOP
-    ========================= */
+
+       Каждая стоит в отдельной пустой зоне.
+    ================================================== */
 
     .luck {
       width: 52px;
-      left: 22%;
-      top: 385px;
+      left: 36%;
+      top: 390px;
       animation-duration: 3.4s;
     }
 
-
     .love {
       width: 56px;
-      left: 66%;
-      top: 395px;
+      left: 72%;
+      top: 420px;
       animation-duration: 4.1s;
     }
-
 
     .rest {
       width: 48px;
       left: 19%;
-      top: 625px;
+      top: 690px;
       animation-duration: 3.7s;
     }
 
-
     .joy {
       width: 54px;
-      left: 65%;
-      top: 625px;
+      left: 70%;
+      top: 680px;
       animation-duration: 4.4s;
     }
 
-
     .adventure {
       width: 56px;
-      left: 47%;
-      top: 845px;
+      left: 48%;
+      top: 930px;
       animation-duration: 3.9s;
     }
 
@@ -467,8 +445,7 @@
 
       padding: 30px;
 
-      background:
-        rgba(0, 0, 0, 0.84);
+      background: rgba(0, 0, 0, 0.84);
 
       z-index: 1000;
     }
@@ -481,14 +458,11 @@
     .video-box {
       position: relative;
 
-      width:
-        min(900px, 92vw);
+      width: min(900px, 92vw);
 
-      aspect-ratio:
-        16 / 9;
+      aspect-ratio: 16 / 9;
 
-      background:
-        #1f1b18;
+      background: #1f1b18;
 
       display: flex;
       align-items: center;
@@ -509,11 +483,8 @@
       width: 100%;
       height: 100%;
 
-      background:
-        #1f1b18;
-
-      color:
-        #c96b32;
+      background: #1f1b18;
+      color: #c96b32;
 
       font-family:
         "Satyr SP",
@@ -528,8 +499,7 @@
       align-items: center;
       justify-content: center;
 
-      border:
-        6px solid #b85f2d;
+      border: 6px solid #b85f2d;
     }
 
 
@@ -561,142 +531,144 @@
     (max-width: 1050px) {
 
       .scene {
-        min-height: 1850px;
+        min-height: 1650px;
+      }
+
+      .title h1 {
+        font-size: 62px;
       }
 
 
       .eos {
-        width: 240px;
-        left: 3%;
+        width: 250px;
+        left: 0%;
         top: 200px;
       }
 
       .artemis {
         width: 190px;
-        left: 34%;
-        top: 235px;
-      }
-
-      .demeter {
-        width: 200px;
-        left: 57%;
-        top: 200px;
+        left: 29%;
+        top: 250px;
       }
 
       .themis {
         width: 240px;
-        left: 75%;
-        top: 235px;
+        left: 50%;
+        top: 210px;
+      }
+
+      .demeter {
+        width: 200px;
+        left: 78%;
+        top: 260px;
       }
 
 
-
       .hestia {
-        width: 255px;
-        left: 7%;
+        width: 265px;
+        left: 5%;
         top: 470px;
       }
 
       .hera {
         width: 185px;
         left: 34%;
-        top: 490px;
+        top: 500px;
       }
 
       .persephone {
-        width: 190px;
-        left: 56%;
+        width: 195px;
+        left: 57%;
         top: 465px;
       }
 
       .circe {
-        width: 195px;
-        left: 76%;
-        top: 500px;
+        width: 205px;
+        left: 80%;
+        top: 510px;
       }
-
 
 
       .selene {
-        width: 190px;
-        left: 3%;
-        top: 740px;
+        width: 200px;
+        left: -2%;
+        top: 750px;
       }
 
       .hecate {
-        width: 195px;
-        left: 28%;
-        top: 765px;
+        width: 205px;
+        left: 27%;
+        top: 770px;
       }
 
       .nike {
-        width: 185px;
-        left: 53%;
+        width: 190px;
+        left: 52%;
         top: 735px;
       }
 
       .iris {
-        width: 195px;
-        left: 75%;
-        top: 770px;
+        width: 205px;
+        left: 78%;
+        top: 780px;
       }
-
 
 
       .cassandra {
-        width: 190px;
-        left: 8%;
-        top: 1020px;
+        width: 195px;
+        left: 5%;
+        top: 1030px;
       }
 
       .apollo {
-        width: 210px;
-        left: 31%;
-        top: 1040px;
+        width: 215px;
+        left: 30%;
+        top: 1060px;
       }
 
       .hermes {
-        width: 195px;
-        left: 56%;
-        top: 1010px;
+        width: 200px;
+        left: 55%;
+        top: 1020px;
       }
 
       .calypso {
-        width: 195px;
-        left: 77%;
-        top: 1045px;
+        width: 205px;
+        left: 79%;
+        top: 1070px;
       }
 
 
+      /* Пасхалки */
 
       .luck {
         width: 46px;
-        left: 27%;
+        left: 23%;
         top: 430px;
       }
 
       .love {
         width: 48px;
-        left: 70%;
+        left: 74%;
         top: 430px;
       }
 
       .rest {
         width: 44px;
-        left: 22%;
-        top: 705px;
+        left: 20%;
+        top: 710px;
       }
 
       .joy {
         width: 48px;
-        left: 69%;
+        left: 72%;
         top: 705px;
       }
 
       .adventure {
         width: 48px;
         left: 48%;
-        top: 980px;
+        top: 990px;
       }
 
     }
@@ -710,7 +682,7 @@
     @media (max-width: 700px) {
 
       .scene {
-        min-height: 2050px;
+        min-height: 2200px;
         padding-top: 160px;
       }
 
@@ -745,161 +717,157 @@
       ===================== */
 
       .eos {
-        width: 175px;
-        left: -2%;
+        width: 180px;
+        left: -5%;
         top: 180px;
       }
 
 
       .artemis {
         width: 150px;
-        left: 54%;
-        top: 225px;
+        left: 57%;
+        top: 215px;
       }
 
+
+      .demeter {
+        width: 160px;
+        left: -1%;
+        top: 430px;
+      }
+
+
+      .themis {
+        width: 190px;
+        left: 52%;
+        top: 400px;
+      }
 
 
       .hestia {
-        width: 200px;
-        left: 4%;
-        top: 390px;
+        width: 205px;
+        left: -4%;
+        top: 650px;
       }
-
-
-   .themis {
-  width: 190px;
-  left: 52%;
-  top: 620px;
-}
-
 
 
       .hera {
         width: 150px;
-        left: 2%;
-        top: 640px;
+        left: 59%;
+        top: 680px;
       }
-
-
-   .demeter {
-  width: 165px;
-  left: 50%;
-  top: 420px;
-}
-
 
 
       .persephone {
         width: 155px;
-        left: 8%;
-        top: 850px;
+        left: 5%;
+        top: 890px;
       }
 
 
       .circe {
         width: 155px;
-        left: 56%;
+        left: 59%;
         top: 875px;
       }
 
 
-
       .selene {
-        width: 155px;
-        left: 0%;
-        top: 1070px;
+        width: 160px;
+        left: -3%;
+        top: 1110px;
       }
 
 
       .hecate {
         width: 165px;
-        left: 52%;
-        top: 1050px;
+        left: 55%;
+        top: 1100px;
       }
-
 
 
       .nike {
         width: 150px;
-        left: 7%;
-        top: 1280px;
+        left: 5%;
+        top: 1335px;
       }
 
 
       .iris {
         width: 165px;
-        left: 55%;
-        top: 1300px;
+        left: 57%;
+        top: 1320px;
       }
-
 
 
       .cassandra {
         width: 155px;
-        left: 1%;
-        top: 1510px;
+        left: -1%;
+        top: 1560px;
       }
 
 
       .apollo {
         width: 175px;
-        left: 50%;
-        top: 1490px;
+        left: 54%;
+        top: 1540px;
       }
-
 
 
       .hermes {
         width: 160px;
-        left: 8%;
-        top: 1720px;
+        left: 5%;
+        top: 1780px;
       }
 
 
       .calypso {
-        width: 160px;
-        left: 57%;
-        top: 1740px;
+        width: 165px;
+        left: 58%;
+        top: 1790px;
       }
 
 
 
       /* =====================
          ПАСХАЛКИ MOBILE
+
+         Они стоят в свободных
+         карманах между картинками.
       ===================== */
 
       .luck {
         width: 42px;
-        left: 44%;
-        top: 350px;
+        left: 45%;
+        top: 355px;
       }
 
 
       .love {
         width: 44px;
         left: 84%;
-        top: 590px;
+        top: 610px;
       }
 
 
       .rest {
         width: 40px;
         left: 43%;
-        top: 820px;
+        top: 840px;
       }
 
 
       .joy {
         width: 44px;
-        left: 3%;
-        top: 1240px;
+        left: 4%;
+        top: 1290px;
       }
 
 
       .adventure {
         width: 44px;
-        left: 43%;
-        top: 1680px;
+        left: 44%;
+        top: 1740px;
       }
 
     }
@@ -915,9 +883,7 @@
   <main class="scene">
 
 
-    <!-- =====================
-         ЗАГОЛОВОК
-    ====================== -->
+    <!-- ЗАГОЛОВОК -->
 
     <div class="title">
 
@@ -933,18 +899,13 @@
 
 
 
-    <!-- =====================
-         ПРИВЕТЫ С ОЛИМПА
-    ====================== -->
+    <!-- ПРИВЕТЫ С ОЛИМПА -->
 
     <div
       class="greeting luck"
       data-message="🍀 О, да сопутствует случай тебе благосклонный"
     >
-      <img
-        src="./luck.png"
-        alt="Luck"
-      >
+      <img src="./luck.png" alt="Luck">
     </div>
 
 
@@ -952,10 +913,7 @@
       class="greeting love"
       data-message="💘 Да умножит Киприда любовь и веселье"
     >
-      <img
-        src="./love.png"
-        alt="Love"
-      >
+      <img src="./love.png" alt="Love">
     </div>
 
 
@@ -963,10 +921,7 @@
       class="greeting rest"
       data-message="🌙 Сладостен сон; почивай же без всякой тревоги"
     >
-      <img
-        src="./rest.png"
-        alt="Rest"
-      >
+      <img src="./rest.png" alt="Rest">
     </div>
 
 
@@ -974,10 +929,7 @@
       class="greeting joy"
       data-message="✨ Смех да пребудет с тобой, и пиры, и отрада"
     >
-      <img
-        src="./joy.png"
-        alt="Joy"
-      >
+      <img src="./joy.png" alt="Joy">
     </div>
 
 
@@ -985,171 +937,103 @@
       class="greeting adventure"
       data-message="🏺 Странствуй отважно, но мимо циклопов по возможности"
     >
-      <img
-        src="./adventure.png"
-        alt="Adventure"
-      >
+      <img src="./adventure.png" alt="Adventure">
     </div>
 
 
 
-    <!-- =====================
-         ОСНОВНЫЕ КАРТИНКИ
-    ====================== -->
+    <!-- ОСНОВНЫЕ КАРТИНКИ -->
 
 
     <div
       class="object eos"
       data-video="https://www.youtube.com/embed/n92WoYu_kIg"
     >
-      <img
-        src="./eos.png"
-        alt="Eos"
-      >
+      <img src="./eos.png" alt="Eos">
     </div>
-
 
 
     <div
       class="object themis"
       data-video="https://www.youtube.com/embed/sWfOfMFYXu8"
     >
-      <img
-        src="./themis.png"
-        alt="Themis"
-      >
+      <img src="./themis.png" alt="Themis">
     </div>
-
 
 
     <div class="object artemis">
-      <img
-        src="./artemis.png"
-        alt="Artemis"
-      >
+      <img src="./artemis.png" alt="Artemis">
     </div>
-
 
 
     <div class="object hera">
-      <img
-        src="./hera.png"
-        alt="Hera"
-      >
+      <img src="./hera.png" alt="Hera">
     </div>
-
 
 
     <div class="object demeter">
-      <img
-        src="./demeter.png"
-        alt="Demeter"
-      >
+      <img src="./demeter.png" alt="Demeter">
     </div>
-
 
 
     <div class="object persephone">
-      <img
-        src="./persephone.png"
-        alt="Persephone"
-      >
+      <img src="./persephone.png" alt="Persephone">
     </div>
-
 
 
     <div
       class="object hestia"
       data-video="https://www.youtube.com/embed/rIFX2fCCWto"
     >
-      <img
-        src="./hestia.png"
-        alt="Hestia"
-      >
+      <img src="./hestia.png" alt="Hestia">
     </div>
-
 
 
     <div class="object selene">
-      <img
-        src="./selene.png"
-        alt="Selene"
-      >
+      <img src="./selene.png" alt="Selene">
     </div>
-
 
 
     <div class="object hecate">
-      <img
-        src="./hecate.png"
-        alt="Hecate"
-      >
+      <img src="./hecate.png" alt="Hecate">
     </div>
-
 
 
     <div class="object nike">
-      <img
-        src="./nike.png"
-        alt="Nike"
-      >
+      <img src="./nike.png" alt="Nike">
     </div>
-
 
 
     <div
       class="object iris"
       data-video="https://www.youtube.com/embed/M5i-03CmOzc"
     >
-      <img
-        src="./iris.png"
-        alt="Iris"
-      >
+      <img src="./iris.png" alt="Iris">
     </div>
-
 
 
     <div class="object circe">
-      <img
-        src="./circe.png"
-        alt="Circe"
-      >
+      <img src="./circe.png" alt="Circe">
     </div>
-
 
 
     <div class="object calypso">
-      <img
-        src="./calypso.png"
-        alt="Calypso"
-      >
+      <img src="./calypso.png" alt="Calypso">
     </div>
-
 
 
     <div class="object cassandra">
-      <img
-        src="./cassandra.png"
-        alt="Cassandra"
-      >
+      <img src="./cassandra.png" alt="Cassandra">
     </div>
-
 
 
     <div class="object apollo">
-      <img
-        src="./apollo.png"
-        alt="Apollo"
-      >
+      <img src="./apollo.png" alt="Apollo">
     </div>
 
 
-
     <div class="object hermes">
-      <img
-        src="./hermes.png"
-        alt="Hermes"
-      >
+      <img src="./hermes.png" alt="Hermes">
     </div>
 
 
@@ -1157,17 +1041,11 @@
 
 
 
-  <!-- =====================
-       МОДАЛЬНОЕ ОКНО
-  ====================== -->
+  <!-- МОДАЛЬНОЕ ОКНО -->
 
-  <div
-    class="modal"
-    id="modal"
-  >
+  <div class="modal" id="modal">
 
     <div class="video-box">
-
 
       <button
         class="close"
@@ -1179,7 +1057,6 @@
       </button>
 
 
-
       <iframe
         id="video"
         src=""
@@ -1189,19 +1066,13 @@
       </iframe>
 
 
-
       <div id="message"></div>
-
 
     </div>
 
   </div>
 
 
-
-  <!-- =====================
-       JAVASCRIPT
-  ====================== -->
 
   <script>
 
@@ -1210,22 +1081,17 @@
         "[data-video], [data-message]"
       );
 
-
     const modal =
       document.getElementById("modal");
-
 
     const video =
       document.getElementById("video");
 
-
     const message =
       document.getElementById("message");
 
-
     const closeButton =
       document.getElementById("close");
-
 
 
     objects.forEach(object => {
@@ -1234,19 +1100,12 @@
         "click",
         function () {
 
-
           const videoURL =
             object.dataset.video;
-
 
           const messageText =
             object.dataset.message;
 
-
-
-          /* =====================
-             ВИДЕО
-          ====================== */
 
           if (videoURL) {
 
@@ -1256,15 +1115,12 @@
             message.textContent =
               "";
 
-
             video.style.display =
               "block";
-
 
             video.src =
               videoURL +
               "?autoplay=1";
-
 
             modal.classList.add(
               "active"
@@ -1273,28 +1129,19 @@
           }
 
 
-
-          /* =====================
-             ПАСХАЛКА
-          ====================== */
-
           if (messageText) {
 
             video.src =
               "";
 
-
             video.style.display =
               "none";
-
 
             message.textContent =
               messageText;
 
-
             message.style.display =
               "flex";
-
 
             modal.classList.add(
               "active"
@@ -1308,35 +1155,25 @@
     });
 
 
-
-    /* =====================
-       ЗАКРЫТИЕ
-    ====================== */
-
     function closeModal() {
 
       modal.classList.remove(
         "active"
       );
 
-
       video.src =
         "";
-
 
       video.style.display =
         "block";
 
-
       message.textContent =
         "";
-
 
       message.style.display =
         "none";
 
     }
-
 
 
     closeButton.addEventListener(
@@ -1345,20 +1182,16 @@
     );
 
 
-
     modal.addEventListener(
       "click",
       function (event) {
 
         if (event.target === modal) {
-
           closeModal();
-
         }
 
       }
     );
-
 
 
     document.addEventListener(
@@ -1366,9 +1199,7 @@
       function (event) {
 
         if (event.key === "Escape") {
-
           closeModal();
-
         }
 
       }
