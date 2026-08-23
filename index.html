@@ -104,7 +104,8 @@
       animation: float var(--dur, 4s) ease-in-out infinite;
     }
 
-    .object[data-video] {
+    .object[data-video],
+    .object[data-file] {
       cursor: pointer;
     }
 
@@ -112,7 +113,6 @@
       display: block;
       width: 100%;
       height: auto;
-
       transform: rotate(var(--rot, 0deg));
 
       transition:
@@ -159,12 +159,7 @@
       position: absolute;
       z-index: 30;
       cursor: pointer;
-
-      animation:
-        greeting-float
-        4s
-        ease-in-out
-        infinite;
+      animation: greeting-float 4s ease-in-out infinite;
     }
 
     .greeting img {
@@ -182,11 +177,7 @@
     }
 
     .greeting:hover img {
-      animation:
-        wiggle
-        0.6s
-        ease-in-out
-        1;
+      animation: wiggle 0.6s ease-in-out 1;
 
       filter:
         drop-shadow(
@@ -415,7 +406,9 @@
     }
 
 
-    /* НОВАЯ ВИДЕО-ПАСХАЛКА */
+    /* =========================
+       STAR — ВИДЕО-ПАСХАЛКА
+    ========================= */
 
     .star {
       width: 54px;
@@ -450,7 +443,9 @@
     }
 
 
-    /* ОБЫЧНОЕ ПРЯМОУГОЛЬНОЕ ВИДЕО */
+    /* =========================
+       ОБЫЧНОЕ ОКНО
+    ========================= */
 
     .video-box {
       position: relative;
@@ -463,17 +458,36 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
-      transition:
-        width 0.25s ease,
-        aspect-ratio 0.25s ease;
     }
 
 
+    /* =========================
+       YOUTUBE
+    ========================= */
+
     .video-box iframe {
+      display: none;
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+
+    /* =========================
+       ЛОКАЛЬНОЕ MP4
+    ========================= */
+
+    .video-box video {
+      display: none;
+
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+
+      object-fit: contain;
+
+      background: #1f1b18;
     }
 
 
@@ -489,6 +503,7 @@
     }
 
 
+    .video-box.circle video,
     .video-box.circle iframe {
       width: 100%;
       height: 100%;
@@ -497,11 +512,17 @@
 
       border: 8px solid #b85f2d;
 
-      background: #1f1b18;
-
       box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.35);
+    }
+
+
+    /* Для MP4:
+       видео заполняет весь круг */
+
+    .video-box.circle video {
+      object-fit: cover;
     }
 
 
@@ -544,7 +565,6 @@
       right: 0;
 
       border: 0;
-
       background: transparent;
 
       color: #c96b32;
@@ -557,9 +577,6 @@
       z-index: 20;
     }
 
-
-    /* Для круглого видео
-       крестик ближе к кружку */
 
     .video-box.circle .close {
       top: -35px;
@@ -685,8 +702,6 @@
       }
 
 
-      /* Пасхалки */
-
       .luck {
         width: 46px;
         left: 23%;
@@ -737,23 +752,19 @@
         padding-top: 160px;
       }
 
-
       .title {
         top: 22px;
         width: 94%;
       }
 
-
       .title h1 {
         font-size: 48px;
       }
-
 
       .title p {
         font-size: 15px;
         line-height: 1.35;
       }
-
 
       #message {
         font-size: 28px;
@@ -766,10 +777,6 @@
         width: min(360px, 82vw);
       }
 
-
-      /* =====================
-         MOBILE КОЛЛАЖ
-      ===================== */
 
       .eos {
         width: 180px;
@@ -871,9 +878,7 @@
       }
 
 
-      /* =====================
-         ПАСХАЛКИ MOBILE
-      ===================== */
+      /* Пасхалки */
 
       .luck {
         width: 42px;
@@ -915,7 +920,7 @@
 
 
     /* ==================================================
-       FULL HD И БОЛЬШИЕ ЭКРАНЫ
+       FULL HD
     ================================================== */
 
     @media (min-width: 1500px) {
@@ -1140,12 +1145,12 @@
 
 
     <!-- =========================
-         НОВАЯ ВИДЕО-ПАСХАЛКА
+         STAR — MP4 В КРУГЕ
     ========================== -->
 
     <div
       class="greeting star"
-      data-video="https://www.youtube.com/embed/M5i-03CmOzc"
+      data-file="./star.mp4"
       data-shape="circle"
     >
       <img src="./star.png" alt="Star">
@@ -1156,7 +1161,6 @@
     <!-- =========================
          ОСНОВНЫЕ КАРТИНКИ
     ========================== -->
-
 
     <div
       class="object eos"
@@ -1285,6 +1289,17 @@
       </button>
 
 
+      <!-- ЛОКАЛЬНОЕ MP4 -->
+
+      <video
+        id="localVideo"
+        controls
+        playsinline
+      ></video>
+
+
+      <!-- YOUTUBE -->
+
       <iframe
         id="video"
         src=""
@@ -1293,6 +1308,8 @@
         allowfullscreen
       ></iframe>
 
+
+      <!-- ТЕКСТ -->
 
       <div id="message"></div>
 
@@ -1309,9 +1326,12 @@
 
   <script>
 
+
+    /* Все кликабельные элементы */
+
     const objects =
       document.querySelectorAll(
-        "[data-video], [data-message]"
+        "[data-video], [data-file], [data-message]"
       );
 
 
@@ -1323,6 +1343,10 @@
       document.getElementById("video");
 
 
+    const localVideo =
+      document.getElementById("localVideo");
+
+
     const message =
       document.getElementById("message");
 
@@ -1331,15 +1355,13 @@
       document.getElementById("close");
 
 
-    /* НОВОЕ:
-       получаем само окно видео */
-
     const videoBox =
       document.querySelector(".video-box");
 
 
 
     objects.forEach(object => {
+
 
       object.addEventListener(
         "click",
@@ -1350,12 +1372,13 @@
             object.dataset.video;
 
 
+          const videoFile =
+            object.dataset.file;
+
+
           const messageText =
             object.dataset.message;
 
-
-          /* НОВОЕ:
-             узнаём форму видео */
 
           const shape =
             object.dataset.shape;
@@ -1363,27 +1386,25 @@
 
 
           /* =========================
-             ОТКРЫВАЕМ ВИДЕО
+             ЛОКАЛЬНОЕ MP4
           ========================== */
 
-          if (videoURL) {
+          if (videoFile) {
 
 
-            message.style.display =
-              "none";
+            /* Останавливаем YouTube */
+
+            video.src = "";
+            video.style.display = "none";
 
 
-            message.textContent =
-              "";
+            /* Убираем текст */
+
+            message.textContent = "";
+            message.style.display = "none";
 
 
-            video.style.display =
-              "block";
-
-
-            /* Если у объекта написано
-               data-shape="circle",
-               делаем окно круглым */
+            /* Форма окна */
 
             if (shape === "circle") {
 
@@ -1400,6 +1421,79 @@
             }
 
 
+            /* Показываем MP4 */
+
+            localVideo.src =
+              videoFile;
+
+
+            localVideo.style.display =
+              "block";
+
+
+            modal.classList.add(
+              "active"
+            );
+
+
+            /* Запускаем */
+
+            localVideo.play();
+
+          }
+
+
+
+          /* =========================
+             YOUTUBE
+          ========================== */
+
+          if (videoURL) {
+
+
+            /* Останавливаем MP4 */
+
+            localVideo.pause();
+
+            localVideo.removeAttribute(
+              "src"
+            );
+
+            localVideo.load();
+
+            localVideo.style.display =
+              "none";
+
+
+            /* Убираем текст */
+
+            message.textContent = "";
+            message.style.display = "none";
+
+
+            /* Форма */
+
+            if (shape === "circle") {
+
+              videoBox.classList.add(
+                "circle"
+              );
+
+            } else {
+
+              videoBox.classList.remove(
+                "circle"
+              );
+
+            }
+
+
+            /* Показываем YouTube */
+
+            video.style.display =
+              "block";
+
+
             video.src =
               videoURL +
               "?autoplay=1";
@@ -1414,26 +1508,38 @@
 
 
           /* =========================
-             ОТКРЫВАЕМ ТЕКСТ
+             ТЕКСТОВАЯ ПАСХАЛКА
           ========================== */
 
           if (messageText) {
 
 
-            /* Текст никогда
-               не должен быть круглым */
+            /* Останавливаем YouTube */
+
+            video.src = "";
+            video.style.display = "none";
+
+
+            /* Останавливаем MP4 */
+
+            localVideo.pause();
+
+            localVideo.removeAttribute(
+              "src"
+            );
+
+            localVideo.load();
+
+            localVideo.style.display =
+              "none";
+
+
+            /* Текст всегда
+               прямоугольный */
 
             videoBox.classList.remove(
               "circle"
             );
-
-
-            video.src =
-              "";
-
-
-            video.style.display =
-              "none";
 
 
             message.textContent =
@@ -1450,8 +1556,10 @@
 
           }
 
+
         }
       );
+
 
     });
 
@@ -1469,23 +1577,37 @@
       );
 
 
-      video.src =
-        "";
+      /* YouTube */
 
+      video.src = "";
 
       video.style.display =
-        "block";
+        "none";
 
 
-      message.textContent =
-        "";
+      /* MP4 */
 
+      localVideo.pause();
+
+      localVideo.removeAttribute(
+        "src"
+      );
+
+      localVideo.load();
+
+      localVideo.style.display =
+        "none";
+
+
+      /* Текст */
+
+      message.textContent = "";
 
       message.style.display =
         "none";
 
 
-      /* Возвращаем обычную форму */
+      /* Убираем форму круга */
 
       videoBox.classList.remove(
         "circle"
@@ -1495,6 +1617,8 @@
 
 
 
+    /* Крестик */
+
     closeButton.addEventListener(
       "click",
       closeModal
@@ -1502,8 +1626,7 @@
 
 
 
-    /* Закрытие по клику
-       на тёмный фон */
+    /* Клик по фону */
 
     modal.addEventListener(
       "click",
@@ -1520,7 +1643,7 @@
 
 
 
-    /* Закрытие клавишей Escape */
+    /* Escape */
 
     document.addEventListener(
       "keydown",
@@ -1534,6 +1657,7 @@
 
       }
     );
+
 
   </script>
 
