@@ -4,12 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Светлоликая Светлана</title>
 
   <style>
-    /* =========================
-       ШРИФТЫ
-    ========================= */
 
     @font-face {
       font-family: "Satyr SP";
@@ -24,10 +22,6 @@
       font-weight: normal;
       font-style: normal;
     }
-
-    /* =========================
-       ОБЩИЕ
-    ========================= */
 
     * {
       box-sizing: border-box;
@@ -47,6 +41,11 @@
       cursor: url("./cursor1.png") 16 16, auto;
     }
 
+
+    /* =========================
+       СЦЕНА
+    ========================= */
+
     .scene {
       position: relative;
       width: 100%;
@@ -54,6 +53,7 @@
       overflow: hidden;
       padding-top: 180px;
     }
+
 
     /* =========================
        ЗАГОЛОВОК
@@ -81,9 +81,9 @@
       margin: 10px 0 0;
       font-family: "UbuntuLI", serif;
       font-size: 14px;
-      font-weight: normal;
       line-height: 1.35;
     }
+
 
     /* =========================
        ОСНОВНЫЕ КАРТИНКИ
@@ -108,7 +108,9 @@
       display: block;
       width: 100%;
       height: auto;
-      transition: transform 0.25s ease, filter 0.25s ease;
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
     }
 
     .object img {
@@ -120,8 +122,15 @@
     }
 
     .object:hover img {
-      transform: rotate(var(--rot, 0deg)) scale(1.12);
-      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.25));
+      transform:
+        rotate(var(--rot, 0deg))
+        scale(1.12);
+
+      filter:
+        drop-shadow(
+          0 18px 24px
+          rgba(0, 0, 0, 0.25)
+        );
     }
 
     @keyframes float {
@@ -134,6 +143,7 @@
         transform: translateY(-12px);
       }
     }
+
 
     /* =========================
        ПАСХАЛКИ
@@ -151,7 +161,12 @@
 
     .greeting:hover img {
       animation: wiggle 0.6s ease-in-out 1;
-      filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+
+      filter:
+        drop-shadow(
+          0 8px 10px
+          rgba(0, 0, 0, 0.2)
+        );
     }
 
     @keyframes greeting-float {
@@ -190,6 +205,7 @@
         transform: rotate(0deg) scale(1);
       }
     }
+
 
     /* ==================================================
        ОБЫЧНЫЙ DESKTOP
@@ -230,7 +246,7 @@
     .hestia {
       width: 340px;
       left: 4%;
-      top: 470px;
+      top: 500px;
       --rot: 6deg;
       --dur: 4.3s;
     }
@@ -323,6 +339,7 @@
       --dur: 4.4s;
     }
 
+
     /* =========================
        ПАСХАЛКИ DESKTOP
     ========================= */
@@ -369,6 +386,7 @@
       animation-duration: 4.2s;
     }
 
+
     /* =========================
        МОДАЛЬНОЕ ОКНО
     ========================= */
@@ -376,11 +394,15 @@
     .modal {
       position: fixed;
       inset: 0;
+
       display: none;
       align-items: center;
       justify-content: center;
+
       padding: 30px;
+
       background: rgba(0, 0, 0, 0.84);
+
       z-index: 1000;
     }
 
@@ -388,15 +410,24 @@
       display: flex;
     }
 
+
+    /* =========================
+       БАЗОВОЕ ОКНО
+    ========================= */
+
     .video-box {
       position: relative;
+
       width: min(900px, 92vw);
       aspect-ratio: 16 / 9;
+
       background: #1f1b18;
+
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
 
     .video-box iframe {
       display: none;
@@ -404,6 +435,7 @@
       height: 100%;
       border: 0;
     }
+
 
     .video-box video {
       display: none;
@@ -413,6 +445,11 @@
       object-fit: contain;
       background: #1f1b18;
     }
+
+
+    /* =========================
+       КРУГЛОЕ ВИДЕО
+    ========================= */
 
     .video-box.circle {
       width: min(520px, 82vw);
@@ -424,41 +461,131 @@
     .video-box.circle iframe {
       width: 100%;
       height: 100%;
+
       border-radius: 50%;
+
       border: 8px solid #b85f2d;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+      box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.35);
     }
 
     .video-box.circle video {
       object-fit: cover;
     }
 
-    #message {
-      display: none;
+
+    /* =========================
+       ВЕРТИКАЛЬНОЕ ВИДЕО В РАМКЕ
+    ========================= */
+
+    .video-box.vertical {
+      width: min(420px, 82vw);
+      aspect-ratio: 9 / 16;
+
+      padding: 14px;
+
+      background: #1f1b18;
+
+      border: 8px solid #b85f2d;
+      border-radius: 24px;
+
+      box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.35);
+    }
+
+    .video-box.vertical iframe,
+    .video-box.vertical video {
       width: 100%;
       height: 100%;
+
+      border: 0;
+      border-radius: 12px;
+
+      object-fit: cover;
+    }
+
+
+    /* =========================
+       ГОРИЗОНТАЛЬНОЕ ВИДЕО В РАМКЕ
+    ========================= */
+
+    .video-box.horizontal-frame {
+      width: min(900px, 92vw);
+      aspect-ratio: 16 / 9;
+
+      padding: 14px;
+
+      background: #1f1b18;
+
+      border: 8px solid #b85f2d;
+      border-radius: 24px;
+
+      box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.35);
+    }
+
+    .video-box.horizontal-frame iframe,
+    .video-box.horizontal-frame video {
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+      border-radius: 12px;
+    }
+
+
+    /* =========================
+       ТЕКСТ ПАСХАЛОК
+    ========================= */
+
+    #message {
+      display: none;
+
+      width: 100%;
+      height: 100%;
+
       background: #1f1b18;
       color: #c96b32;
+
       font-family: "Satyr SP", serif;
+
       font-size: 42px;
       line-height: 1.25;
       text-align: center;
+
       padding: 50px;
+
       align-items: center;
       justify-content: center;
+
       border: 6px solid #b85f2d;
     }
 
+
+    /* =========================
+       КНОПКА ЗАКРЫТИЯ
+    ========================= */
+
     .close {
       position: absolute;
+
       top: -50px;
       right: 0;
+
       border: 0;
       background: transparent;
+
       color: #c96b32;
+
       font-size: 42px;
       line-height: 1;
+
       cursor: pointer;
+
       z-index: 20;
     }
 
@@ -467,11 +594,19 @@
       right: 25px;
     }
 
+    .video-box.vertical .close,
+    .video-box.horizontal-frame .close {
+      top: -50px;
+      right: 0;
+    }
+
+
     /* ==================================================
        СРЕДНИЕ ЭКРАНЫ
     ================================================== */
 
     @media (min-width: 701px) and (max-width: 1050px) {
+
       .scene {
         min-height: 1720px;
       }
@@ -507,7 +642,7 @@
       .hestia {
         width: 290px;
         left: 4%;
-        top: 470px;
+        top: 500px;
       }
 
       .hera {
@@ -611,13 +746,16 @@
         left: 44%;
         top: 690px;
       }
+
     }
+
 
     /* ==================================================
        МОБИЛЬНАЯ ВЕРСИЯ
     ================================================== */
 
     @media (max-width: 700px) {
+
       .scene {
         min-height: 1720px;
         padding-top: 160px;
@@ -643,9 +781,19 @@
         line-height: 1.3;
       }
 
+
       .video-box.circle {
         width: min(360px, 82vw);
       }
+
+      .video-box.vertical {
+        width: min(330px, 82vw);
+      }
+
+      .video-box.horizontal-frame {
+        width: min(92vw, 620px);
+      }
+
 
       .eos {
         width: 220px;
@@ -674,7 +822,7 @@
       .hestia {
         width: 230px;
         left: 2%;
-        top: 545px;
+        top: 575px;
       }
 
       .hera {
@@ -743,6 +891,7 @@
         top: 1460px;
       }
 
+
       .luck {
         width: 42px;
         left: 46%;
@@ -778,13 +927,16 @@
         left: 46%;
         top: 1415px;
       }
+
     }
+
 
     /* ==================================================
        FULL HD
     ================================================== */
 
     @media (min-width: 1500px) {
+
       .scene {
         min-height: 1280px;
       }
@@ -816,7 +968,7 @@
       .hestia {
         width: 370px;
         left: 7%;
-        top: 410px;
+        top: 440px;
       }
 
       .hera {
@@ -920,11 +1072,15 @@
         left: 46%;
         top: 865px;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
   <main class="scene">
 
     <div class="title">
@@ -932,95 +1088,162 @@
       <p>Добрые речи подруг и друзей здесь Светлане Светлоликой с любовью собраны</p>
     </div>
 
+
     <!-- ТЕКСТОВЫЕ ПАСХАЛКИ -->
 
-    <div class="greeting luck" data-message="🍀 О, да сопутствует случай тебе благосклонный">
+    <div
+      class="greeting luck"
+      data-message="🍀 О, да сопутствует случай тебе благосклонный"
+    >
       <img src="./luck.png" alt="Luck">
     </div>
 
-    <div class="greeting love" data-message="💘 Да умножит Киприда любовь и веселье">
+    <div
+      class="greeting love"
+      data-message="💘 Да умножит Киприда любовь и веселье"
+    >
       <img src="./love.png" alt="Love">
     </div>
 
-    <div class="greeting rest" data-message="🌙 Сладостен сон; почивай же без всякой тревоги">
+    <div
+      class="greeting rest"
+      data-message="🌙 Сладостен сон; почивай же без всякой тревоги"
+    >
       <img src="./rest.png" alt="Rest">
     </div>
 
-    <div class="greeting joy" data-message="✨ Смех да пребудет с тобой, и пиры, и отрада">
+    <div
+      class="greeting joy"
+      data-message="✨ Смех да пребудет с тобой, и пиры, и отрада"
+    >
       <img src="./joy.png" alt="Joy">
     </div>
 
-    <div class="greeting adventure" data-message="🏺 Странствуй отважно, но мимо циклопов по возможности">
+    <div
+      class="greeting adventure"
+      data-message="🏺 Странствуй отважно, но мимо циклопов по возможности"
+    >
       <img src="./adventure.png" alt="Adventure">
     </div>
 
+
     <!-- STAR — КРУГЛОЕ MP4 -->
 
-    <div class="greeting star" data-file="./star.mp4" data-shape="circle">
+    <div
+      class="greeting star"
+      data-file="./star.mp4"
+      data-shape="circle"
+    >
       <img src="./star.png" alt="Star">
     </div>
 
+
     <!-- ОСНОВНЫЕ КАРТИНКИ -->
 
-  <div class="object eos" data-video="https://www.youtube.com/embed/SpErms8oQcU">
-  <img src="./eos.png" alt="Eos">
-</div>
+    <div
+      class="object eos"
+      data-video="https://www.youtube.com/embed/SpErms8oQcU"
+      data-format="vertical"
+    >
+      <img src="./eos.png" alt="Eos">
+    </div>
 
-    <div class="object themis" data-video="https://www.youtube.com/embed/sWfOfMFYXu8">
+
+    <div
+      class="object themis"
+      data-video="https://www.youtube.com/embed/sWfOfMFYXu8"
+      data-format="vertical"
+    >
       <img src="./themis.png" alt="Themis">
     </div>
+
 
     <div class="object artemis">
       <img src="./artemis.png" alt="Artemis">
     </div>
 
+
     <div class="object hera">
       <img src="./hera.png" alt="Hera">
     </div>
+
 
     <div class="object demeter">
       <img src="./demeter.png" alt="Demeter">
     </div>
 
+
     <div class="object persephone">
       <img src="./persephone.png" alt="Persephone">
     </div>
 
-    <div class="object hestia" data-video="https://www.youtube.com/embed/rIFX2fCCWto">
+
+    <div
+      class="object hestia"
+      data-video="https://www.youtube.com/embed/rIFX2fCCWto"
+      data-format="horizontal-frame"
+    >
       <img src="./hestia.png" alt="Hestia">
     </div>
+
 
     <div class="object selene">
       <img src="./selene.png" alt="Selene">
     </div>
 
-    <div class="object hecate" data-video="https://www.youtube.com/embed/FaSLRJPeqZg">
+
+    <div
+      class="object hecate"
+      data-video="https://www.youtube.com/embed/FaSLRJPeqZg"
+      data-format="vertical"
+    >
       <img src="./hecate.png" alt="Hecate">
     </div>
 
-    <div class="object nike" data-video="https://www.youtube.com/embed/xKC3ytckkYk">
+
+    <div
+      class="object nike"
+      data-video="https://www.youtube.com/embed/xKC3ytckkYk"
+      data-format="vertical"
+    >
       <img src="./nike.png" alt="Nike">
     </div>
 
-    <div class="object iris" data-video="https://www.youtube.com/embed/M5i-03CmOzc">
+
+    <!-- IRIS — КРУГЛОЕ MP4 -->
+
+    <div
+      class="object iris"
+      data-file="./iris.mp4"
+      data-shape="circle"
+    >
       <img src="./iris.png" alt="Iris">
     </div>
 
-    <div class="object circe" data-video="https://www.youtube.com/embed/CrQv0RrOO_s">
+
+    <div
+      class="object circe"
+      data-video="https://www.youtube.com/embed/CrQv0RrOO_s"
+      data-format="vertical"
+    >
       <img src="./circe.png" alt="Circe">
     </div>
+
 
     <div class="object calypso">
       <img src="./calypso.png" alt="Calypso">
     </div>
 
+
     <div class="object cassandra">
       <img src="./cassandra.png" alt="Cassandra">
     </div>
 
+
     <div class="object apollo">
       <img src="./apollo.png" alt="Apollo">
     </div>
+
 
     <div class="object hermes">
       <img src="./hermes.png" alt="Hermes">
@@ -1028,14 +1251,38 @@
 
   </main>
 
-  <div class="modal" id="modal">
+
+  <!-- =========================
+       МОДАЛЬНОЕ ОКНО
+  ========================= -->
+
+  <div
+    class="modal"
+    id="modal"
+  >
+
     <div class="video-box">
 
-      <button class="close" id="close" type="button" aria-label="Закрыть">
+      <button
+        class="close"
+        id="close"
+        type="button"
+        aria-label="Закрыть"
+      >
         ×
       </button>
 
-      <video id="localVideo" controls playsinline></video>
+
+      <!-- ЛОКАЛЬНОЕ MP4 -->
+
+      <video
+        id="localVideo"
+        controls
+        playsinline
+      ></video>
+
+
+      <!-- YOUTUBE -->
 
       <iframe
         id="video"
@@ -1045,14 +1292,22 @@
         allowfullscreen
       ></iframe>
 
+
+      <!-- ТЕКСТ -->
+
       <div id="message"></div>
 
     </div>
+
   </div>
 
+
   <script>
+
     const objects =
-      document.querySelectorAll("[data-video], [data-file], [data-message]");
+      document.querySelectorAll(
+        "[data-video], [data-file], [data-message]"
+      );
 
     const modal =
       document.getElementById("modal");
@@ -1072,107 +1327,234 @@
     const videoBox =
       document.querySelector(".video-box");
 
+
+    function setVideoBoxStyle(shape, format) {
+
+      videoBox.classList.remove(
+        "circle",
+        "vertical",
+        "horizontal-frame"
+      );
+
+      if (shape === "circle") {
+        videoBox.classList.add("circle");
+      }
+
+      if (format === "vertical") {
+        videoBox.classList.add("vertical");
+      }
+
+      if (format === "horizontal-frame") {
+        videoBox.classList.add("horizontal-frame");
+      }
+
+    }
+
+
     objects.forEach(object => {
-      object.addEventListener("click", function () {
-        const videoURL = object.dataset.video;
-        const videoFile = object.dataset.file;
-        const messageText = object.dataset.message;
-        const shape = object.dataset.shape;
 
-        if (videoFile) {
-          video.src = "";
-          video.style.display = "none";
+      object.addEventListener(
+        "click",
+        function () {
 
-          message.textContent = "";
-          message.style.display = "none";
+          const videoURL =
+            object.dataset.video;
 
-          if (shape === "circle") {
-            videoBox.classList.add("circle");
-          } else {
-            videoBox.classList.remove("circle");
+          const videoFile =
+            object.dataset.file;
+
+          const messageText =
+            object.dataset.message;
+
+          const shape =
+            object.dataset.shape;
+
+          const format =
+            object.dataset.format;
+
+
+          /* =========================
+             ЛОКАЛЬНОЕ MP4
+          ========================= */
+
+          if (videoFile) {
+
+            video.src = "";
+            video.style.display = "none";
+
+            message.textContent = "";
+            message.style.display = "none";
+
+            setVideoBoxStyle(
+              shape,
+              format
+            );
+
+            localVideo.src =
+              videoFile;
+
+            localVideo.style.display =
+              "block";
+
+            modal.classList.add(
+              "active"
+            );
+
+            localVideo.play().catch(
+              () => {}
+            );
+
+            return;
           }
 
-          localVideo.src = videoFile;
-          localVideo.style.display = "block";
 
-          modal.classList.add("active");
+          /* =========================
+             YOUTUBE
+          ========================= */
 
-          localVideo.play().catch(() => {});
-          return;
-        }
+          if (videoURL) {
 
-        if (videoURL) {
-          localVideo.pause();
-          localVideo.removeAttribute("src");
-          localVideo.load();
-          localVideo.style.display = "none";
+            localVideo.pause();
 
-          message.textContent = "";
-          message.style.display = "none";
+            localVideo.removeAttribute(
+              "src"
+            );
 
-          if (shape === "circle") {
-            videoBox.classList.add("circle");
-          } else {
-            videoBox.classList.remove("circle");
+            localVideo.load();
+
+            localVideo.style.display =
+              "none";
+
+            message.textContent = "";
+            message.style.display = "none";
+
+            setVideoBoxStyle(
+              shape,
+              format
+            );
+
+            video.style.display =
+              "block";
+
+            video.src =
+              videoURL +
+              "?autoplay=1";
+
+            modal.classList.add(
+              "active"
+            );
+
+            return;
           }
 
-          video.style.display = "block";
-          video.src = videoURL + "?autoplay=1";
 
-          modal.classList.add("active");
-          return;
+          /* =========================
+             ТЕКСТ
+          ========================= */
+
+          if (messageText) {
+
+            video.src = "";
+            video.style.display = "none";
+
+            localVideo.pause();
+
+            localVideo.removeAttribute(
+              "src"
+            );
+
+            localVideo.load();
+
+            localVideo.style.display =
+              "none";
+
+            videoBox.classList.remove(
+              "circle",
+              "vertical",
+              "horizontal-frame"
+            );
+
+            message.textContent =
+              messageText;
+
+            message.style.display =
+              "flex";
+
+            modal.classList.add(
+              "active"
+            );
+
+          }
+
         }
+      );
 
-        if (messageText) {
-          video.src = "";
-          video.style.display = "none";
-
-          localVideo.pause();
-          localVideo.removeAttribute("src");
-          localVideo.load();
-          localVideo.style.display = "none";
-
-          videoBox.classList.remove("circle");
-
-          message.textContent = messageText;
-          message.style.display = "flex";
-
-          modal.classList.add("active");
-        }
-      });
     });
 
+
     function closeModal() {
-      modal.classList.remove("active");
+
+      modal.classList.remove(
+        "active"
+      );
 
       video.src = "";
       video.style.display = "none";
 
       localVideo.pause();
-      localVideo.removeAttribute("src");
+
+      localVideo.removeAttribute(
+        "src"
+      );
+
       localVideo.load();
-      localVideo.style.display = "none";
+
+      localVideo.style.display =
+        "none";
 
       message.textContent = "";
       message.style.display = "none";
 
-      videoBox.classList.remove("circle");
+      videoBox.classList.remove(
+        "circle",
+        "vertical",
+        "horizontal-frame"
+      );
+
     }
 
-    closeButton.addEventListener("click", closeModal);
 
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal) {
-        closeModal();
-      }
-    });
+    closeButton.addEventListener(
+      "click",
+      closeModal
+    );
 
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeModal();
+
+    modal.addEventListener(
+      "click",
+      function (event) {
+
+        if (event.target === modal) {
+          closeModal();
+        }
+
       }
-    });
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+          closeModal();
+        }
+
+      }
+    );
+
   </script>
+
 </body>
 
 </html>
