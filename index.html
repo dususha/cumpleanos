@@ -4,11 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Светлоликая Светлана</title>
 
   <style>
-
     /* =========================
        ШРИФТЫ
     ========================= */
@@ -27,9 +25,8 @@
       font-style: normal;
     }
 
-
     /* =========================
-       ОБЩИЕ НАСТРОЙКИ
+       ОБЩИЕ
     ========================= */
 
     * {
@@ -50,19 +47,13 @@
       cursor: url("./cursor1.png") 16 16, auto;
     }
 
-
-    /* =========================
-       СЦЕНА
-    ========================= */
-
     .scene {
       position: relative;
       width: 100%;
-      min-height: 1420px;
+      min-height: 1500px;
       overflow: hidden;
       padding-top: 180px;
     }
-
 
     /* =========================
        ЗАГОЛОВОК
@@ -91,8 +82,8 @@
       font-family: "UbuntuLI", serif;
       font-size: 14px;
       font-weight: normal;
+      line-height: 1.35;
     }
-
 
     /* =========================
        ОСНОВНЫЕ КАРТИНКИ
@@ -105,19 +96,23 @@
     }
 
     .object[data-video],
-    .object[data-file] {
+    .object[data-file],
+    .greeting[data-video],
+    .greeting[data-file],
+    .greeting[data-message] {
       cursor: pointer;
     }
 
-    .object img {
+    .object img,
+    .greeting img {
       display: block;
       width: 100%;
       height: auto;
-      transform: rotate(var(--rot, 0deg));
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
 
-      transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
+    .object img {
+      transform: rotate(var(--rot, 0deg));
     }
 
     .object:hover {
@@ -125,31 +120,18 @@
     }
 
     .object:hover img {
-      transform:
-        rotate(var(--rot, 0deg))
-        scale(1.12);
-
-      filter:
-        drop-shadow(
-          0 18px 24px
-          rgba(0, 0, 0, 0.25)
-        );
+      transform: rotate(var(--rot, 0deg)) scale(1.12);
+      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.25));
     }
 
-
     @keyframes float {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(-12px);
       }
-
     }
-
 
     /* =========================
        ПАСХАЛКИ
@@ -158,18 +140,7 @@
     .greeting {
       position: absolute;
       z-index: 30;
-      cursor: pointer;
       animation: greeting-float 4s ease-in-out infinite;
-    }
-
-    .greeting img {
-      display: block;
-      width: 100%;
-      height: auto;
-
-      transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
     }
 
     .greeting:hover {
@@ -178,64 +149,45 @@
 
     .greeting:hover img {
       animation: wiggle 0.6s ease-in-out 1;
-
-      filter:
-        drop-shadow(
-          0 8px 10px
-          rgba(0, 0, 0, 0.2)
-        );
+      filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
     }
-
-
-    @keyframes wiggle {
-
-      0% {
-        transform: rotate(0deg) scale(1);
-      }
-
-      20% {
-        transform: rotate(-14deg) scale(1.12);
-      }
-
-      40% {
-        transform: rotate(12deg) scale(1.12);
-      }
-
-      60% {
-        transform: rotate(-9deg) scale(1.12);
-      }
-
-      80% {
-        transform: rotate(6deg) scale(1.08);
-      }
-
-      100% {
-        transform: rotate(0deg) scale(1);
-      }
-
-    }
-
 
     @keyframes greeting-float {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(-6px);
       }
-
     }
 
+    @keyframes wiggle {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      20% {
+        transform: rotate(-14deg) scale(1.12);
+      }
+      40% {
+        transform: rotate(12deg) scale(1.12);
+      }
+      60% {
+        transform: rotate(-9deg) scale(1.12);
+      }
+      80% {
+        transform: rotate(6deg) scale(1.08);
+      }
+      100% {
+        transform: rotate(0deg) scale(1);
+      }
+    }
 
     /* ==================================================
        ОБЫЧНЫЙ DESKTOP
     ================================================== */
 
     .eos {
-      width: 300px;
+      width: 330px;
       left: 1%;
       top: 220px;
       --rot: -7deg;
@@ -243,180 +195,170 @@
     }
 
     .artemis {
-      width: 220px;
-      left: 23%;
+      width: 245px;
+      left: 22%;
       top: 270px;
       --rot: -4deg;
       --dur: 3.9s;
     }
 
     .themis {
-      width: 320px;
-      left: 45%;
-      top: 210px;
+      width: 350px;
+      left: 44%;
+      top: 205px;
       --rot: -6deg;
       --dur: 4.6s;
     }
 
     .demeter {
-      width: 210px;
-      left: 78%;
-      top: 245px;
+      width: 230px;
+      left: 77%;
+      top: 240px;
       --rot: -7deg;
       --dur: 4.1s;
     }
 
-
     .hestia {
-      width: 310px;
-      left: 5%;
+      width: 340px;
+      left: 4%;
       top: 470px;
       --rot: 6deg;
       --dur: 4.3s;
     }
 
     .hera {
-      width: 215px;
-      left: 33%;
-      top: 500px;
+      width: 235px;
+      left: 32%;
+      top: 505px;
       --rot: 8deg;
       --dur: 4.8s;
     }
 
     .persephone {
-      width: 225px;
-      left: 56%;
+      width: 250px;
+      left: 55%;
       top: 455px;
       --rot: 5deg;
       --dur: 3.6s;
     }
 
     .circe {
-      width: 245px;
-      left: 82%;
+      width: 270px;
+      left: 81%;
       top: 500px;
       --rot: 8deg;
       --dur: 3.9s;
     }
 
-
     .selene {
-      width: 235px;
-      left: -1%;
-      top: 720px;
+      width: 260px;
+      left: 0%;
+      top: 735px;
       --rot: 7deg;
       --dur: 3.8s;
     }
 
     .hecate {
-      width: 240px;
-      left: 24%;
-      top: 750px;
+      width: 265px;
+      left: 23%;
+      top: 760px;
       --rot: -8deg;
       --dur: 4.5s;
     }
 
     .nike {
-      width: 255px;
-      left: 50%;
-      top: 700px;
+      width: 285px;
+      left: 49%;
+      top: 705px;
       --rot: 4deg;
       --dur: 3.5s;
     }
 
     .iris {
-      width: 245px;
-      left: 76%;
-      top: 745px;
+      width: 270px;
+      left: 75%;
+      top: 750px;
       --rot: -5deg;
       --dur: 4.7s;
     }
 
-
     .cassandra {
-      width: 225px;
+      width: 250px;
       left: 5%;
-      top: 980px;
+      top: 1000px;
       --rot: 7deg;
       --dur: 3.7s;
     }
 
     .apollo {
-      width: 255px;
-      left: 29%;
-      top: 1010px;
+      width: 285px;
+      left: 28%;
+      top: 1030px;
       --rot: -4deg;
       --dur: 4.2s;
     }
 
     .hermes {
-      width: 235px;
-      left: 55%;
-      top: 960px;
+      width: 260px;
+      left: 54%;
+      top: 980px;
       --rot: 6deg;
       --dur: 3.8s;
     }
 
     .calypso {
-      width: 245px;
-      left: 80%;
-      top: 1020px;
+      width: 270px;
+      left: 79%;
+      top: 1040px;
       --rot: -7deg;
       --dur: 4.4s;
     }
-
 
     /* =========================
        ПАСХАЛКИ DESKTOP
     ========================= */
 
     .luck {
-      width: 52px;
-      left: 36%;
+      width: 54px;
+      left: 35%;
       top: 390px;
       animation-duration: 3.4s;
     }
 
     .love {
-      width: 56px;
-      left: 72%;
+      width: 58px;
+      left: 71%;
       top: 420px;
       animation-duration: 4.1s;
     }
 
     .rest {
-      width: 48px;
-      left: 19%;
-      top: 690px;
+      width: 50px;
+      left: 18%;
+      top: 700px;
       animation-duration: 3.7s;
     }
 
     .joy {
-      width: 54px;
-      left: 70%;
-      top: 680px;
+      width: 56px;
+      left: 69%;
+      top: 690px;
       animation-duration: 4.4s;
     }
 
     .adventure {
-      width: 56px;
-      left: 48%;
-      top: 930px;
+      width: 58px;
+      left: 47%;
+      top: 950px;
       animation-duration: 3.9s;
     }
 
-
-    /* =========================
-       STAR — ВИДЕО-ПАСХАЛКА
-    ========================= */
-
     .star {
-      width: 54px;
-      left: 39%;
-      top: 675px;
+      width: 56px;
+      left: 38%;
+      top: 690px;
       animation-duration: 4.2s;
     }
-
 
     /* =========================
        МОДАЛЬНОЕ ОКНО
@@ -425,16 +367,11 @@
     .modal {
       position: fixed;
       inset: 0;
-
       display: none;
-
       align-items: center;
       justify-content: center;
-
       padding: 30px;
-
       background: rgba(0, 0, 0, 0.84);
-
       z-index: 1000;
     }
 
@@ -442,28 +379,15 @@
       display: flex;
     }
 
-
-    /* =========================
-       ОБЫЧНОЕ ОКНО
-    ========================= */
-
     .video-box {
       position: relative;
-
       width: min(900px, 92vw);
       aspect-ratio: 16 / 9;
-
       background: #1f1b18;
-
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
-
-    /* =========================
-       YOUTUBE
-    ========================= */
 
     .video-box iframe {
       display: none;
@@ -472,283 +396,221 @@
       border: 0;
     }
 
-
-    /* =========================
-       ЛОКАЛЬНОЕ MP4
-    ========================= */
-
     .video-box video {
       display: none;
-
       width: 100%;
       height: 100%;
-
       border: 0;
-
       object-fit: contain;
-
       background: #1f1b18;
     }
-
-
-    /* =========================
-       КРУГЛОЕ ВИДЕО
-    ========================= */
 
     .video-box.circle {
       width: min(520px, 82vw);
       aspect-ratio: 1 / 1;
-
       background: transparent;
     }
-
 
     .video-box.circle video,
     .video-box.circle iframe {
       width: 100%;
       height: 100%;
-
       border-radius: 50%;
-
       border: 8px solid #b85f2d;
-
-      box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.35);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
     }
-
-
-    /* Для MP4:
-       видео заполняет весь круг */
 
     .video-box.circle video {
       object-fit: cover;
     }
 
-
-    /* =========================
-       ТЕКСТ ПАСХАЛОК
-    ========================= */
-
     #message {
       display: none;
-
       width: 100%;
       height: 100%;
-
       background: #1f1b18;
       color: #c96b32;
-
       font-family: "Satyr SP", serif;
-
       font-size: 42px;
       line-height: 1.25;
       text-align: center;
-
       padding: 50px;
-
       align-items: center;
       justify-content: center;
-
       border: 6px solid #b85f2d;
     }
 
-
-    /* =========================
-       КНОПКА ЗАКРЫТИЯ
-    ========================= */
-
     .close {
       position: absolute;
-
       top: -50px;
       right: 0;
-
       border: 0;
       background: transparent;
-
       color: #c96b32;
-
       font-size: 42px;
       line-height: 1;
-
       cursor: pointer;
-
       z-index: 20;
     }
-
 
     .video-box.circle .close {
       top: -35px;
       right: 25px;
     }
 
-
     /* ==================================================
        СРЕДНИЕ ЭКРАНЫ
     ================================================== */
 
-    @media
-    (min-width: 701px)
-    and
-    (max-width: 1050px) {
-
+    @media (min-width: 701px) and (max-width: 1050px) {
       .scene {
-        min-height: 1650px;
+        min-height: 1720px;
       }
 
       .title h1 {
         font-size: 62px;
       }
 
-
       .eos {
-        width: 250px;
+        width: 275px;
         left: 0%;
         top: 200px;
       }
 
       .artemis {
-        width: 190px;
-        left: 29%;
-        top: 250px;
+        width: 210px;
+        left: 28%;
+        top: 245px;
       }
 
       .themis {
-        width: 270px;
-        left: 50%;
-        top: 210px;
+        width: 300px;
+        left: 49%;
+        top: 205px;
       }
 
       .demeter {
-        width: 175px;
-        left: 78%;
-        top: 260px;
+        width: 190px;
+        left: 77%;
+        top: 255px;
       }
 
-
       .hestia {
-        width: 265px;
-        left: 5%;
+        width: 290px;
+        left: 4%;
         top: 470px;
       }
 
       .hera {
-        width: 185px;
-        left: 34%;
+        width: 205px;
+        left: 33%;
         top: 500px;
       }
 
       .persephone {
-        width: 195px;
-        left: 57%;
+        width: 215px;
+        left: 56%;
         top: 465px;
       }
 
       .circe {
-        width: 205px;
-        left: 80%;
+        width: 225px;
+        left: 79%;
         top: 510px;
       }
 
-
       .selene {
-        width: 200px;
-        left: -2%;
-        top: 750px;
+        width: 220px;
+        left: -1%;
+        top: 760px;
       }
 
       .hecate {
-        width: 205px;
-        left: 27%;
-        top: 770px;
-      }
-
-      .nike {
-        width: 215px;
-        left: 52%;
-        top: 735px;
-      }
-
-      .iris {
-        width: 205px;
-        left: 78%;
+        width: 225px;
+        left: 26%;
         top: 780px;
       }
 
+      .nike {
+        width: 240px;
+        left: 51%;
+        top: 740px;
+      }
+
+      .iris {
+        width: 225px;
+        left: 77%;
+        top: 790px;
+      }
 
       .cassandra {
-        width: 195px;
+        width: 215px;
         left: 5%;
-        top: 1030px;
+        top: 1050px;
       }
 
       .apollo {
-        width: 215px;
-        left: 30%;
-        top: 1060px;
+        width: 240px;
+        left: 29%;
+        top: 1080px;
       }
 
       .hermes {
-        width: 200px;
-        left: 55%;
-        top: 1020px;
+        width: 220px;
+        left: 54%;
+        top: 1035px;
       }
 
       .calypso {
-        width: 205px;
-        left: 79%;
-        top: 1070px;
+        width: 225px;
+        left: 78%;
+        top: 1090px;
       }
 
-
       .luck {
-        width: 46px;
-        left: 23%;
+        width: 48px;
+        left: 22%;
         top: 430px;
       }
 
       .love {
-        width: 48px;
-        left: 74%;
+        width: 50px;
+        left: 73%;
         top: 430px;
       }
 
       .rest {
-        width: 44px;
-        left: 20%;
-        top: 710px;
+        width: 46px;
+        left: 19%;
+        top: 720px;
       }
 
       .joy {
-        width: 48px;
-        left: 72%;
-        top: 705px;
+        width: 50px;
+        left: 71%;
+        top: 715px;
       }
 
       .adventure {
-        width: 48px;
-        left: 48%;
-        top: 990px;
+        width: 50px;
+        left: 47%;
+        top: 1010px;
       }
 
       .star {
-        width: 46px;
-        left: 45%;
-        top: 680px;
+        width: 48px;
+        left: 44%;
+        top: 690px;
       }
-
     }
 
-
     /* ==================================================
-       МОБИЛЬНАЯ ВЕРСИЯ
+       МОБИЛЬНАЯ ВЕРСИЯ — ПЛОТНЕЕ И КРУПНЕЕ
     ================================================== */
 
     @media (max-width: 700px) {
-
       .scene {
-        min-height: 2200px;
+        min-height: 1650px;
         padding-top: 160px;
       }
 
@@ -772,533 +634,399 @@
         line-height: 1.3;
       }
 
-
       .video-box.circle {
         width: min(360px, 82vw);
       }
 
-
       .eos {
-        width: 180px;
-        left: -5%;
+        width: 200px;
+        left: -3%;
         top: 180px;
       }
 
       .artemis {
-        width: 150px;
-        left: 57%;
-        top: 215px;
+        width: 165px;
+        left: 55%;
+        top: 205px;
       }
 
       .demeter {
-        width: 135px;
-        left: 1%;
-        top: 430px;
+        width: 150px;
+        left: 2%;
+        top: 350px;
       }
 
       .themis {
-        width: 210px;
-        left: 52%;
-        top: 400px;
+        width: 230px;
+        left: 50%;
+        top: 335px;
       }
 
-
       .hestia {
-        width: 205px;
-        left: -4%;
-        top: 650px;
+        width: 225px;
+        left: -2%;
+        top: 510px;
       }
 
       .hera {
-        width: 150px;
-        left: 59%;
-        top: 680px;
+        width: 165px;
+        left: 58%;
+        top: 535px;
       }
 
       .persephone {
-        width: 155px;
+        width: 170px;
         left: 5%;
-        top: 890px;
+        top: 690px;
       }
 
       .circe {
-        width: 155px;
-        left: 59%;
-        top: 875px;
+        width: 170px;
+        left: 58%;
+        top: 700px;
       }
 
-
       .selene {
-        width: 160px;
-        left: -3%;
-        top: 1110px;
+        width: 175px;
+        left: 0%;
+        top: 865px;
       }
 
       .hecate {
-        width: 165px;
-        left: 55%;
-        top: 1100px;
+        width: 180px;
+        left: 54%;
+        top: 850px;
       }
 
       .nike {
-        width: 170px;
+        width: 190px;
         left: 5%;
-        top: 1335px;
+        top: 1030px;
       }
 
       .iris {
-        width: 165px;
-        left: 57%;
-        top: 1320px;
+        width: 180px;
+        left: 56%;
+        top: 1020px;
       }
 
-
       .cassandra {
-        width: 155px;
-        left: -1%;
-        top: 1560px;
+        width: 170px;
+        left: 1%;
+        top: 1200px;
       }
 
       .apollo {
-        width: 175px;
-        left: 54%;
-        top: 1540px;
+        width: 195px;
+        left: 53%;
+        top: 1185px;
       }
 
       .hermes {
-        width: 160px;
+        width: 175px;
         left: 5%;
-        top: 1780px;
+        top: 1370px;
       }
 
       .calypso {
-        width: 165px;
-        left: 58%;
-        top: 1790px;
+        width: 180px;
+        left: 57%;
+        top: 1380px;
       }
-
-
-      /* Пасхалки */
 
       .luck {
         width: 42px;
-        left: 45%;
-        top: 355px;
+        left: 44%;
+        top: 315px;
       }
 
       .love {
         width: 44px;
-        left: 84%;
-        top: 610px;
+        left: 83%;
+        top: 480px;
       }
 
       .rest {
         width: 40px;
         left: 43%;
-        top: 840px;
+        top: 655px;
       }
 
       .joy {
         width: 44px;
         left: 4%;
-        top: 1290px;
+        top: 985px;
       }
 
       .adventure {
         width: 44px;
         left: 44%;
-        top: 1740px;
+        top: 1335px;
       }
 
       .star {
         width: 42px;
         left: 43%;
-        top: 1050px;
+        top: 815px;
       }
-
     }
-
 
     /* ==================================================
        FULL HD
     ================================================== */
 
     @media (min-width: 1500px) {
-
       .scene {
-        min-height: 1200px;
+        min-height: 1280px;
       }
 
-
       .eos {
-        width: 360px;
+        width: 390px;
         left: 3%;
         top: 185px;
       }
 
       .artemis {
-        width: 285px;
-        left: 20%;
+        width: 310px;
+        left: 19%;
         top: 230px;
       }
 
       .themis {
-        width: 400px;
-        left: 37%;
-        top: 175px;
+        width: 430px;
+        left: 36%;
+        top: 170px;
       }
 
       .demeter {
-        width: 210px;
+        width: 230px;
         left: 72%;
         top: 220px;
       }
 
-
       .hestia {
-        width: 385px;
+        width: 420px;
         left: 4%;
         top: 365px;
       }
 
       .hera {
-        width: 275px;
-        left: 28%;
+        width: 300px;
+        left: 27%;
         top: 405px;
       }
 
       .persephone {
-        width: 300px;
-        left: 47%;
+        width: 325px;
+        left: 46%;
         top: 365px;
       }
 
       .circe {
-        width: 315px;
-        left: 71%;
+        width: 340px;
+        left: 70%;
         top: 390px;
       }
 
-
       .selene {
-        width: 300px;
+        width: 325px;
         left: 3%;
-        top: 585px;
+        top: 600px;
       }
 
       .hecate {
-        width: 315px;
-        left: 20%;
-        top: 615px;
+        width: 340px;
+        left: 19%;
+        top: 625px;
       }
 
       .nike {
-        width: 340px;
-        left: 40%;
-        top: 565px;
+        width: 370px;
+        left: 39%;
+        top: 575px;
       }
 
       .iris {
-        width: 320px;
-        left: 70%;
-        top: 610px;
+        width: 350px;
+        left: 69%;
+        top: 620px;
       }
 
-
       .cassandra {
-        width: 290px;
+        width: 315px;
         left: 4%;
-        top: 800px;
+        top: 835px;
       }
 
       .apollo {
-        width: 340px;
-        left: 25%;
-        top: 830px;
+        width: 370px;
+        left: 24%;
+        top: 860px;
       }
 
       .hermes {
-        width: 310px;
-        left: 48%;
-        top: 790px;
+        width: 335px;
+        left: 47%;
+        top: 815px;
       }
 
       .calypso {
-        width: 320px;
-        left: 70%;
-        top: 825px;
+        width: 345px;
+        left: 69%;
+        top: 855px;
       }
 
-
-      /* Пасхалки */
-
       .luck {
-        width: 55px;
-        left: 33%;
+        width: 56px;
+        left: 32%;
         top: 350px;
       }
 
       .love {
-        width: 58px;
-        left: 65%;
+        width: 60px;
+        left: 64%;
         top: 345px;
       }
 
       .rest {
         width: 52px;
-        left: 16%;
-        top: 565px;
+        left: 15%;
+        top: 580px;
       }
 
       .joy {
         width: 58px;
-        left: 65%;
-        top: 560px;
+        left: 64%;
+        top: 575px;
       }
 
       .adventure {
         width: 60px;
-        left: 45%;
-        top: 770px;
+        left: 44%;
+        top: 790px;
       }
 
       .star {
         width: 58px;
-        left: 34%;
-        top: 575px;
+        left: 33%;
+        top: 590px;
       }
-
     }
-
   </style>
-
 </head>
 
-
 <body>
-
-
   <main class="scene">
 
-
-    <!-- =========================
-         ЗАГОЛОВОК
-    ========================== -->
-
     <div class="title">
-
-      <h1>
-        С днём рождения!
-      </h1>
-
-      <p>
-        Добрые речи подруг и друзей здесь Светлане Светлоликой с любовью собраны
-      </p>
-
+      <h1>С днём рождения!</h1>
+      <p>Добрые речи подруг и друзей здесь Светлане Светлоликой с любовью собраны</p>
     </div>
 
+    <!-- ТЕКСТОВЫЕ ПАСХАЛКИ -->
 
-
-    <!-- =========================
-         ТЕКСТОВЫЕ ПАСХАЛКИ
-    ========================== -->
-
-    <div
-      class="greeting luck"
-      data-message="🍀 О, да сопутствует случай тебе благосклонный"
-    >
+    <div class="greeting luck" data-message="🍀 О, да сопутствует случай тебе благосклонный">
       <img src="./luck.png" alt="Luck">
     </div>
 
-
-    <div
-      class="greeting love"
-      data-message="💘 Да умножит Киприда любовь и веселье"
-    >
+    <div class="greeting love" data-message="💘 Да умножит Киприда любовь и веселье">
       <img src="./love.png" alt="Love">
     </div>
 
-
-    <div
-      class="greeting rest"
-      data-message="🌙 Сладостен сон; почивай же без всякой тревоги"
-    >
+    <div class="greeting rest" data-message="🌙 Сладостен сон; почивай же без всякой тревоги">
       <img src="./rest.png" alt="Rest">
     </div>
 
-
-    <div
-      class="greeting joy"
-      data-message="✨ Смех да пребудет с тобой, и пиры, и отрада"
-    >
+    <div class="greeting joy" data-message="✨ Смех да пребудет с тобой, и пиры, и отрада">
       <img src="./joy.png" alt="Joy">
     </div>
 
-
-    <div
-      class="greeting adventure"
-      data-message="🏺 Странствуй отважно, но мимо циклопов по возможности"
-    >
+    <div class="greeting adventure" data-message="🏺 Странствуй отважно, но мимо циклопов по возможности">
       <img src="./adventure.png" alt="Adventure">
     </div>
 
+    <!-- STAR — КРУГЛОЕ MP4 -->
 
-
-    <!-- =========================
-         STAR — MP4 В КРУГЕ
-    ========================== -->
-
-    <div
-      class="greeting star"
-      data-file="./star.mp4"
-      data-shape="circle"
-    >
+    <div class="greeting star" data-file="./star.mp4" data-shape="circle">
       <img src="./star.png" alt="Star">
     </div>
 
+    <!-- ОСНОВНЫЕ КАРТИНКИ -->
 
-
-    <!-- =========================
-         ОСНОВНЫЕ КАРТИНКИ
-    ========================== -->
-
-    <div
-      class="object eos"
-      data-video="https://www.youtube.com/embed/n92WoYu_kIg"
-    >
+    <div class="object eos" data-video="https://www.youtube.com/embed/n92WoYu_kIg">
       <img src="./eos.png" alt="Eos">
     </div>
 
-
-    <div
-      class="object themis"
-      data-video="https://www.youtube.com/embed/sWfOfMFYXu8"
-    >
+    <div class="object themis" data-video="https://www.youtube.com/embed/sWfOfMFYXu8">
       <img src="./themis.png" alt="Themis">
     </div>
-
 
     <div class="object artemis">
       <img src="./artemis.png" alt="Artemis">
     </div>
 
-
     <div class="object hera">
       <img src="./hera.png" alt="Hera">
     </div>
-
 
     <div class="object demeter">
       <img src="./demeter.png" alt="Demeter">
     </div>
 
-
     <div class="object persephone">
       <img src="./persephone.png" alt="Persephone">
     </div>
 
-
-    <div
-      class="object hestia"
-      data-video="https://www.youtube.com/embed/rIFX2fCCWto"
-    >
+    <div class="object hestia" data-video="https://www.youtube.com/embed/rIFX2fCCWto">
       <img src="./hestia.png" alt="Hestia">
     </div>
-
 
     <div class="object selene">
       <img src="./selene.png" alt="Selene">
     </div>
 
-
-    <div
-      class="object hecate"
-      data-video="https://www.youtube.com/embed/FaSLRJPeqZg"
-    >
+    <div class="object hecate" data-video="https://www.youtube.com/embed/FaSLRJPeqZg">
       <img src="./hecate.png" alt="Hecate">
     </div>
 
-
-    <div
-      class="object nike"
-      data-video="https://www.youtube.com/embed/xKC3ytckkYk"
-    >
+    <div class="object nike" data-video="https://www.youtube.com/embed/xKC3ytckkYk">
       <img src="./nike.png" alt="Nike">
     </div>
 
-
-    <div
-      class="object iris"
-      data-video="https://www.youtube.com/embed/M5i-03CmOzc"
-    >
+    <div class="object iris" data-video="https://www.youtube.com/embed/M5i-03CmOzc">
       <img src="./iris.png" alt="Iris">
     </div>
 
-
-    <div
-      class="object circe"
-      data-video="https://www.youtube.com/embed/CrQv0RrOO_s"
-    >
+    <div class="object circe" data-video="https://www.youtube.com/embed/CrQv0RrOO_s">
       <img src="./circe.png" alt="Circe">
     </div>
-
 
     <div class="object calypso">
       <img src="./calypso.png" alt="Calypso">
     </div>
 
-
     <div class="object cassandra">
       <img src="./cassandra.png" alt="Cassandra">
     </div>
-
 
     <div class="object apollo">
       <img src="./apollo.png" alt="Apollo">
     </div>
 
-
     <div class="object hermes">
       <img src="./hermes.png" alt="Hermes">
     </div>
 
-
   </main>
 
-
-
-  <!-- =========================
-       МОДАЛЬНОЕ ОКНО
-  ========================== -->
-
-  <div
-    class="modal"
-    id="modal"
-  >
-
+  <div class="modal" id="modal">
     <div class="video-box">
 
-
-      <button
-        class="close"
-        id="close"
-        type="button"
-        aria-label="Закрыть"
-      >
+      <button class="close" id="close" type="button" aria-label="Закрыть">
         ×
       </button>
 
-
-      <!-- ЛОКАЛЬНОЕ MP4 -->
-
-      <video
-        id="localVideo"
-        controls
-        playsinline
-      ></video>
-
-
-      <!-- YOUTUBE -->
+      <video id="localVideo" controls playsinline></video>
 
       <iframe
         id="video"
@@ -1308,360 +1036,137 @@
         allowfullscreen
       ></iframe>
 
-
-      <!-- ТЕКСТ -->
-
       <div id="message"></div>
 
-
     </div>
-
   </div>
 
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script>
-
-
-    /* Все кликабельные элементы */
-
     const objects =
-      document.querySelectorAll(
-        "[data-video], [data-file], [data-message]"
-      );
-
+      document.querySelectorAll("[data-video], [data-file], [data-message]");
 
     const modal =
       document.getElementById("modal");
 
-
     const video =
       document.getElementById("video");
-
 
     const localVideo =
       document.getElementById("localVideo");
 
-
     const message =
       document.getElementById("message");
-
 
     const closeButton =
       document.getElementById("close");
 
-
     const videoBox =
       document.querySelector(".video-box");
 
-
-
     objects.forEach(object => {
+      object.addEventListener("click", function () {
+        const videoURL = object.dataset.video;
+        const videoFile = object.dataset.file;
+        const messageText = object.dataset.message;
+        const shape = object.dataset.shape;
 
+        /* ЛОКАЛЬНОЕ MP4 */
+        if (videoFile) {
+          video.src = "";
+          video.style.display = "none";
 
-      object.addEventListener(
-        "click",
-        function () {
+          message.textContent = "";
+          message.style.display = "none";
 
-
-          const videoURL =
-            object.dataset.video;
-
-
-          const videoFile =
-            object.dataset.file;
-
-
-          const messageText =
-            object.dataset.message;
-
-
-          const shape =
-            object.dataset.shape;
-
-
-
-          /* =========================
-             ЛОКАЛЬНОЕ MP4
-          ========================== */
-
-          if (videoFile) {
-
-
-            /* Останавливаем YouTube */
-
-            video.src = "";
-            video.style.display = "none";
-
-
-            /* Убираем текст */
-
-            message.textContent = "";
-            message.style.display = "none";
-
-
-            /* Форма окна */
-
-            if (shape === "circle") {
-
-              videoBox.classList.add(
-                "circle"
-              );
-
-            } else {
-
-              videoBox.classList.remove(
-                "circle"
-              );
-
-            }
-
-
-            /* Показываем MP4 */
-
-            localVideo.src =
-              videoFile;
-
-
-            localVideo.style.display =
-              "block";
-
-
-            modal.classList.add(
-              "active"
-            );
-
-
-            /* Запускаем */
-
-            localVideo.play();
-
+          if (shape === "circle") {
+            videoBox.classList.add("circle");
+          } else {
+            videoBox.classList.remove("circle");
           }
 
+          localVideo.src = videoFile;
+          localVideo.style.display = "block";
 
+          modal.classList.add("active");
 
-          /* =========================
-             YOUTUBE
-          ========================== */
-
-          if (videoURL) {
-
-
-            /* Останавливаем MP4 */
-
-            localVideo.pause();
-
-            localVideo.removeAttribute(
-              "src"
-            );
-
-            localVideo.load();
-
-            localVideo.style.display =
-              "none";
-
-
-            /* Убираем текст */
-
-            message.textContent = "";
-            message.style.display = "none";
-
-
-            /* Форма */
-
-            if (shape === "circle") {
-
-              videoBox.classList.add(
-                "circle"
-              );
-
-            } else {
-
-              videoBox.classList.remove(
-                "circle"
-              );
-
-            }
-
-
-            /* Показываем YouTube */
-
-            video.style.display =
-              "block";
-
-
-            video.src =
-              videoURL +
-              "?autoplay=1";
-
-
-            modal.classList.add(
-              "active"
-            );
-
-          }
-
-
-
-          /* =========================
-             ТЕКСТОВАЯ ПАСХАЛКА
-          ========================== */
-
-          if (messageText) {
-
-
-            /* Останавливаем YouTube */
-
-            video.src = "";
-            video.style.display = "none";
-
-
-            /* Останавливаем MP4 */
-
-            localVideo.pause();
-
-            localVideo.removeAttribute(
-              "src"
-            );
-
-            localVideo.load();
-
-            localVideo.style.display =
-              "none";
-
-
-            /* Текст всегда
-               прямоугольный */
-
-            videoBox.classList.remove(
-              "circle"
-            );
-
-
-            message.textContent =
-              messageText;
-
-
-            message.style.display =
-              "flex";
-
-
-            modal.classList.add(
-              "active"
-            );
-
-          }
-
-
+          localVideo.play().catch(() => {});
+          return;
         }
-      );
 
+        /* YOUTUBE */
+        if (videoURL) {
+          localVideo.pause();
+          localVideo.removeAttribute("src");
+          localVideo.load();
+          localVideo.style.display = "none";
 
+          message.textContent = "";
+          message.style.display = "none";
+
+          if (shape === "circle") {
+            videoBox.classList.add("circle");
+          } else {
+            videoBox.classList.remove("circle");
+          }
+
+          video.style.display = "block";
+          video.src = videoURL + "?autoplay=1";
+
+          modal.classList.add("active");
+          return;
+        }
+
+        /* ТЕКСТ */
+        if (messageText) {
+          video.src = "";
+          video.style.display = "none";
+
+          localVideo.pause();
+          localVideo.removeAttribute("src");
+          localVideo.load();
+          localVideo.style.display = "none";
+
+          videoBox.classList.remove("circle");
+
+          message.textContent = messageText;
+          message.style.display = "flex";
+
+          modal.classList.add("active");
+        }
+      });
     });
 
-
-
-    /* =========================
-       ЗАКРЫТИЕ
-    ========================== */
-
     function closeModal() {
-
-
-      modal.classList.remove(
-        "active"
-      );
-
-
-      /* YouTube */
+      modal.classList.remove("active");
 
       video.src = "";
-
-      video.style.display =
-        "none";
-
-
-      /* MP4 */
+      video.style.display = "none";
 
       localVideo.pause();
-
-      localVideo.removeAttribute(
-        "src"
-      );
-
+      localVideo.removeAttribute("src");
       localVideo.load();
-
-      localVideo.style.display =
-        "none";
-
-
-      /* Текст */
+      localVideo.style.display = "none";
 
       message.textContent = "";
+      message.style.display = "none";
 
-      message.style.display =
-        "none";
-
-
-      /* Убираем форму круга */
-
-      videoBox.classList.remove(
-        "circle"
-      );
-
+      videoBox.classList.remove("circle");
     }
 
+    closeButton.addEventListener("click", closeModal);
 
-
-    /* Крестик */
-
-    closeButton.addEventListener(
-      "click",
-      closeModal
-    );
-
-
-
-    /* Клик по фону */
-
-    modal.addEventListener(
-      "click",
-      function (event) {
-
-        if (event.target === modal) {
-
-          closeModal();
-
-        }
-
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeModal();
       }
-    );
+    });
 
-
-
-    /* Escape */
-
-    document.addEventListener(
-      "keydown",
-      function (event) {
-
-        if (event.key === "Escape") {
-
-          closeModal();
-
-        }
-
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeModal();
       }
-    );
-
-
+    });
   </script>
-
-
 </body>
 
 </html>
