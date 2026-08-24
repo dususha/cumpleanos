@@ -9,10 +9,6 @@
 
   <style>
 
-    /* =========================
-       ШРИФТЫ
-    ========================= */
-
     @font-face {
       font-family: "Satyr SP";
       src: url("./SatyrSP.otf") format("opentype");
@@ -26,11 +22,6 @@
       font-weight: normal;
       font-style: normal;
     }
-
-
-    /* =========================
-       ОБЩЕЕ
-    ========================= */
 
     * {
       box-sizing: border-box;
@@ -50,11 +41,6 @@
       cursor: url("./cursor1.png") 16 16, auto;
     }
 
-
-    /* =========================
-       СЦЕНА
-    ========================= */
-
     .scene {
       position: relative;
       width: 100%;
@@ -62,11 +48,6 @@
       overflow: hidden;
       padding-top: 180px;
     }
-
-
-    /* =========================
-       ЗАГОЛОВОК
-    ========================= */
 
     .title {
       position: absolute;
@@ -93,11 +74,6 @@
       line-height: 1.35;
     }
 
-
-    /* =========================
-       ОСНОВНЫЕ КАРТИНКИ
-    ========================= */
-
     .object {
       position: absolute;
       z-index: 10;
@@ -118,7 +94,6 @@
       display: block;
       width: 100%;
       height: auto;
-
       transition:
         transform 0.25s ease,
         filter 0.25s ease;
@@ -144,9 +119,7 @@
         );
     }
 
-
     @keyframes float {
-
       0%,
       100% {
         transform: translateY(0);
@@ -155,13 +128,7 @@
       50% {
         transform: translateY(-12px);
       }
-
     }
-
-
-    /* =========================
-       ПАСХАЛКИ
-    ========================= */
 
     .greeting {
       position: absolute;
@@ -183,9 +150,7 @@
         );
     }
 
-
     @keyframes greeting-float {
-
       0%,
       100% {
         transform: translateY(0);
@@ -194,12 +159,9 @@
       50% {
         transform: translateY(-6px);
       }
-
     }
 
-
     @keyframes wiggle {
-
       0% {
         transform: rotate(0deg) scale(1);
       }
@@ -223,13 +185,9 @@
       100% {
         transform: rotate(0deg) scale(1);
       }
-
     }
 
-
-    /* ==================================================
-       ОБЫЧНЫЙ DESKTOP
-    ================================================== */
+    /* DESKTOP */
 
     .eos {
       width: 360px;
@@ -343,10 +301,7 @@
       --dur: 3.8s;
     }
 
-
-    /* =========================
-       ПАСХАЛКИ DESKTOP
-    ========================= */
+    /* 10 ДАРОВ */
 
     .luck {
       width: 54px;
@@ -383,16 +338,12 @@
       animation-duration: 4.2s;
     }
 
-
-    /* BONUS — НИЖЕ HECATE */
-
     .bonus {
       width: 56px;
       left: 31%;
       top: 965px;
       animation-duration: 4s;
     }
-
 
     .adventure {
       width: 58px;
@@ -401,16 +352,12 @@
       animation-duration: 3.9s;
     }
 
-
-    /* SECRET — РЯДОМ С APOLLO */
-
     .secret {
       width: 54px;
       left: 23%;
       top: 1185px;
       animation-duration: 4.5s;
     }
-
 
     .surprise {
       width: 55px;
@@ -419,7 +366,6 @@
       animation-duration: 3.8s;
     }
 
-
     .treasure {
       width: 58px;
       left: 73%;
@@ -427,24 +373,62 @@
       animation-duration: 4.3s;
     }
 
+    /* ПОДСКАЗКА ВНИЗУ */
 
-    /* =========================
-       МОДАЛЬНОЕ ОКНО
-    ========================= */
+    .gift-toggle {
+      width: 100%;
+      padding: 25px 20px 50px;
+
+      display: flex;
+      justify-content: center;
+
+      background: #F1CEB2;
+
+      font-family: "Satyr SP", serif;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .gift-toggle label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .gift-toggle input {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
+      accent-color: #b85f2d;
+      cursor: pointer;
+    }
+
+    /* ПОСТОЯННАЯ ПОДСВЕТКА БЕЗ МЕРЦАНИЯ */
+
+    body.gifts-visible .greeting {
+      z-index: 45;
+    }
+
+    body.gifts-visible .greeting img {
+      filter:
+        drop-shadow(0 0 6px rgba(184, 95, 45, 0.95))
+        drop-shadow(0 0 14px rgba(184, 95, 45, 0.75))
+        drop-shadow(0 0 24px rgba(184, 95, 45, 0.45));
+    }
+
+    /* МОДАЛЬНОЕ ОКНО */
 
     .modal {
       position: fixed;
       inset: 0;
-
       display: none;
-
       align-items: center;
       justify-content: center;
-
       padding: 30px;
-
       background: rgba(0, 0, 0, 0.84);
-
       z-index: 1000;
     }
 
@@ -452,53 +436,37 @@
       display: flex;
     }
 
-
     .video-box {
       position: relative;
-
       width: min(900px, 92vw);
       aspect-ratio: 16 / 9;
-
       background: #1f1b18;
-
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-
     .video-box iframe {
       display: none;
-
       width: 100%;
       height: 100%;
-
       border: 0;
     }
-
 
     .video-box video {
       display: none;
-
       width: 100%;
       height: 100%;
-
       border: 0;
-
       object-fit: contain;
-
       background: #1f1b18;
     }
 
-
-    /* =========================
-       ОБЫЧНОЕ КРУГЛОЕ ВИДЕО
-    ========================= */
+    /* КРУГЛОЕ ВИДЕО */
 
     .video-box.circle {
       width: min(520px, 82vw);
       aspect-ratio: 1 / 1;
-
       background: transparent;
     }
 
@@ -506,11 +474,8 @@
     .video-box.circle iframe {
       width: 100%;
       height: 100%;
-
       border-radius: 50%;
-
       border: 8px solid #b85f2d;
-
       box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.35);
@@ -520,22 +485,15 @@
       object-fit: cover;
     }
 
-
-    /* =========================
-       ВЕРТИКАЛЬНОЕ ВИДЕО
-    ========================= */
+    /* ВЕРТИКАЛЬНОЕ ВИДЕО */
 
     .video-box.vertical {
       width: min(420px, 82vw);
       aspect-ratio: 9 / 16;
-
       padding: 14px;
-
       background: #1f1b18;
-
       border: 8px solid #b85f2d;
       border-radius: 24px;
-
       box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.35);
@@ -545,30 +503,20 @@
     .video-box.vertical video {
       width: 100%;
       height: 100%;
-
       border: 0;
-
       border-radius: 12px;
-
       object-fit: cover;
     }
 
-
-    /* =========================
-       ГОРИЗОНТАЛЬНОЕ ВИДЕО
-    ========================= */
+    /* ГОРИЗОНТАЛЬНОЕ ВИДЕО */
 
     .video-box.horizontal-frame {
       width: min(900px, 92vw);
       aspect-ratio: 16 / 9;
-
       padding: 14px;
-
       background: #1f1b18;
-
       border: 8px solid #b85f2d;
       border-radius: 24px;
-
       box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.35);
@@ -578,177 +526,110 @@
     .video-box.horizontal-frame video {
       width: 100%;
       height: 100%;
-
       border: 0;
-
       border-radius: 12px;
     }
 
-
-    /* ==================================================
-       КРУГЛОЕ ВИДЕО + ОДНА НАДПИСЬ ПО ДУГЕ
-       LUCK / LOVE / ADVENTURE
-    ================================================== */
+    /* КРУГЛОЕ ВИДЕО + ОДНА НАДПИСЬ */
 
     .video-box.ring-circle {
       width: min(520px, 70vw);
       aspect-ratio: 1 / 1;
-
       padding: 0;
-
       background: transparent;
-
       border: 0;
       border-radius: 50%;
-
       box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.35);
     }
 
-
     .video-box.ring-circle video {
       width: 100%;
       height: 100%;
-
       border-radius: 50%;
-
       border: 8px solid #b85f2d;
-
       object-fit: cover;
-
       background: #1f1b18;
-
       position: relative;
-
       z-index: 10;
     }
 
-
-    /* НАДПИСЬ ПО КРУГУ */
-
     #ringTextSvg {
       display: none;
-
       position: absolute;
-
       left: 50%;
       top: 50%;
-
       width: calc(100% + 150px);
       height: calc(100% + 150px);
-
       transform: translate(-50%, -50%);
-
       overflow: visible;
-
       pointer-events: none;
-
       z-index: 5;
     }
 
-
     #ringTextSvg text {
       font-family: "Satyr SP", serif;
-
       font-size: 30px;
-
       letter-spacing: 2px;
-
       fill: #F1CEB2;
     }
-
 
     .video-box.ring-circle #ringTextSvg {
       display: block;
     }
 
-
     .video-box.ring-circle .close {
       top: -60px;
       right: 0;
-
       z-index: 30;
     }
 
-
-    /* =========================
-       ФОТО
-    ========================= */
+    /* ФОТО */
 
     .video-box.photo-mode {
       width: auto;
-
       max-width: 92vw;
-
       height: auto;
-
       aspect-ratio: auto;
-
       background: transparent;
     }
 
-
     #photoCard {
       display: none;
-
       position: relative;
-
       width: min(700px, 88vw);
-
       max-height: 82vh;
-
       background: #1f1b18;
-
       border: 8px solid #b85f2d;
-
       border-radius: 20px;
-
       overflow: hidden;
-
       box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.35);
     }
 
-
     #photoImage {
       display: block;
-
       width: 100%;
-
       max-height: 82vh;
-
       object-fit: contain;
-
       background: #1f1b18;
     }
 
-
-    /* ПОДПИСЬ СНИЗУ КАК У JOY */
-
     #photoCaption {
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: 0;
-
       padding:
         45px
         18px
         16px;
-
-      font-family:
-        "Satyr SP",
-        serif;
-
+      font-family: "Satyr SP", serif;
       font-size: 20px;
-
       line-height: 1.25;
-
       text-align: center;
-
       color: #F1CEB2;
 
       background:
@@ -760,74 +641,41 @@
         );
     }
 
-
-    /* =========================
-       ТЕКСТОВЫЕ ПОСЛАНИЯ
-    ========================= */
-
     #message {
       display: none;
-
       width: 100%;
       height: 100%;
-
       background: #1f1b18;
-
       color: #c96b32;
-
       font-family: "Satyr SP", serif;
-
       font-size: 42px;
-
       line-height: 1.25;
-
       text-align: center;
-
       padding: 50px;
-
       align-items: center;
       justify-content: center;
-
-      border:
-        6px solid #b85f2d;
+      border: 6px solid #b85f2d;
     }
-
-
-    /* =========================
-       КНОПКА ЗАКРЫТИЯ
-    ========================= */
 
     .close {
       position: absolute;
-
       top: -50px;
       right: 0;
-
       border: 0;
-
       background: transparent;
-
       color: #c96b32;
-
       font-size: 42px;
-
       line-height: 1;
-
       cursor: pointer;
-
       z-index: 50;
     }
-
 
     .video-box.circle .close {
       top: -35px;
       right: 25px;
     }
 
-
-    /* ==================================================
-       СРЕДНИЕ ЭКРАНЫ
-    ================================================== */
+    /* TABLET */
 
     @media (min-width: 701px) and (max-width: 1050px) {
 
@@ -838,7 +686,6 @@
       .title h1 {
         font-size: 62px;
       }
-
 
       .eos {
         width: 300px;
@@ -924,9 +771,6 @@
         top: 1035px;
       }
 
-
-      /* ПАСХАЛКИ */
-
       .luck {
         width: 48px;
         left: 20%;
@@ -957,15 +801,11 @@
         top: 900px;
       }
 
-
-      /* BONUS ПОД HECATE */
-
       .bonus {
         width: 48px;
         left: 31%;
         top: 995px;
       }
-
 
       .adventure {
         width: 50px;
@@ -973,20 +813,17 @@
         top: 1015px;
       }
 
-
       .secret {
         width: 47px;
         left: 24%;
         top: 1230px;
       }
 
-
       .surprise {
         width: 48px;
         left: 86%;
         top: 900px;
       }
-
 
       .treasure {
         width: 50px;
@@ -996,10 +833,7 @@
 
     }
 
-
-    /* ==================================================
-       МОБИЛЬНАЯ ВЕРСИЯ
-    ================================================== */
+    /* MOBILE */
 
     @media (max-width: 700px) {
 
@@ -1022,12 +856,15 @@
         line-height: 1.35;
       }
 
+      .gift-toggle {
+        padding: 22px 20px 40px;
+        font-size: 18px;
+      }
 
       #message {
         font-size: 28px;
         padding: 30px;
       }
-
 
       .video-box.circle {
         width: min(360px, 82vw);
@@ -1040,9 +877,6 @@
       .video-box.horizontal-frame {
         width: 92vw;
       }
-
-
-      /* КРУГ С ТЕКСТОМ */
 
       .video-box.ring-circle {
         width: 66vw;
@@ -1067,7 +901,6 @@
         right: -5px;
       }
 
-
       #photoCard {
         width: 90vw;
         max-height: 80vh;
@@ -1080,17 +913,11 @@
       #photoCaption {
         font-size: 16px;
         line-height: 1.25;
-
         padding:
           40px
           12px
           12px;
       }
-
-
-      /* =========================
-         ПЕРСОНАЖИ MOBILE
-      ========================= */
 
       .eos {
         width: 220px;
@@ -1176,11 +1003,6 @@
         top: 1460px;
       }
 
-
-      /* =========================
-         ПАСХАЛКИ MOBILE
-      ========================= */
-
       .luck {
         width: 42px;
         left: 45%;
@@ -1211,15 +1033,11 @@
         top: 875px;
       }
 
-
-      /* BONUS ПОД HECATE */
-
       .bonus {
         width: 44px;
         left: 58%;
         top: 1065px;
       }
-
 
       .adventure {
         width: 44px;
@@ -1227,20 +1045,17 @@
         top: 1420px;
       }
 
-
       .secret {
         width: 41px;
         left: 76%;
         top: 1365px;
       }
 
-
       .surprise {
         width: 43px;
         left: 82%;
         top: 1200px;
       }
-
 
       .treasure {
         width: 44px;
@@ -1250,17 +1065,13 @@
 
     }
 
-
-    /* ==================================================
-       FULL HD
-    ================================================== */
+    /* FULL HD */
 
     @media (min-width: 1500px) {
 
       .scene {
         min-height: 1280px;
       }
-
 
       .eos {
         width: 430px;
@@ -1346,11 +1157,6 @@
         top: 910px;
       }
 
-
-      /* =========================
-         ПАСХАЛКИ FULL HD
-      ========================= */
-
       .luck {
         width: 54px;
         left: 34%;
@@ -1381,15 +1187,11 @@
         top: 830px;
       }
 
-
-      /* BONUS ПОД HECATE */
-
       .bonus {
         width: 58px;
         left: 30%;
         top: 920px;
       }
-
 
       .adventure {
         width: 58px;
@@ -1397,20 +1199,17 @@
         top: 895px;
       }
 
-
       .secret {
         width: 55px;
         left: 22%;
         top: 1100px;
       }
 
-
       .surprise {
         width: 56px;
         left: 82%;
         top: 745px;
       }
-
 
       .treasure {
         width: 58px;
@@ -1423,21 +1222,13 @@
   </style>
 </head>
 
-
 <body>
 
   <main class="scene">
 
-
-    <!-- =========================
-         ЗАГОЛОВОК
-    ========================= -->
-
     <div class="title">
 
-      <h1>
-        С днём рождения!
-      </h1>
+      <h1>С днём рождения!</h1>
 
       <p>
         Добрые речи подруг и друзей здесь Светлане Светлоликой с любовью собраны
@@ -1446,12 +1237,7 @@
     </div>
 
 
-    <!-- =========================
-         ПАСХАЛКИ
-    ========================= -->
-
-
-    <!-- LUCK -->
+    <!-- 10 ДАРОВ -->
 
     <div
       class="greeting luck"
@@ -1463,8 +1249,6 @@
     </div>
 
 
-    <!-- LOVE -->
-
     <div
       class="greeting love"
       data-file="./love.mp4"
@@ -1475,8 +1259,6 @@
     </div>
 
 
-    <!-- REST -->
-
     <div
       class="greeting rest"
       data-photo="./rest-photo.jpg"
@@ -1486,8 +1268,6 @@
     </div>
 
 
-    <!-- JOY -->
-
     <div
       class="greeting joy"
       data-photo="./joy-photo.jpg"
@@ -1496,8 +1276,6 @@
       <img src="./joy.png" alt="Joy">
     </div>
 
-
-    <!-- ADVENTURE -->
 
     <div
       class="greeting adventure"
@@ -1509,8 +1287,6 @@
     </div>
 
 
-    <!-- STAR -->
-
     <div
       class="greeting star"
       data-file="./star.mp4"
@@ -1519,8 +1295,6 @@
       <img src="./star.png" alt="Star">
     </div>
 
-
-    <!-- BONUS -->
 
     <div
       class="greeting bonus"
@@ -1531,8 +1305,6 @@
     </div>
 
 
-    <!-- SECRET -->
-
     <div
       class="greeting secret"
       data-photo="./secret.jpg"
@@ -1541,8 +1313,6 @@
       <img src="./secret.png" alt="Secret">
     </div>
 
-
-    <!-- SURPRISE -->
 
     <div
       class="greeting surprise"
@@ -1553,8 +1323,6 @@
     </div>
 
 
-    <!-- TREASURE -->
-
     <div
       class="greeting treasure"
       data-photo="./treasure.jpg"
@@ -1564,12 +1332,7 @@
     </div>
 
 
-    <!-- =========================
-         ПЕРСОНАЖИ
-    ========================= -->
-
-
-    <!-- EOS -->
+    <!-- ПЕРСОНАЖИ -->
 
     <div
       class="object eos"
@@ -1580,8 +1343,6 @@
     </div>
 
 
-    <!-- THEMIS -->
-
     <div
       class="object themis"
       data-video="https://www.youtube.com/embed/sWfOfMFYXu8"
@@ -1590,8 +1351,6 @@
       <img src="./themis.png" alt="Themis">
     </div>
 
-
-    <!-- ARTEMIS -->
 
     <div
       class="object artemis"
@@ -1602,8 +1361,6 @@
     </div>
 
 
-    <!-- DEMETER -->
-
     <div
       class="object demeter"
       data-video="https://www.youtube.com/embed/_CZCpBAkrrk"
@@ -1613,14 +1370,10 @@
     </div>
 
 
-    <!-- PERSEPHONE -->
-
     <div class="object persephone">
       <img src="./persephone.png" alt="Persephone">
     </div>
 
-
-    <!-- HESTIA -->
 
     <div
       class="object hestia"
@@ -1631,14 +1384,10 @@
     </div>
 
 
-    <!-- SELENE -->
-
     <div class="object selene">
       <img src="./selene.png" alt="Selene">
     </div>
 
-
-    <!-- HECATE -->
 
     <div
       class="object hecate"
@@ -1649,8 +1398,6 @@
     </div>
 
 
-    <!-- NIKE -->
-
     <div
       class="object nike"
       data-video="https://www.youtube.com/embed/xKC3ytckkYk"
@@ -1659,8 +1406,6 @@
       <img src="./nike.png" alt="Nike">
     </div>
 
-
-    <!-- IRIS -->
 
     <div
       class="object iris"
@@ -1671,8 +1416,6 @@
     </div>
 
 
-    <!-- CIRCE -->
-
     <div
       class="object circe"
       data-video="https://www.youtube.com/embed/CrQv0RrOO_s"
@@ -1682,14 +1425,10 @@
     </div>
 
 
-    <!-- CASSANDRA -->
-
     <div class="object cassandra">
       <img src="./cassandra.png" alt="Cassandra">
     </div>
 
-
-    <!-- APOLLO -->
 
     <div
       class="object apollo"
@@ -1700,19 +1439,34 @@
     </div>
 
 
-    <!-- HERMES -->
-
     <div class="object hermes">
       <img src="./hermes.png" alt="Hermes">
     </div>
 
-
   </main>
 
 
-  <!-- =========================
-       МОДАЛЬНОЕ ОКНО
-  ========================= -->
+  <!-- ПОДСКАЗКА -->
+
+  <div class="gift-toggle">
+
+    <label>
+
+      <input
+        type="checkbox"
+        id="highlightGifts"
+      >
+
+      <span>
+        Если не все дары открылись взору — да явятся сокрытые.
+      </span>
+
+    </label>
+
+  </div>
+
+
+  <!-- МОДАЛЬНОЕ ОКНО -->
 
   <div
     class="modal"
@@ -1720,7 +1474,6 @@
   >
 
     <div class="video-box">
-
 
       <button
         class="close"
@@ -1731,10 +1484,6 @@
         ×
       </button>
 
-
-      <!-- =========================
-           ТЕКСТ ПО ДУГЕ
-      ========================= -->
 
       <svg
         id="ringTextSvg"
@@ -1769,16 +1518,12 @@
       </svg>
 
 
-      <!-- ЛОКАЛЬНОЕ ВИДЕО -->
-
       <video
         id="localVideo"
         controls
         playsinline
       ></video>
 
-
-      <!-- YOUTUBE -->
 
       <iframe
         id="video"
@@ -1788,8 +1533,6 @@
         allowfullscreen
       ></iframe>
 
-
-      <!-- ФОТО -->
 
       <div id="photoCard">
 
@@ -1804,121 +1547,72 @@
       </div>
 
 
-      <!-- ТЕКСТ -->
-
       <div id="message"></div>
-
 
     </div>
 
   </div>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
   <script>
-
 
     const objects =
       document.querySelectorAll(
         "[data-video], [data-file], [data-message], [data-photo]"
       );
 
-
     const modal =
       document.getElementById("modal");
-
 
     const video =
       document.getElementById("video");
 
-
     const localVideo =
       document.getElementById("localVideo");
-
 
     const message =
       document.getElementById("message");
 
-
     const photoCard =
       document.getElementById("photoCard");
-
 
     const photoImage =
       document.getElementById("photoImage");
 
-
     const photoCaption =
       document.getElementById("photoCaption");
-
 
     const closeButton =
       document.getElementById("close");
 
-
     const videoBox =
       document.querySelector(".video-box");
-
 
     const ringTextPath =
       document.getElementById("ringTextPath");
 
+    const highlightGifts =
+      document.getElementById("highlightGifts");
 
-
-    /* =========================
-       СБРОС
-    ========================= */
 
     function clearContent() {
-
-
-      /* YouTube */
 
       video.src = "";
       video.style.display = "none";
 
-
-      /* Локальное видео */
-
       localVideo.pause();
-
-      localVideo.removeAttribute(
-        "src"
-      );
-
+      localVideo.removeAttribute("src");
       localVideo.load();
-
-      localVideo.style.display =
-        "none";
-
-
-      /* Текст */
+      localVideo.style.display = "none";
 
       message.textContent = "";
       message.style.display = "none";
 
-
-      /* Фото */
-
-      photoCard.style.display =
-        "none";
-
+      photoCard.style.display = "none";
       photoImage.src = "";
+      photoCaption.textContent = "";
 
-      photoCaption.textContent =
-        "";
-
-
-      /* Текст по кругу */
-
-      ringTextPath.textContent =
-        "";
-
-
-      /* Стили окна */
+      ringTextPath.textContent = "";
 
       videoBox.classList.remove(
         "circle",
@@ -1930,11 +1624,6 @@
 
     }
 
-
-
-    /* =========================
-       ФОРМАТ ВИДЕО
-    ========================= */
 
     function setVideoBoxStyle(
       shape,
@@ -1949,291 +1638,178 @@
         "photo-mode"
       );
 
-
-      if (
-        shape === "circle"
-      ) {
-
-        videoBox.classList.add(
-          "circle"
-        );
-
+      if (shape === "circle") {
+        videoBox.classList.add("circle");
       }
 
-
-      if (
-        format === "vertical"
-      ) {
-
-        videoBox.classList.add(
-          "vertical"
-        );
-
+      if (format === "vertical") {
+        videoBox.classList.add("vertical");
       }
 
-
-      if (
-        format ===
-        "horizontal-frame"
-      ) {
-
-        videoBox.classList.add(
-          "horizontal-frame"
-        );
-
+      if (format === "horizontal-frame") {
+        videoBox.classList.add("horizontal-frame");
       }
 
-
-      if (
-        format ===
-        "ring-circle"
-      ) {
-
-        videoBox.classList.add(
-          "ring-circle"
-        );
-
+      if (format === "ring-circle") {
+        videoBox.classList.add("ring-circle");
       }
 
     }
 
 
-
-    /* =========================
-       КЛИКИ
-    ========================= */
-
     objects.forEach(
       object => {
-
 
         object.addEventListener(
           "click",
           function () {
 
-
             const videoURL =
               object.dataset.video;
-
 
             const videoFile =
               object.dataset.file;
 
-
             const messageText =
               object.dataset.message;
-
 
             const shape =
               object.dataset.shape;
 
-
             const format =
               object.dataset.format;
-
 
             const ringText =
               object.dataset.ringText;
 
-
             const photo =
               object.dataset.photo;
-
 
             const caption =
               object.dataset.caption;
 
 
-
-            /* =========================
-               ФОТО
-            ========================= */
-
             if (photo) {
 
-
               clearContent();
-
 
               videoBox.classList.add(
                 "photo-mode"
               );
 
-
-              photoImage.src =
-                photo;
-
+              photoImage.src = photo;
 
               photoCaption.textContent =
                 caption || "";
 
-
               photoCard.style.display =
                 "block";
-
 
               modal.classList.add(
                 "active"
               );
-
 
               return;
 
             }
 
 
-
-            /* =========================
-               ЛОКАЛЬНОЕ MP4
-            ========================= */
-
             if (videoFile) {
 
-
               clearContent();
-
 
               setVideoBoxStyle(
                 shape,
                 format
               );
 
-
-              /*
-                ВАЖНО:
-                текст теперь пишется
-                ОДИН РАЗ,
-                без repeat()
-              */
-
               if (ringText) {
-
                 ringTextPath.textContent =
                   ringText;
-
               }
-
 
               localVideo.src =
                 videoFile;
 
-
               localVideo.style.display =
                 "block";
-
 
               modal.classList.add(
                 "active"
               );
 
-
               localVideo
                 .play()
-                .catch(
-                  () => {}
-                );
-
+                .catch(() => {});
 
               return;
 
             }
 
 
-
-            /* =========================
-               YOUTUBE
-            ========================= */
-
             if (videoURL) {
 
-
               clearContent();
-
 
               setVideoBoxStyle(
                 shape,
                 format
               );
 
-
               video.style.display =
                 "block";
-
 
               const separator =
                 videoURL.includes("?")
                   ? "&"
                   : "?";
 
-
               video.src =
                 videoURL +
                 separator +
                 "autoplay=1";
 
-
               modal.classList.add(
                 "active"
               );
-
 
               return;
 
             }
 
 
-
-            /* =========================
-               ТЕКСТ
-            ========================= */
-
             if (messageText) {
 
-
               clearContent();
-
 
               message.textContent =
                 messageText;
 
-
               message.style.display =
                 "flex";
-
 
               modal.classList.add(
                 "active"
               );
 
-
             }
-
 
           }
         );
-
 
       }
     );
 
 
-
-    /* =========================
-       ЗАКРЫТИЕ
-    ========================= */
-
     function closeModal() {
-
 
       modal.classList.remove(
         "active"
       );
 
-
       clearContent();
 
     }
-
 
 
     closeButton.addEventListener(
@@ -2242,43 +1818,43 @@
     );
 
 
-
     modal.addEventListener(
       "click",
       function (event) {
 
-
-        if (
-          event.target === modal
-        ) {
-
+        if (event.target === modal) {
           closeModal();
-
         }
-
 
       }
     );
-
 
 
     document.addEventListener(
       "keydown",
       function (event) {
 
-
-        if (
-          event.key === "Escape"
-        ) {
-
+        if (event.key === "Escape") {
           closeModal();
-
         }
-
 
       }
     );
 
+
+    /* ПОДСВЕТИТЬ СОКРЫТЫЕ ДАРЫ */
+
+    highlightGifts.addEventListener(
+      "change",
+      function () {
+
+        document.body.classList.toggle(
+          "gifts-visible",
+          highlightGifts.checked
+        );
+
+      }
+    );
 
   </script>
 
