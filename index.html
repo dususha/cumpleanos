@@ -9,10 +9,6 @@
 
   <style>
 
-    /* ==================================================
-       ШРИФТЫ
-    ================================================== */
-
     @font-face {
       font-family: "Satyr SP";
       src: url("./SatyrSP.otf") format("opentype");
@@ -26,11 +22,6 @@
       font-weight: normal;
       font-style: normal;
     }
-
-
-    /* ==================================================
-       ОБЩЕЕ
-    ================================================== */
 
     * {
       box-sizing: border-box;
@@ -50,11 +41,6 @@
       cursor: url("./cursor1.png") 16 16, auto;
     }
 
-
-    /* ==================================================
-       СЦЕНА
-    ================================================== */
-
     .scene {
       position: relative;
       width: 100%;
@@ -62,11 +48,6 @@
       overflow: hidden;
       padding-top: 180px;
     }
-
-
-    /* ==================================================
-       ЗАГОЛОВОК
-    ================================================== */
 
     .title {
       position: absolute;
@@ -93,11 +74,6 @@
       line-height: 1.35;
     }
 
-
-    /* ==================================================
-       ОСНОВНЫЕ ПЕРСОНАЖИ
-    ================================================== */
-
     .object {
       position: absolute;
       z-index: 10;
@@ -118,7 +94,6 @@
       display: block;
       width: 100%;
       height: auto;
-
       transition:
         transform 0.25s ease,
         filter 0.25s ease;
@@ -143,7 +118,6 @@
         );
     }
 
-
     @keyframes float {
       0%,
       100% {
@@ -154,11 +128,6 @@
         transform: translateY(-12px);
       }
     }
-
-
-    /* ==================================================
-       10 ДАРОВ
-    ================================================== */
 
     .greeting {
       position: absolute;
@@ -179,7 +148,6 @@
         );
     }
 
-
     @keyframes greeting-float {
       0%,
       100% {
@@ -190,7 +158,6 @@
         transform: translateY(-6px);
       }
     }
-
 
     @keyframes wiggle {
       0% {
@@ -223,9 +190,6 @@
        DESKTOP
     ================================================== */
 
-
-    /* ---------- ВЕРХ ---------- */
-
     .eos {
       width: 360px;
       left: 2%;
@@ -257,9 +221,6 @@
       --rot: -7deg;
       --dur: 4.1s;
     }
-
-
-    /* ---------- СЕРЕДИНА ---------- */
 
     .hestia {
       width: 350px;
@@ -301,17 +262,28 @@
       --dur: 4.2s;
     }
 
+    /* HERMES ПЕРЕНЕСЁН НА МЕСТО NIKE */
+
     .hermes {
       width: 260px;
-      left: 72%;
-      top: 700px;
+      left: 53%;
+      top: 950px;
       --rot: 6deg;
       --dur: 3.8s;
     }
 
+    /* NIKE ПЕРЕНЕСЕНА НА МЕСТО HERMES */
 
-    /* ---------- НИЖНЯЯ ЗОНА
-       НЕ РЯДОМ, А ХАОТИЧНО ---------- */
+    .nike {
+      width: 285px;
+      left: 72%;
+      top: 700px;
+      --rot: 4deg;
+      --dur: 3.5s;
+    }
+
+
+    /* НИЖНЯЯ ЗОНА */
 
     .selene {
       width: 260px;
@@ -327,14 +299,6 @@
       top: 1080px;
       --rot: 5deg;
       --dur: 3.6s;
-    }
-
-    .nike {
-      width: 285px;
-      left: 53%;
-      top: 950px;
-      --rot: 4deg;
-      --dur: 3.5s;
     }
 
     .cassandra {
@@ -378,9 +342,11 @@
       animation-duration: 4.4s;
     }
 
+    /* STAR ПЕРЕНЕСЁН */
+
     .star {
       width: 56px;
-      left: 22%;
+      left: 36%;
       top: 845px;
       animation-duration: 4.2s;
     }
@@ -401,24 +367,30 @@
       animation-duration: 3.9s;
     }
 
-    .secret {
-      width: 54px;
-      left: 42%;
-      top: 800px;
-      animation-duration: 4.5s;
-    }
+    /* SURPRISE ТЕПЕРЬ НА МЕСТЕ SECRET */
 
     .surprise {
       width: 55px;
-      left: 87%;
-      top: 825px;
+      left: 42%;
+      top: 800px;
       animation-duration: 3.8s;
     }
 
-    .treasure {
-      width: 58px;
+    /* SECRET ТЕПЕРЬ НА МЕСТЕ TREASURE */
+
+    .secret {
+      width: 54px;
       left: 68%;
       top: 905px;
+      animation-duration: 4.5s;
+    }
+
+    /* TREASURE ПЕРЕНЕСЁН В НОВОЕ МЕСТО */
+
+    .treasure {
+      width: 58px;
+      left: 86%;
+      top: 970px;
       animation-duration: 4.3s;
     }
 
@@ -468,12 +440,6 @@
       cursor: pointer;
     }
 
-
-    /* ==================================================
-       ПОДСВЕТКА В РЕЖИМЕ ЭОС
-       БЕЗ МЕРЦАНИЯ
-    ================================================== */
-
     body.eos-mode .greeting {
       z-index: 45;
     }
@@ -493,7 +459,7 @@
 
 
     /* ==================================================
-       МОДАЛЬНОЕ ОКНО
+       МОДАЛКА
     ================================================== */
 
     .modal {
@@ -516,7 +482,6 @@
       display: flex;
     }
 
-
     .video-box {
       position: relative;
 
@@ -530,7 +495,6 @@
       justify-content: center;
     }
 
-
     .video-box iframe {
       display: none;
 
@@ -539,7 +503,6 @@
 
       border: 0;
     }
-
 
     .video-box video {
       display: none;
@@ -555,9 +518,7 @@
     }
 
 
-    /* ==================================================
-       КРУГЛОЕ ВИДЕО
-    ================================================== */
+    /* КРУГ */
 
     .video-box.circle {
       width: min(520px, 82vw);
@@ -572,7 +533,6 @@
       height: 100%;
 
       border-radius: 50%;
-
       border: 8px solid #b85f2d;
 
       box-shadow:
@@ -584,9 +544,7 @@
     }
 
 
-    /* ==================================================
-       ВЕРТИКАЛЬНОЕ ВИДЕО
-    ================================================== */
+    /* ВЕРТИКАЛЬНОЕ */
 
     .video-box.vertical {
       width: min(420px, 82vw);
@@ -609,16 +567,13 @@
       height: 100%;
 
       border: 0;
-
       border-radius: 12px;
 
       object-fit: cover;
     }
 
 
-    /* ==================================================
-       ГОРИЗОНТАЛЬНОЕ ВИДЕО
-    ================================================== */
+    /* ГОРИЗОНТАЛЬНОЕ */
 
     .video-box.horizontal-frame {
       width: min(900px, 92vw);
@@ -641,14 +596,11 @@
       height: 100%;
 
       border: 0;
-
       border-radius: 12px;
     }
 
 
-    /* ==================================================
-       КРУГЛОЕ ВИДЕО + ТЕКСТ ПО ДУГЕ
-    ================================================== */
+    /* КРУГ + НАДПИСЬ */
 
     .video-box.ring-circle {
       width: min(520px, 70vw);
@@ -670,7 +622,6 @@
       height: 100%;
 
       border-radius: 50%;
-
       border: 8px solid #b85f2d;
 
       object-fit: cover;
@@ -681,7 +632,6 @@
 
       z-index: 10;
     }
-
 
     #ringTextSvg {
       display: none;
@@ -705,11 +655,8 @@
 
     #ringTextSvg text {
       font-family: "Satyr SP", serif;
-
       font-size: 30px;
-
       letter-spacing: 2px;
-
       fill: #F1CEB2;
     }
 
@@ -725,9 +672,7 @@
     }
 
 
-    /* ==================================================
-       ФОТО
-    ================================================== */
+    /* ФОТО */
 
     .video-box.photo-mode {
       width: auto;
@@ -800,10 +745,6 @@
     }
 
 
-    /* ==================================================
-       ТЕКСТ
-    ================================================== */
-
     #message {
       display: none;
 
@@ -828,11 +769,6 @@
 
       border: 6px solid #b85f2d;
     }
-
-
-    /* ==================================================
-       ЗАКРЫТИЕ
-    ================================================== */
 
     .close {
       position: absolute;
@@ -862,7 +798,6 @@
 
     /* ==================================================
        TABLET
-       701–1050
     ================================================== */
 
     @media (min-width: 701px) and (max-width: 1050px) {
@@ -874,7 +809,6 @@
       .title h1 {
         font-size: 62px;
       }
-
 
       .eos {
         width: 300px;
@@ -899,7 +833,6 @@
         left: 63%;
         top: 270px;
       }
-
 
       .hestia {
         width: 305px;
@@ -931,14 +864,19 @@
         top: 690px;
       }
 
-      .hermes {
-        width: 220px;
+      /* SWAP */
+
+      .nike {
+        width: 240px;
         left: 76%;
         top: 750px;
       }
 
-
-      /* НИЖНЯЯ ЗОНА */
+      .hermes {
+        width: 220px;
+        left: 52%;
+        top: 1025px;
+      }
 
       .selene {
         width: 220px;
@@ -952,20 +890,12 @@
         top: 1140px;
       }
 
-      .nike {
-        width: 240px;
-        left: 52%;
-        top: 1025px;
-      }
-
       .cassandra {
         width: 215px;
         left: 76%;
         top: 1160px;
       }
 
-
-      /* ДАРЫ */
 
       .luck {
         width: 48px;
@@ -993,8 +923,8 @@
 
       .star {
         width: 48px;
-        left: 23%;
-        top: 905px;
+        left: 36%;
+        top: 915px;
       }
 
       .bonus {
@@ -1009,22 +939,22 @@
         top: 950px;
       }
 
-      .secret {
-        width: 47px;
+      .surprise {
+        width: 48px;
         left: 43%;
         top: 850px;
       }
 
-      .surprise {
-        width: 48px;
-        left: 88%;
-        top: 925px;
+      .secret {
+        width: 47px;
+        left: 68%;
+        top: 955px;
       }
 
       .treasure {
         width: 50px;
-        left: 68%;
-        top: 955px;
+        left: 86%;
+        top: 1010px;
       }
 
     }
@@ -1055,7 +985,6 @@
         line-height: 1.35;
       }
 
-
       .eos-toggle {
         padding:
           22px
@@ -1065,12 +994,10 @@
         font-size: 19px;
       }
 
-
       #message {
         font-size: 28px;
         padding: 30px;
       }
-
 
       .video-box.circle {
         width: min(360px, 82vw);
@@ -1083,7 +1010,6 @@
       .video-box.horizontal-frame {
         width: 92vw;
       }
-
 
       .video-box.ring-circle {
         width: 66vw;
@@ -1108,7 +1034,6 @@
         right: -5px;
       }
 
-
       #photoCard {
         width: 90vw;
         max-height: 80vh;
@@ -1128,8 +1053,6 @@
           12px;
       }
 
-
-      /* ---------- ВЕРХ ---------- */
 
       .eos {
         width: 220px;
@@ -1154,9 +1077,6 @@
         left: 46%;
         top: 385px;
       }
-
-
-      /* ---------- СЕРЕДИНА ---------- */
 
       .hestia {
         width: 255px;
@@ -1188,14 +1108,19 @@
         top: 1010px;
       }
 
-      .hermes {
-        width: 180px;
+      /* SWAP */
+
+      .nike {
+        width: 195px;
         left: 56%;
         top: 1090px;
       }
 
-
-      /* ---------- НИЖНЯЯ ЗОНА ---------- */
+      .hermes {
+        width: 180px;
+        left: 5%;
+        top: 1515px;
+      }
 
       .selene {
         width: 180px;
@@ -1209,20 +1134,12 @@
         top: 1410px;
       }
 
-      .nike {
-        width: 195px;
-        left: 5%;
-        top: 1515px;
-      }
-
       .cassandra {
         width: 175px;
         left: 56%;
         top: 1625px;
       }
 
-
-      /* ---------- ДАРЫ ---------- */
 
       .luck {
         width: 42px;
@@ -1250,8 +1167,8 @@
 
       .star {
         width: 42px;
-        left: 42%;
-        top: 875px;
+        left: 36%;
+        top: 865px;
       }
 
       .bonus {
@@ -1266,22 +1183,22 @@
         top: 1210px;
       }
 
-      .secret {
-        width: 41px;
+      .surprise {
+        width: 43px;
         left: 44%;
         top: 1015px;
       }
 
-      .surprise {
-        width: 43px;
-        left: 82%;
-        top: 1260px;
+      .secret {
+        width: 41px;
+        left: 34%;
+        top: 1360px;
       }
 
       .treasure {
         width: 44px;
-        left: 34%;
-        top: 1360px;
+        left: 80%;
+        top: 1450px;
       }
 
     }
@@ -1296,9 +1213,6 @@
       .scene {
         min-height: 1400px;
       }
-
-
-      /* ---------- ВЕРХ ---------- */
 
       .eos {
         width: 430px;
@@ -1323,9 +1237,6 @@
         left: 62%;
         top: 225px;
       }
-
-
-      /* ---------- СЕРЕДИНА ---------- */
 
       .hestia {
         width: 405px;
@@ -1357,14 +1268,19 @@
         top: 655px;
       }
 
-      .hermes {
-        width: 290px;
+      /* SWAP */
+
+      .nike {
+        width: 330px;
         left: 72%;
         top: 715px;
       }
 
-
-      /* ---------- НИЗ ---------- */
+      .hermes {
+        width: 290px;
+        left: 51%;
+        top: 970px;
+      }
 
       .selene {
         width: 280px;
@@ -1378,20 +1294,12 @@
         top: 1110px;
       }
 
-      .nike {
-        width: 330px;
-        left: 51%;
-        top: 970px;
-      }
-
       .cassandra {
         width: 270px;
         left: 77%;
         top: 1130px;
       }
 
-
-      /* ---------- ДАРЫ ---------- */
 
       .luck {
         width: 54px;
@@ -1419,8 +1327,8 @@
 
       .star {
         width: 56px;
-        left: 21%;
-        top: 850px;
+        left: 37%;
+        top: 860px;
       }
 
       .bonus {
@@ -1435,22 +1343,22 @@
         top: 900px;
       }
 
-      .secret {
-        width: 55px;
+      .surprise {
+        width: 56px;
         left: 42%;
         top: 825px;
       }
 
-      .surprise {
-        width: 56px;
-        left: 86%;
-        top: 850px;
+      .secret {
+        width: 55px;
+        left: 67%;
+        top: 925px;
       }
 
       .treasure {
         width: 58px;
-        left: 67%;
-        top: 925px;
+        left: 84%;
+        top: 995px;
       }
 
     }
@@ -1461,13 +1369,8 @@
 
 <body>
 
-
   <main class="scene">
 
-
-    <!-- ==================================================
-         ЗАГОЛОВОК
-    ================================================== -->
 
     <div class="title">
 
@@ -1482,13 +1385,9 @@
     </div>
 
 
-
     <!-- ==================================================
          10 ДАРОВ
     ================================================== -->
-
-
-    <!-- 1. LUCK -->
 
     <div
       class="greeting luck"
@@ -1500,8 +1399,6 @@
     </div>
 
 
-    <!-- 2. LOVE -->
-
     <div
       class="greeting love"
       data-file="./love.mp4"
@@ -1512,8 +1409,6 @@
     </div>
 
 
-    <!-- 3. REST -->
-
     <div
       class="greeting rest"
       data-photo="./rest-photo.jpg"
@@ -1523,8 +1418,6 @@
     </div>
 
 
-    <!-- 4. JOY -->
-
     <div
       class="greeting joy"
       data-photo="./joy-photo.jpg"
@@ -1533,8 +1426,6 @@
       <img src="./joy.png" alt="Joy">
     </div>
 
-
-    <!-- 5. ADVENTURE -->
 
     <div
       class="greeting adventure"
@@ -1546,8 +1437,6 @@
     </div>
 
 
-    <!-- 6. STAR -->
-
     <div
       class="greeting star"
       data-file="./star.mp4"
@@ -1556,8 +1445,6 @@
       <img src="./star.png" alt="Star">
     </div>
 
-
-    <!-- 7. BONUS -->
 
     <div
       class="greeting bonus"
@@ -1568,8 +1455,6 @@
     </div>
 
 
-    <!-- 8. SECRET -->
-
     <div
       class="greeting secret"
       data-photo="./secret.jpg"
@@ -1578,8 +1463,6 @@
       <img src="./secret.png" alt="Secret">
     </div>
 
-
-    <!-- 9. SURPRISE -->
 
     <div
       class="greeting surprise"
@@ -1590,8 +1473,6 @@
     </div>
 
 
-    <!-- 10. TREASURE -->
-
     <div
       class="greeting treasure"
       data-photo="./treasure.jpg"
@@ -1601,11 +1482,9 @@
     </div>
 
 
-
     <!-- ==================================================
          ПЕРСОНАЖИ
     ================================================== -->
-
 
     <div
       class="object eos"
@@ -1720,7 +1599,6 @@
   </main>
 
 
-
   <!-- ==================================================
        РЕЖИМ ЭОС
   ================================================== -->
@@ -1741,7 +1619,6 @@
     </label>
 
   </div>
-
 
 
   <!-- ==================================================
@@ -1766,9 +1643,6 @@
       </button>
 
 
-
-      <!-- ТЕКСТ ПО ДУГЕ -->
-
       <svg
         id="ringTextSvg"
         viewBox="0 0 1000 1000"
@@ -1788,7 +1662,6 @@
 
         </defs>
 
-
         <text>
 
           <textPath
@@ -1802,18 +1675,12 @@
       </svg>
 
 
-
-      <!-- LOCAL VIDEO -->
-
       <video
         id="localVideo"
         controls
         playsinline
       ></video>
 
-
-
-      <!-- YOUTUBE -->
 
       <iframe
         id="video"
@@ -1823,9 +1690,6 @@
         allowfullscreen
       ></iframe>
 
-
-
-      <!-- PHOTO -->
 
       <div id="photoCard">
 
@@ -1840,9 +1704,6 @@
       </div>
 
 
-
-      <!-- MESSAGE -->
-
       <div id="message"></div>
 
 
@@ -1851,118 +1712,65 @@
   </div>
 
 
-
   <script>
-
-
-    /* ==================================================
-       ЭЛЕМЕНТЫ
-    ================================================== */
 
     const objects =
       document.querySelectorAll(
         "[data-video], [data-file], [data-message], [data-photo]"
       );
 
-
     const modal =
       document.getElementById("modal");
-
 
     const video =
       document.getElementById("video");
 
-
     const localVideo =
       document.getElementById("localVideo");
-
 
     const message =
       document.getElementById("message");
 
-
     const photoCard =
       document.getElementById("photoCard");
-
 
     const photoImage =
       document.getElementById("photoImage");
 
-
     const photoCaption =
       document.getElementById("photoCaption");
-
 
     const closeButton =
       document.getElementById("close");
 
-
     const videoBox =
       document.querySelector(".video-box");
 
-
     const ringTextPath =
       document.getElementById("ringTextPath");
-
 
     const eosMode =
       document.getElementById("eosMode");
 
 
-
-    /* ==================================================
-       ОЧИСТКА МОДАЛКИ
-    ================================================== */
-
     function clearContent() {
-
-
-      /* YouTube */
 
       video.src = "";
       video.style.display = "none";
 
-
-      /* local mp4 */
-
       localVideo.pause();
-
-      localVideo.removeAttribute(
-        "src"
-      );
-
+      localVideo.removeAttribute("src");
       localVideo.load();
-
-      localVideo.style.display =
-        "none";
-
-
-      /* message */
+      localVideo.style.display = "none";
 
       message.textContent = "";
+      message.style.display = "none";
 
-      message.style.display =
-        "none";
-
-
-      /* photo */
-
-      photoCard.style.display =
-        "none";
-
+      photoCard.style.display = "none";
       photoImage.src = "";
+      photoCaption.textContent = "";
 
-      photoCaption.textContent =
-        "";
-
-
-      /* text around circle */
-
-      ringTextPath.textContent =
-        "";
-
-
-      /* reset classes */
+      ringTextPath.textContent = "";
 
       videoBox.classList.remove(
         "circle",
@@ -1974,18 +1782,12 @@
 
     }
 
-
-
-    /* ==================================================
-       ФОРМАТ ВИДЕО
-    ================================================== */
 
     function setVideoBoxStyle(
       shape,
       format
     ) {
 
-
       videoBox.classList.remove(
         "circle",
         "vertical",
@@ -1994,160 +1796,91 @@
         "photo-mode"
       );
 
-
-      if (
-        shape === "circle"
-      ) {
-
-        videoBox.classList.add(
-          "circle"
-        );
-
+      if (shape === "circle") {
+        videoBox.classList.add("circle");
       }
 
-
-      if (
-        format === "vertical"
-      ) {
-
-        videoBox.classList.add(
-          "vertical"
-        );
-
+      if (format === "vertical") {
+        videoBox.classList.add("vertical");
       }
 
-
-      if (
-        format ===
-        "horizontal-frame"
-      ) {
-
-        videoBox.classList.add(
-          "horizontal-frame"
-        );
-
+      if (format === "horizontal-frame") {
+        videoBox.classList.add("horizontal-frame");
       }
 
-
-      if (
-        format ===
-        "ring-circle"
-      ) {
-
-        videoBox.classList.add(
-          "ring-circle"
-        );
-
+      if (format === "ring-circle") {
+        videoBox.classList.add("ring-circle");
       }
 
     }
 
 
-
-    /* ==================================================
-       КЛИКИ
-    ================================================== */
-
     objects.forEach(
       object => {
-
 
         object.addEventListener(
           "click",
           function () {
 
-
             const videoURL =
               object.dataset.video;
-
 
             const videoFile =
               object.dataset.file;
 
-
             const messageText =
               object.dataset.message;
-
 
             const shape =
               object.dataset.shape;
 
-
             const format =
               object.dataset.format;
-
 
             const ringText =
               object.dataset.ringText;
 
-
             const photo =
               object.dataset.photo;
-
 
             const caption =
               object.dataset.caption;
 
 
-
-            /* ----------------------
-               PHOTO
-            ---------------------- */
-
             if (photo) {
 
-
               clearContent();
-
 
               videoBox.classList.add(
                 "photo-mode"
               );
 
-
               photoImage.src =
                 photo;
-
 
               photoCaption.textContent =
                 caption || "";
 
-
               photoCard.style.display =
                 "block";
-
 
               modal.classList.add(
                 "active"
               );
-
 
               return;
 
             }
 
 
-
-            /* ----------------------
-               LOCAL MP4
-            ---------------------- */
-
             if (videoFile) {
 
-
               clearContent();
-
 
               setVideoBoxStyle(
                 shape,
                 format
               );
-
-
-              /*
-                Надпись выводится
-                ОДИН РАЗ.
-              */
 
               if (ringText) {
 
@@ -2156,127 +1889,88 @@
 
               }
 
-
               localVideo.src =
                 videoFile;
 
-
               localVideo.style.display =
                 "block";
-
 
               modal.classList.add(
                 "active"
               );
 
-
               localVideo
                 .play()
-                .catch(
-                  () => {}
-                );
-
+                .catch(() => {});
 
               return;
 
             }
 
 
-
-            /* ----------------------
-               YOUTUBE
-            ---------------------- */
-
             if (videoURL) {
 
-
               clearContent();
-
 
               setVideoBoxStyle(
                 shape,
                 format
               );
 
-
               video.style.display =
                 "block";
-
 
               const separator =
                 videoURL.includes("?")
                   ? "&"
                   : "?";
 
-
               video.src =
                 videoURL +
                 separator +
                 "autoplay=1";
 
-
               modal.classList.add(
                 "active"
               );
-
 
               return;
 
             }
 
 
-
-            /* ----------------------
-               MESSAGE
-            ---------------------- */
-
             if (messageText) {
 
-
               clearContent();
-
 
               message.textContent =
                 messageText;
 
-
               message.style.display =
                 "flex";
-
 
               modal.classList.add(
                 "active"
               );
 
-
             }
-
 
           }
         );
-
 
       }
     );
 
 
-
-    /* ==================================================
-       ЗАКРЫТИЕ
-    ================================================== */
-
     function closeModal() {
-
 
       modal.classList.remove(
         "active"
       );
 
-
       clearContent();
 
     }
-
 
 
     closeButton.addEventListener(
@@ -2285,63 +1979,41 @@
     );
 
 
-
     modal.addEventListener(
       "click",
       function (event) {
 
-
-        if (
-          event.target === modal
-        ) {
-
+        if (event.target === modal) {
           closeModal();
-
         }
-
 
       }
     );
-
 
 
     document.addEventListener(
       "keydown",
       function (event) {
 
-
-        if (
-          event.key === "Escape"
-        ) {
-
+        if (event.key === "Escape") {
           closeModal();
-
         }
-
 
       }
     );
 
 
-
-    /* ==================================================
-       РЕЖИМ ЭОС
-    ================================================== */
-
     eosMode.addEventListener(
       "change",
       function () {
-
 
         document.body.classList.toggle(
           "eos-mode",
           eosMode.checked
         );
 
-
       }
     );
-
 
   </script>
 
