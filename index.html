@@ -383,12 +383,16 @@
       animation-duration: 4.2s;
     }
 
+
+    /* BONUS теперь на старом месте SURPRISE */
+
     .bonus {
       width: 56px;
-      left: 84%;
-      top: 790px;
+      left: 35%;
+      top: 735px;
       animation-duration: 4s;
     }
+
 
     .adventure {
       width: 58px;
@@ -397,19 +401,26 @@
       animation-duration: 3.9s;
     }
 
+
+    /* SECRET рядом с APOLLO */
+
     .secret {
       width: 54px;
-      left: 61%;
-      top: 410px;
+      left: 23%;
+      top: 1185px;
       animation-duration: 4.5s;
     }
 
+
+    /* SURPRISE на старом месте BONUS */
+
     .surprise {
       width: 55px;
-      left: 35%;
-      top: 735px;
+      left: 84%;
+      top: 790px;
       animation-duration: 3.8s;
     }
+
 
     .treasure {
       width: 58px;
@@ -426,11 +437,16 @@
     .modal {
       position: fixed;
       inset: 0;
+
       display: none;
+
       align-items: center;
       justify-content: center;
+
       padding: 30px;
+
       background: rgba(0, 0, 0, 0.84);
+
       z-index: 1000;
     }
 
@@ -441,9 +457,12 @@
 
     .video-box {
       position: relative;
+
       width: min(900px, 92vw);
       aspect-ratio: 16 / 9;
+
       background: #1f1b18;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -452,29 +471,36 @@
 
     .video-box iframe {
       display: none;
+
       width: 100%;
       height: 100%;
+
       border: 0;
     }
 
 
     .video-box video {
       display: none;
+
       width: 100%;
       height: 100%;
+
       border: 0;
+
       object-fit: contain;
+
       background: #1f1b18;
     }
 
 
     /* =========================
-       КРУГЛОЕ ВИДЕО
+       ОБЫЧНОЕ КРУГЛОЕ ВИДЕО
     ========================= */
 
     .video-box.circle {
       width: min(520px, 82vw);
       aspect-ratio: 1 / 1;
+
       background: transparent;
     }
 
@@ -521,8 +547,11 @@
     .video-box.vertical video {
       width: 100%;
       height: 100%;
+
       border: 0;
+
       border-radius: 12px;
+
       object-fit: cover;
     }
 
@@ -553,16 +582,17 @@
       height: 100%;
 
       border: 0;
+
       border-radius: 12px;
     }
 
 
     /* ==================================================
-       ADVENTURE
-       КРУГЛОЕ ВИДЕО + НАДПИСЬ ПО КРУГУ
+       КРУГЛОЕ ВИДЕО + ТЕКСТ ПО КРУГУ
+       LUCK / ADVENTURE
     ================================================== */
 
-    .video-box.adventure-frame {
+    .video-box.ring-circle {
       width: min(520px, 70vw);
       aspect-ratio: 1 / 1;
 
@@ -579,7 +609,7 @@
     }
 
 
-    .video-box.adventure-frame video {
+    .video-box.ring-circle video {
       width: 100%;
       height: 100%;
 
@@ -592,13 +622,14 @@
       background: #1f1b18;
 
       position: relative;
+
       z-index: 10;
     }
 
 
-    /* НАДПИСЬ ВОКРУГ ADVENTURE */
+    /* ТЕКСТ ПО КРУГУ */
 
-    #adventureRing {
+    #ringTextSvg {
       display: none;
 
       position: absolute;
@@ -609,7 +640,8 @@
       width: calc(100% + 150px);
       height: calc(100% + 150px);
 
-      transform: translate(-50%, -50%);
+      transform:
+        translate(-50%, -50%);
 
       overflow: visible;
 
@@ -619,23 +651,26 @@
     }
 
 
-    #adventureRing text {
+    #ringTextSvg text {
       font-family: "Satyr SP", serif;
+
       font-size: 30px;
+
       letter-spacing: 2px;
 
       fill: #F1CEB2;
     }
 
 
-    .video-box.adventure-frame #adventureRing {
+    .video-box.ring-circle #ringTextSvg {
       display: block;
     }
 
 
-    .video-box.adventure-frame .close {
+    .video-box.ring-circle .close {
       top: -60px;
       right: 0;
+
       z-index: 30;
     }
 
@@ -646,9 +681,13 @@
 
     .video-box.photo-mode {
       width: auto;
+
       max-width: 92vw;
+
       height: auto;
+
       aspect-ratio: auto;
+
       background: transparent;
     }
 
@@ -659,11 +698,13 @@
       position: relative;
 
       width: min(700px, 88vw);
+
       max-height: 82vh;
 
       background: #1f1b18;
 
       border: 8px solid #b85f2d;
+
       border-radius: 20px;
 
       overflow: hidden;
@@ -678,6 +719,7 @@
       display: block;
 
       width: 100%;
+
       max-height: 82vh;
 
       object-fit: contain;
@@ -685,6 +727,8 @@
       background: #1f1b18;
     }
 
+
+    /* ПОДПИСЬ СНИЗУ ПОВЕРХ ФОТО */
 
     #photoCaption {
       position: absolute;
@@ -698,9 +742,12 @@
         18px
         16px;
 
-      font-family: "Satyr SP", serif;
+      font-family:
+        "Satyr SP",
+        serif;
 
       font-size: 20px;
+
       line-height: 1.25;
 
       text-align: center;
@@ -728,11 +775,13 @@
       height: 100%;
 
       background: #1f1b18;
+
       color: #c96b32;
 
       font-family: "Satyr SP", serif;
 
       font-size: 42px;
+
       line-height: 1.25;
 
       text-align: center;
@@ -740,9 +789,11 @@
       padding: 50px;
 
       align-items: center;
+
       justify-content: center;
 
-      border: 6px solid #b85f2d;
+      border:
+        6px solid #b85f2d;
     }
 
 
@@ -757,11 +808,13 @@
       right: 0;
 
       border: 0;
+
       background: transparent;
 
       color: #c96b32;
 
       font-size: 42px;
+
       line-height: 1;
 
       cursor: pointer;
@@ -876,6 +929,8 @@
       }
 
 
+      /* ПАСХАЛКИ */
+
       .luck {
         width: 48px;
         left: 20%;
@@ -906,11 +961,15 @@
         top: 900px;
       }
 
+
+      /* BONUS = бывшее место SURPRISE */
+
       .bonus {
         width: 48px;
-        left: 86%;
-        top: 900px;
+        left: 39%;
+        top: 710px;
       }
+
 
       .adventure {
         width: 50px;
@@ -918,17 +977,24 @@
         top: 1015px;
       }
 
+
+      /* SECRET рядом с APOLLO */
+
       .secret {
         width: 47px;
-        left: 43%;
-        top: 450px;
+        left: 24%;
+        top: 1230px;
       }
+
+
+      /* SURPRISE = бывшее место BONUS */
 
       .surprise {
         width: 48px;
-        left: 39%;
-        top: 710px;
+        left: 86%;
+        top: 900px;
       }
+
 
       .treasure {
         width: 50px;
@@ -984,27 +1050,27 @@
       }
 
 
-      /* ADVENTURE MOBILE */
+      /* КРУГ С ТЕКСТОМ MOBILE */
 
-      .video-box.adventure-frame {
+      .video-box.ring-circle {
         width: 66vw;
       }
 
-      .video-box.adventure-frame video {
+      .video-box.ring-circle video {
         border-width: 6px;
       }
 
-      #adventureRing {
+      #ringTextSvg {
         width: calc(100% + 100px);
         height: calc(100% + 100px);
       }
 
-      #adventureRing text {
+      #ringTextSvg text {
         font-size: 25px;
         letter-spacing: 1px;
       }
 
-      .video-box.adventure-frame .close {
+      .video-box.ring-circle .close {
         top: -55px;
         right: -5px;
       }
@@ -1029,6 +1095,10 @@
           12px;
       }
 
+
+      /* =========================
+         ПЕРСОНАЖИ MOBILE
+      ========================= */
 
       .eos {
         width: 220px;
@@ -1115,6 +1185,10 @@
       }
 
 
+      /* =========================
+         ПАСХАЛКИ MOBILE
+      ========================= */
+
       .luck {
         width: 42px;
         left: 45%;
@@ -1145,11 +1219,15 @@
         top: 875px;
       }
 
+
+      /* BONUS = бывшее место SURPRISE */
+
       .bonus {
         width: 44px;
-        left: 82%;
-        top: 1200px;
+        left: 80%;
+        top: 850px;
       }
+
 
       .adventure {
         width: 44px;
@@ -1157,17 +1235,24 @@
         top: 1420px;
       }
 
+
+      /* SECRET рядом с APOLLO */
+
       .secret {
         width: 41px;
-        left: 45%;
-        top: 515px;
+        left: 76%;
+        top: 1365px;
       }
+
+
+      /* SURPRISE = бывшее место BONUS */
 
       .surprise {
         width: 43px;
-        left: 80%;
-        top: 850px;
+        left: 82%;
+        top: 1200px;
       }
+
 
       .treasure {
         width: 44px;
@@ -1274,6 +1359,10 @@
       }
 
 
+      /* =========================
+         ПАСХАЛКИ FULL HD
+      ========================= */
+
       .luck {
         width: 54px;
         left: 34%;
@@ -1304,11 +1393,15 @@
         top: 830px;
       }
 
+
+      /* BONUS = бывшее место SURPRISE */
+
       .bonus {
         width: 58px;
-        left: 82%;
-        top: 745px;
+        left: 37%;
+        top: 690px;
       }
+
 
       .adventure {
         width: 58px;
@@ -1316,17 +1409,24 @@
         top: 895px;
       }
 
+
+      /* SECRET рядом с APOLLO */
+
       .secret {
         width: 55px;
-        left: 57%;
-        top: 400px;
+        left: 22%;
+        top: 1100px;
       }
+
+
+      /* SURPRISE = бывшее место BONUS */
 
       .surprise {
         width: 56px;
-        left: 37%;
-        top: 690px;
+        left: 82%;
+        top: 745px;
       }
+
 
       .treasure {
         width: 58px;
@@ -1345,11 +1445,15 @@
   <main class="scene">
 
 
-    <!-- ЗАГОЛОВОК -->
+    <!-- =========================
+         ЗАГОЛОВОК
+    ========================= -->
 
     <div class="title">
 
-      <h1>С днём рождения!</h1>
+      <h1>
+        С днём рождения!
+      </h1>
 
       <p>
         Добрые речи подруг и друзей здесь Светлане Светлоликой с любовью собраны
@@ -1363,13 +1467,19 @@
     ========================= -->
 
 
+    <!-- LUCK — КРУГЛОЕ ВИДЕО -->
+
     <div
       class="greeting luck"
-      data-message="🍀 О, да сопутствует случай тебе благосклонный"
+      data-file="./luck.mp4"
+      data-format="ring-circle"
+      data-ring-text="🍀 О, да сопутствует случай тебе благосклонный • "
     >
       <img src="./luck.png" alt="Luck">
     </div>
 
+
+    <!-- LOVE -->
 
     <div
       class="greeting love"
@@ -1379,7 +1489,7 @@
     </div>
 
 
-    <!-- REST -->
+    <!-- REST — ФОТО -->
 
     <div
       class="greeting rest"
@@ -1390,7 +1500,7 @@
     </div>
 
 
-    <!-- JOY -->
+    <!-- JOY — ФОТО -->
 
     <div
       class="greeting joy"
@@ -1401,12 +1511,13 @@
     </div>
 
 
-    <!-- ADVENTURE -->
+    <!-- ADVENTURE — КРУГЛОЕ ВИДЕО -->
 
     <div
       class="greeting adventure"
       data-file="./adventure.mp4"
-      data-format="adventure-frame"
+      data-format="ring-circle"
+      data-ring-text="🏺 Странствуй отважно • Но мимо циклопов по возможности • "
     >
       <img src="./adventure.png" alt="Adventure">
     </div>
@@ -1434,16 +1545,24 @@
     </div>
 
 
-    <!-- SECRET -->
+    <!-- SECRET — ФОТО -->
 
-    <div class="greeting secret">
+    <div
+      class="greeting secret"
+      data-photo="./secret.jpg"
+      data-caption="Да ладится всё, к чему руку приложишь"
+    >
       <img src="./secret.png" alt="Secret">
     </div>
 
 
-    <!-- SURPRISE -->
+    <!-- SURPRISE — ФОТО -->
 
-    <div class="greeting surprise">
+    <div
+      class="greeting surprise"
+      data-photo="./surprise.jpg"
+      data-caption="Смех да пребудет с тобой, и пиры, и отрада"
+    >
       <img src="./surprise.png" alt="Surprise">
     </div>
 
@@ -1460,6 +1579,8 @@
     ========================= -->
 
 
+    <!-- EOS -->
+
     <div
       class="object eos"
       data-video="https://www.youtube.com/embed/SpErms8oQcU"
@@ -1468,6 +1589,8 @@
       <img src="./eos.png" alt="Eos">
     </div>
 
+
+    <!-- THEMIS -->
 
     <div
       class="object themis"
@@ -1478,6 +1601,8 @@
     </div>
 
 
+    <!-- ARTEMIS -->
+
     <div
       class="object artemis"
       data-video="https://www.youtube.com/embed/HGYg0D8Lb_k"
@@ -1486,6 +1611,8 @@
       <img src="./artemis.png" alt="Artemis">
     </div>
 
+
+    <!-- DEMETER -->
 
     <div
       class="object demeter"
@@ -1496,10 +1623,14 @@
     </div>
 
 
+    <!-- PERSEPHONE -->
+
     <div class="object persephone">
       <img src="./persephone.png" alt="Persephone">
     </div>
 
+
+    <!-- HESTIA -->
 
     <div
       class="object hestia"
@@ -1510,10 +1641,14 @@
     </div>
 
 
+    <!-- SELENE -->
+
     <div class="object selene">
       <img src="./selene.png" alt="Selene">
     </div>
 
+
+    <!-- HECATE -->
 
     <div
       class="object hecate"
@@ -1524,6 +1659,8 @@
     </div>
 
 
+    <!-- NIKE -->
+
     <div
       class="object nike"
       data-video="https://www.youtube.com/embed/xKC3ytckkYk"
@@ -1532,6 +1669,8 @@
       <img src="./nike.png" alt="Nike">
     </div>
 
+
+    <!-- IRIS -->
 
     <div
       class="object iris"
@@ -1542,6 +1681,8 @@
     </div>
 
 
+    <!-- CIRCE -->
+
     <div
       class="object circe"
       data-video="https://www.youtube.com/embed/CrQv0RrOO_s"
@@ -1551,10 +1692,14 @@
     </div>
 
 
+    <!-- CASSANDRA -->
+
     <div class="object cassandra">
       <img src="./cassandra.png" alt="Cassandra">
     </div>
 
+
+    <!-- APOLLO -->
 
     <div
       class="object apollo"
@@ -1564,6 +1709,8 @@
       <img src="./apollo.png" alt="Apollo">
     </div>
 
+
+    <!-- HERMES -->
 
     <div class="object hermes">
       <img src="./hermes.png" alt="Hermes">
@@ -1596,11 +1743,11 @@
 
 
       <!-- =========================
-           ADVENTURE — ТЕКСТ ПО КРУГУ
+           ТЕКСТ ПО КРУГУ
       ========================= -->
 
       <svg
-        id="adventureRing"
+        id="ringTextSvg"
         viewBox="0 0 1000 1000"
         aria-hidden="true"
       >
@@ -1608,7 +1755,7 @@
         <defs>
 
           <path
-            id="adventureTextPath"
+            id="ringTextPathShape"
             d="
               M 100,500
               A 400,400 0 1,1 900,500
@@ -1622,11 +1769,10 @@
         <text>
 
           <textPath
-            href="#adventureTextPath"
+            id="ringTextPath"
+            href="#ringTextPathShape"
             startOffset="2%"
-          >
-            🏺 СТРАНСТВУЙ ОТВАЖНО • НО МИМО ЦИКЛОПОВ ПО ВОЗМОЖНОСТИ •
-          </textPath>
+          ></textPath>
 
         </text>
 
@@ -1678,6 +1824,10 @@
   </div>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
 
 
@@ -1723,6 +1873,10 @@
       document.querySelector(".video-box");
 
 
+    const ringTextPath =
+      document.getElementById("ringTextPath");
+
+
 
     /* =========================
        СБРОС
@@ -1731,33 +1885,62 @@
     function clearContent() {
 
 
-      video.src = "";
-      video.style.display = "none";
+      /* YouTube */
 
+      video.src = "";
+
+      video.style.display =
+        "none";
+
+
+      /* Локальное видео */
 
       localVideo.pause();
 
-      localVideo.removeAttribute("src");
+      localVideo.removeAttribute(
+        "src"
+      );
 
       localVideo.load();
 
-      localVideo.style.display = "none";
+      localVideo.style.display =
+        "none";
 
 
-      message.textContent = "";
-      message.style.display = "none";
+      /* Текст */
+
+      message.textContent =
+        "";
+
+      message.style.display =
+        "none";
 
 
-      photoCard.style.display = "none";
-      photoImage.src = "";
-      photoCaption.textContent = "";
+      /* Фото */
 
+      photoCard.style.display =
+        "none";
+
+      photoImage.src =
+        "";
+
+      photoCaption.textContent =
+        "";
+
+
+      /* Круглая надпись */
+
+      ringTextPath.textContent =
+        "";
+
+
+      /* Стили окна */
 
       videoBox.classList.remove(
         "circle",
         "vertical",
         "horizontal-frame",
-        "adventure-frame",
+        "ring-circle",
         "photo-mode"
       );
 
@@ -1778,12 +1961,14 @@
         "circle",
         "vertical",
         "horizontal-frame",
-        "adventure-frame",
+        "ring-circle",
         "photo-mode"
       );
 
 
-      if (shape === "circle") {
+      if (
+        shape === "circle"
+      ) {
 
         videoBox.classList.add(
           "circle"
@@ -1792,7 +1977,9 @@
       }
 
 
-      if (format === "vertical") {
+      if (
+        format === "vertical"
+      ) {
 
         videoBox.classList.add(
           "vertical"
@@ -1815,11 +2002,11 @@
 
       if (
         format ===
-        "adventure-frame"
+        "ring-circle"
       ) {
 
         videoBox.classList.add(
-          "adventure-frame"
+          "ring-circle"
         );
 
       }
@@ -1832,197 +2019,213 @@
        КЛИКИ
     ========================= */
 
-    objects.forEach(object => {
+    objects.forEach(
+      object => {
 
 
-      object.addEventListener(
-        "click",
-        function () {
+        object.addEventListener(
+          "click",
+          function () {
 
 
-          const videoURL =
-            object.dataset.video;
+            const videoURL =
+              object.dataset.video;
 
 
-          const videoFile =
-            object.dataset.file;
+            const videoFile =
+              object.dataset.file;
 
 
-          const messageText =
-            object.dataset.message;
+            const messageText =
+              object.dataset.message;
 
 
-          const shape =
-            object.dataset.shape;
+            const shape =
+              object.dataset.shape;
 
 
-          const format =
-            object.dataset.format;
+            const format =
+              object.dataset.format;
 
 
-          const photo =
-            object.dataset.photo;
+            const ringText =
+              object.dataset.ringText;
 
 
-          const caption =
-            object.dataset.caption;
+            const photo =
+              object.dataset.photo;
 
 
-
-          /* =========================
-             ФОТО
-          ========================= */
-
-          if (photo) {
-
-
-            clearContent();
-
-
-            videoBox.classList.add(
-              "photo-mode"
-            );
-
-
-            photoImage.src =
-              photo;
-
-
-            photoCaption.textContent =
-              caption || "";
-
-
-            photoCard.style.display =
-              "block";
-
-
-            modal.classList.add(
-              "active"
-            );
-
-
-            return;
-
-          }
+            const caption =
+              object.dataset.caption;
 
 
 
-          /* =========================
-             ЛОКАЛЬНОЕ MP4
-          ========================= */
+            /* =========================
+               ФОТО
+            ========================= */
 
-          if (videoFile) {
-
-
-            clearContent();
+            if (photo) {
 
 
-            setVideoBoxStyle(
-              shape,
-              format
-            );
+              clearContent();
 
 
-            localVideo.src =
-              videoFile;
-
-
-            localVideo.style.display =
-              "block";
-
-
-            modal.classList.add(
-              "active"
-            );
-
-
-            localVideo
-              .play()
-              .catch(
-                () => {}
+              videoBox.classList.add(
+                "photo-mode"
               );
 
 
-            return;
+              photoImage.src =
+                photo;
+
+
+              photoCaption.textContent =
+                caption || "";
+
+
+              photoCard.style.display =
+                "block";
+
+
+              modal.classList.add(
+                "active"
+              );
+
+
+              return;
+
+            }
+
+
+
+            /* =========================
+               ЛОКАЛЬНОЕ MP4
+            ========================= */
+
+            if (videoFile) {
+
+
+              clearContent();
+
+
+              setVideoBoxStyle(
+                shape,
+                format
+              );
+
+
+              /* Текст вокруг круга */
+
+              if (ringText) {
+
+                ringTextPath.textContent =
+                  ringText.repeat(4);
+
+              }
+
+
+              localVideo.src =
+                videoFile;
+
+
+              localVideo.style.display =
+                "block";
+
+
+              modal.classList.add(
+                "active"
+              );
+
+
+              localVideo
+                .play()
+                .catch(
+                  () => {}
+                );
+
+
+              return;
+
+            }
+
+
+
+            /* =========================
+               YOUTUBE
+            ========================= */
+
+            if (videoURL) {
+
+
+              clearContent();
+
+
+              setVideoBoxStyle(
+                shape,
+                format
+              );
+
+
+              video.style.display =
+                "block";
+
+
+              const separator =
+                videoURL.includes("?")
+                  ? "&"
+                  : "?";
+
+
+              video.src =
+                videoURL +
+                separator +
+                "autoplay=1";
+
+
+              modal.classList.add(
+                "active"
+              );
+
+
+              return;
+
+            }
+
+
+
+            /* =========================
+               ТЕКСТ
+            ========================= */
+
+            if (messageText) {
+
+
+              clearContent();
+
+
+              message.textContent =
+                messageText;
+
+
+              message.style.display =
+                "flex";
+
+
+              modal.classList.add(
+                "active"
+              );
+
+
+            }
+
 
           }
+        );
 
 
-
-          /* =========================
-             YOUTUBE
-          ========================= */
-
-          if (videoURL) {
-
-
-            clearContent();
-
-
-            setVideoBoxStyle(
-              shape,
-              format
-            );
-
-
-            video.style.display =
-              "block";
-
-
-            const separator =
-              videoURL.includes("?")
-              ? "&"
-              : "?";
-
-
-            video.src =
-              videoURL +
-              separator +
-              "autoplay=1";
-
-
-            modal.classList.add(
-              "active"
-            );
-
-
-            return;
-
-          }
-
-
-
-          /* =========================
-             ТЕКСТ
-          ========================= */
-
-          if (messageText) {
-
-
-            clearContent();
-
-
-            message.textContent =
-              messageText;
-
-
-            message.style.display =
-              "flex";
-
-
-            modal.classList.add(
-              "active"
-            );
-
-
-          }
-
-
-        }
-      );
-
-
-    });
+      }
+    );
 
 
 
@@ -2056,7 +2259,9 @@
       function (event) {
 
 
-        if (event.target === modal) {
+        if (
+          event.target === modal
+        ) {
 
           closeModal();
 
@@ -2073,7 +2278,9 @@
       function (event) {
 
 
-        if (event.key === "Escape") {
+        if (
+          event.key === "Escape"
+        ) {
 
           closeModal();
 
