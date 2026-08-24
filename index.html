@@ -384,12 +384,12 @@
     }
 
 
-    /* BONUS теперь на старом месте SURPRISE */
+    /* BONUS — НИЖЕ HECATE */
 
     .bonus {
       width: 56px;
-      left: 35%;
-      top: 735px;
+      left: 31%;
+      top: 965px;
       animation-duration: 4s;
     }
 
@@ -402,7 +402,7 @@
     }
 
 
-    /* SECRET рядом с APOLLO */
+    /* SECRET — РЯДОМ С APOLLO */
 
     .secret {
       width: 54px;
@@ -411,8 +411,6 @@
       animation-duration: 4.5s;
     }
 
-
-    /* SURPRISE на старом месте BONUS */
 
     .surprise {
       width: 55px;
@@ -588,8 +586,8 @@
 
 
     /* ==================================================
-       КРУГЛОЕ ВИДЕО + ТЕКСТ ПО КРУГУ
-       LUCK / ADVENTURE
+       КРУГЛОЕ ВИДЕО + ОДНА НАДПИСЬ ПО ДУГЕ
+       LUCK / LOVE / ADVENTURE
     ================================================== */
 
     .video-box.ring-circle {
@@ -627,7 +625,7 @@
     }
 
 
-    /* ТЕКСТ ПО КРУГУ */
+    /* НАДПИСЬ ПО КРУГУ */
 
     #ringTextSvg {
       display: none;
@@ -640,8 +638,7 @@
       width: calc(100% + 150px);
       height: calc(100% + 150px);
 
-      transform:
-        translate(-50%, -50%);
+      transform: translate(-50%, -50%);
 
       overflow: visible;
 
@@ -728,7 +725,7 @@
     }
 
 
-    /* ПОДПИСЬ СНИЗУ ПОВЕРХ ФОТО */
+    /* ПОДПИСЬ СНИЗУ КАК У JOY */
 
     #photoCaption {
       position: absolute;
@@ -789,7 +786,6 @@
       padding: 50px;
 
       align-items: center;
-
       justify-content: center;
 
       border:
@@ -962,12 +958,12 @@
       }
 
 
-      /* BONUS = бывшее место SURPRISE */
+      /* BONUS ПОД HECATE */
 
       .bonus {
         width: 48px;
-        left: 39%;
-        top: 710px;
+        left: 31%;
+        top: 995px;
       }
 
 
@@ -978,16 +974,12 @@
       }
 
 
-      /* SECRET рядом с APOLLO */
-
       .secret {
         width: 47px;
         left: 24%;
         top: 1230px;
       }
 
-
-      /* SURPRISE = бывшее место BONUS */
 
       .surprise {
         width: 48px;
@@ -1050,7 +1042,7 @@
       }
 
 
-      /* КРУГ С ТЕКСТОМ MOBILE */
+      /* КРУГ С ТЕКСТОМ */
 
       .video-box.ring-circle {
         width: 66vw;
@@ -1220,12 +1212,12 @@
       }
 
 
-      /* BONUS = бывшее место SURPRISE */
+      /* BONUS ПОД HECATE */
 
       .bonus {
         width: 44px;
-        left: 80%;
-        top: 850px;
+        left: 58%;
+        top: 1065px;
       }
 
 
@@ -1236,16 +1228,12 @@
       }
 
 
-      /* SECRET рядом с APOLLO */
-
       .secret {
         width: 41px;
         left: 76%;
         top: 1365px;
       }
 
-
-      /* SURPRISE = бывшее место BONUS */
 
       .surprise {
         width: 43px;
@@ -1394,12 +1382,12 @@
       }
 
 
-      /* BONUS = бывшее место SURPRISE */
+      /* BONUS ПОД HECATE */
 
       .bonus {
         width: 58px;
-        left: 37%;
-        top: 690px;
+        left: 30%;
+        top: 920px;
       }
 
 
@@ -1410,16 +1398,12 @@
       }
 
 
-      /* SECRET рядом с APOLLO */
-
       .secret {
         width: 55px;
         left: 22%;
         top: 1100px;
       }
 
-
-      /* SURPRISE = бывшее место BONUS */
 
       .surprise {
         width: 56px;
@@ -1467,13 +1451,13 @@
     ========================= -->
 
 
-    <!-- LUCK — КРУГЛОЕ ВИДЕО -->
+    <!-- LUCK -->
 
     <div
       class="greeting luck"
       data-file="./luck.mp4"
       data-format="ring-circle"
-      data-ring-text="🍀 О, да сопутствует случай тебе благосклонный • "
+      data-ring-text="🍀 О, да сопутствует случай тебе благосклонный"
     >
       <img src="./luck.png" alt="Luck">
     </div>
@@ -1483,13 +1467,15 @@
 
     <div
       class="greeting love"
-      data-message="💘 Да умножит Киприда любовь и веселье"
+      data-file="./love.mp4"
+      data-format="ring-circle"
+      data-ring-text="💘 Да умножит Киприда любовь и веселье"
     >
       <img src="./love.png" alt="Love">
     </div>
 
 
-    <!-- REST — ФОТО -->
+    <!-- REST -->
 
     <div
       class="greeting rest"
@@ -1500,7 +1486,7 @@
     </div>
 
 
-    <!-- JOY — ФОТО -->
+    <!-- JOY -->
 
     <div
       class="greeting joy"
@@ -1511,13 +1497,13 @@
     </div>
 
 
-    <!-- ADVENTURE — КРУГЛОЕ ВИДЕО -->
+    <!-- ADVENTURE -->
 
     <div
       class="greeting adventure"
       data-file="./adventure.mp4"
       data-format="ring-circle"
-      data-ring-text="🏺 Странствуй отважно • Но мимо циклопов по возможности • "
+      data-ring-text="🏺 Странствуй отважно, но мимо циклопов по возможности"
     >
       <img src="./adventure.png" alt="Adventure">
     </div>
@@ -1545,18 +1531,18 @@
     </div>
 
 
-    <!-- SECRET — ФОТО -->
+    <!-- SECRET -->
 
     <div
       class="greeting secret"
       data-photo="./secret.jpg"
-      data-caption="Да ладится всё, к чему руку приложишь"
+      data-caption="Да ладится всё, к чему руку приложишь."
     >
       <img src="./secret.png" alt="Secret">
     </div>
 
 
-    <!-- SURPRISE — ФОТО -->
+    <!-- SURPRISE -->
 
     <div
       class="greeting surprise"
@@ -1569,7 +1555,11 @@
 
     <!-- TREASURE -->
 
-    <div class="greeting treasure">
+    <div
+      class="greeting treasure"
+      data-photo="./treasure.jpg"
+      data-caption="Да будет тебе всегда ведомо, как ты нам дорога"
+    >
       <img src="./treasure.png" alt="Treasure">
     </div>
 
@@ -1743,7 +1733,7 @@
 
 
       <!-- =========================
-           ТЕКСТ ПО КРУГУ
+           ТЕКСТ ПО ДУГЕ
       ========================= -->
 
       <svg
@@ -1771,7 +1761,7 @@
           <textPath
             id="ringTextPath"
             href="#ringTextPathShape"
-            startOffset="2%"
+            startOffset="8%"
           ></textPath>
 
         </text>
@@ -1888,9 +1878,7 @@
       /* YouTube */
 
       video.src = "";
-
-      video.style.display =
-        "none";
+      video.style.display = "none";
 
 
       /* Локальное видео */
@@ -1909,11 +1897,8 @@
 
       /* Текст */
 
-      message.textContent =
-        "";
-
-      message.style.display =
-        "none";
+      message.textContent = "";
+      message.style.display = "none";
 
 
       /* Фото */
@@ -1921,14 +1906,13 @@
       photoCard.style.display =
         "none";
 
-      photoImage.src =
-        "";
+      photoImage.src = "";
 
       photoCaption.textContent =
         "";
 
 
-      /* Круглая надпись */
+      /* Текст по кругу */
 
       ringTextPath.textContent =
         "";
@@ -2115,12 +2099,17 @@
               );
 
 
-              /* Текст вокруг круга */
+              /*
+                ВАЖНО:
+                текст теперь пишется
+                ОДИН РАЗ,
+                без repeat()
+              */
 
               if (ringText) {
 
                 ringTextPath.textContent =
-                  ringText.repeat(4);
+                  ringText;
 
               }
 
