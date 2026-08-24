@@ -426,16 +426,11 @@
     .modal {
       position: fixed;
       inset: 0;
-
       display: none;
-
       align-items: center;
       justify-content: center;
-
       padding: 30px;
-
       background: rgba(0, 0, 0, 0.84);
-
       z-index: 1000;
     }
 
@@ -446,12 +441,9 @@
 
     .video-box {
       position: relative;
-
       width: min(900px, 92vw);
       aspect-ratio: 16 / 9;
-
       background: #1f1b18;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -559,25 +551,27 @@
     .video-box.horizontal-frame video {
       width: 100%;
       height: 100%;
+
       border: 0;
       border-radius: 12px;
     }
 
 
     /* ==================================================
-       ADVENTURE — ВИДЕО С ТЕКСТОМ ВОКРУГ
+       ADVENTURE
+       КРУГЛОЕ ВИДЕО + НАДПИСЬ ПО КРУГУ
     ================================================== */
 
     .video-box.adventure-frame {
-      width: min(760px, 72vw);
-      aspect-ratio: 16 / 9;
+      width: min(520px, 70vw);
+      aspect-ratio: 1 / 1;
 
-      padding: 14px;
+      padding: 0;
 
-      background: #1f1b18;
+      background: transparent;
 
-      border: 8px solid #b85f2d;
-      border-radius: 24px;
+      border: 0;
+      border-radius: 50%;
 
       box-shadow:
         0 20px 60px
@@ -588,13 +582,21 @@
     .video-box.adventure-frame video {
       width: 100%;
       height: 100%;
-      border: 0;
-      border-radius: 12px;
+
+      border-radius: 50%;
+
+      border: 8px solid #b85f2d;
+
       object-fit: cover;
+
+      background: #1f1b18;
+
+      position: relative;
+      z-index: 10;
     }
 
 
-    /* SVG С НАДПИСЬЮ */
+    /* НАДПИСЬ ВОКРУГ ADVENTURE */
 
     #adventureRing {
       display: none;
@@ -604,8 +606,8 @@
       left: 50%;
       top: 50%;
 
-      width: calc(100% + 210px);
-      height: calc(100% + 190px);
+      width: calc(100% + 150px);
+      height: calc(100% + 150px);
 
       transform: translate(-50%, -50%);
 
@@ -619,7 +621,7 @@
 
     #adventureRing text {
       font-family: "Satyr SP", serif;
-      font-size: 31px;
+      font-size: 30px;
       letter-spacing: 2px;
 
       fill: #F1CEB2;
@@ -631,19 +633,10 @@
     }
 
 
-    /*
-      Видео должно быть над SVG там,
-      где SVG визуально проходит рядом с рамкой.
-    */
-
-    .video-box.adventure-frame #localVideo {
-      position: relative;
-      z-index: 10;
-    }
-
-
     .video-box.adventure-frame .close {
-      z-index: 20;
+      top: -60px;
+      right: 0;
+      z-index: 30;
     }
 
 
@@ -662,6 +655,7 @@
 
     #photoCard {
       display: none;
+
       position: relative;
 
       width: min(700px, 88vw);
@@ -682,9 +676,12 @@
 
     #photoImage {
       display: block;
+
       width: 100%;
       max-height: 82vh;
+
       object-fit: contain;
+
       background: #1f1b18;
     }
 
@@ -879,8 +876,6 @@
       }
 
 
-      /* ПАСХАЛКИ TABLET */
-
       .luck {
         width: 48px;
         left: 20%;
@@ -992,24 +987,26 @@
       /* ADVENTURE MOBILE */
 
       .video-box.adventure-frame {
-        width: 72vw;
-        padding: 10px;
-        border-width: 6px;
-        border-radius: 18px;
+        width: 66vw;
       }
 
       .video-box.adventure-frame video {
-        border-radius: 8px;
+        border-width: 6px;
       }
 
       #adventureRing {
-        width: calc(100% + 105px);
-        height: calc(100% + 125px);
+        width: calc(100% + 100px);
+        height: calc(100% + 100px);
       }
 
       #adventureRing text {
-        font-size: 26px;
+        font-size: 25px;
         letter-spacing: 1px;
+      }
+
+      .video-box.adventure-frame .close {
+        top: -55px;
+        right: -5px;
       }
 
 
@@ -1032,10 +1029,6 @@
           12px;
       }
 
-
-      /* =========================
-         ОСНОВНЫЕ КАРТИНКИ MOBILE
-      ========================= */
 
       .eos {
         width: 220px;
@@ -1121,10 +1114,6 @@
         top: 1460px;
       }
 
-
-      /* =========================
-         ПАСХАЛКИ MOBILE
-      ========================= */
 
       .luck {
         width: 42px;
@@ -1285,10 +1274,6 @@
       }
 
 
-      /* =========================
-         ПАСХАЛКИ FULL HD
-      ========================= */
-
       .luck {
         width: 54px;
         left: 34%;
@@ -1360,15 +1345,11 @@
   <main class="scene">
 
 
-    <!-- =========================
-         ЗАГОЛОВОК
-    ========================= -->
+    <!-- ЗАГОЛОВОК -->
 
     <div class="title">
 
-      <h1>
-        С днём рождения!
-      </h1>
+      <h1>С днём рождения!</h1>
 
       <p>
         Добрые речи подруг и друзей здесь Светлане Светлоликой с любовью собраны
@@ -1382,8 +1363,6 @@
     ========================= -->
 
 
-    <!-- LUCK -->
-
     <div
       class="greeting luck"
       data-message="🍀 О, да сопутствует случай тебе благосклонный"
@@ -1391,8 +1370,6 @@
       <img src="./luck.png" alt="Luck">
     </div>
 
-
-    <!-- LOVE -->
 
     <div
       class="greeting love"
@@ -1483,8 +1460,6 @@
     ========================= -->
 
 
-    <!-- EOS -->
-
     <div
       class="object eos"
       data-video="https://www.youtube.com/embed/SpErms8oQcU"
@@ -1493,8 +1468,6 @@
       <img src="./eos.png" alt="Eos">
     </div>
 
-
-    <!-- THEMIS -->
 
     <div
       class="object themis"
@@ -1505,8 +1478,6 @@
     </div>
 
 
-    <!-- ARTEMIS -->
-
     <div
       class="object artemis"
       data-video="https://www.youtube.com/embed/HGYg0D8Lb_k"
@@ -1515,8 +1486,6 @@
       <img src="./artemis.png" alt="Artemis">
     </div>
 
-
-    <!-- DEMETER -->
 
     <div
       class="object demeter"
@@ -1527,14 +1496,10 @@
     </div>
 
 
-    <!-- PERSEPHONE -->
-
     <div class="object persephone">
       <img src="./persephone.png" alt="Persephone">
     </div>
 
-
-    <!-- HESTIA -->
 
     <div
       class="object hestia"
@@ -1545,14 +1510,10 @@
     </div>
 
 
-    <!-- SELENE -->
-
     <div class="object selene">
       <img src="./selene.png" alt="Selene">
     </div>
 
-
-    <!-- HECATE -->
 
     <div
       class="object hecate"
@@ -1563,8 +1524,6 @@
     </div>
 
 
-    <!-- NIKE -->
-
     <div
       class="object nike"
       data-video="https://www.youtube.com/embed/xKC3ytckkYk"
@@ -1573,8 +1532,6 @@
       <img src="./nike.png" alt="Nike">
     </div>
 
-
-    <!-- IRIS -->
 
     <div
       class="object iris"
@@ -1585,8 +1542,6 @@
     </div>
 
 
-    <!-- CIRCE -->
-
     <div
       class="object circe"
       data-video="https://www.youtube.com/embed/CrQv0RrOO_s"
@@ -1596,14 +1551,10 @@
     </div>
 
 
-    <!-- CASSANDRA -->
-
     <div class="object cassandra">
       <img src="./cassandra.png" alt="Cassandra">
     </div>
 
-
-    <!-- APOLLO -->
 
     <div
       class="object apollo"
@@ -1613,8 +1564,6 @@
       <img src="./apollo.png" alt="Apollo">
     </div>
 
-
-    <!-- HERMES -->
 
     <div class="object hermes">
       <img src="./hermes.png" alt="Hermes">
@@ -1647,12 +1596,12 @@
 
 
       <!-- =========================
-           ТЕКСТ ВОКРУГ ADVENTURE
+           ADVENTURE — ТЕКСТ ПО КРУГУ
       ========================= -->
 
       <svg
         id="adventureRing"
-        viewBox="0 0 1000 700"
+        viewBox="0 0 1000 1000"
         aria-hidden="true"
       >
 
@@ -1661,9 +1610,9 @@
           <path
             id="adventureTextPath"
             d="
-              M 100,350
-              A 400,270 0 1,1 900,350
-              A 400,270 0 1,1 100,350
+              M 100,500
+              A 400,400 0 1,1 900,500
+              A 400,400 0 1,1 100,500
             "
           />
 
@@ -1729,10 +1678,6 @@
   </div>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
   <script>
 
 
@@ -1780,19 +1725,15 @@
 
 
     /* =========================
-       СБРОС СОДЕРЖИМОГО
+       СБРОС
     ========================= */
 
     function clearContent() {
 
 
-      /* YouTube */
-
       video.src = "";
       video.style.display = "none";
 
-
-      /* Локальное видео */
 
       localVideo.pause();
 
@@ -1803,23 +1744,14 @@
       localVideo.style.display = "none";
 
 
-      /* Текст */
-
       message.textContent = "";
-
       message.style.display = "none";
 
 
-      /* Фото */
-
       photoCard.style.display = "none";
-
       photoImage.src = "";
-
       photoCaption.textContent = "";
 
-
-      /* Стили окна */
 
       videoBox.classList.remove(
         "circle",
@@ -1834,7 +1766,7 @@
 
 
     /* =========================
-       ФОРМА ВИДЕО
+       ФОРМАТ ВИДЕО
     ========================= */
 
     function setVideoBoxStyle(
