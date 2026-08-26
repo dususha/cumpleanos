@@ -8,10 +8,6 @@
   <title>Светлоликая Светлана</title>
 
   <style>
-    /* ==================================================
-       FONTS
-    ================================================== */
-
     @font-face {
       font-family: "Satyr SP";
       src: url("./SatyrSP.otf") format("opentype");
@@ -21,11 +17,6 @@
       font-family: "UbuntuLI";
       src: url("./Ubuntu-LI.ttf") format("truetype");
     }
-
-
-    /* ==================================================
-       BASE
-    ================================================== */
 
     * {
       box-sizing: border-box;
@@ -41,48 +32,31 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
-
       background: #F1CEB2;
-
       font-family: Arial, sans-serif;
-
       cursor: url("./cursor1.png") 16 16, auto;
     }
 
     .scene {
       position: relative;
-
       width: 100%;
       min-height: 1500px;
-
       padding-top: 180px;
-
       overflow: hidden;
     }
 
-
-    /* ==================================================
-       TITLE
-    ================================================== */
-
     .title {
       position: absolute;
-
       top: 35px;
       left: 50%;
-
       width: 92%;
-
       transform: translateX(-50%);
-
       text-align: center;
-
       z-index: 50;
     }
 
     .title h1 {
       margin: 0;
-
       font-family: "Satyr SP", serif;
       font-size: 72px;
       font-weight: normal;
@@ -91,36 +65,22 @@
 
     .title p {
       margin: 10px 0 0;
-
       font-family: "UbuntuLI", sans-serif;
       font-size: 14px;
       line-height: 1.35;
     }
 
-
-    /* ==================================================
-       CHARACTERS
-    ================================================== */
-
     .object {
       position: absolute;
-
       z-index: 10;
-
-      animation:
-        float
-        var(--dur, 4s)
-        ease-in-out
-        infinite;
+      animation: float var(--dur, 4s) ease-in-out infinite;
     }
 
     .object img,
     .greeting img {
       display: block;
-
       width: 100%;
       height: auto;
-
       transition:
         transform 0.25s ease,
         filter 0.25s ease;
@@ -165,16 +125,9 @@
       }
     }
 
-
-    /* ==================================================
-       GIFTS
-    ================================================== */
-
     .greeting {
       position: absolute;
-
       z-index: 30;
-
       animation:
         greeting-float
         4s
@@ -187,11 +140,7 @@
     }
 
     .greeting:hover img {
-      animation:
-        wiggle
-        0.6s
-        ease-in-out
-        1;
+      animation: wiggle 0.6s ease-in-out 1;
 
       filter:
         drop-shadow(
@@ -236,16 +185,14 @@
       }
     }
 
-
-    /* ==================================================
+    /* =========================
        DESKTOP POSITIONS
-    ================================================== */
+    ========================= */
 
     .eos {
       width: 360px;
       left: 2%;
       top: 215px;
-
       --rot: -7deg;
       --dur: 3.7s;
     }
@@ -254,7 +201,6 @@
       width: 245px;
       left: 22%;
       top: 270px;
-
       --rot: -4deg;
       --dur: 3.9s;
     }
@@ -263,7 +209,6 @@
       width: 350px;
       left: 44%;
       top: 205px;
-
       --rot: -6deg;
       --dur: 4.6s;
     }
@@ -272,7 +217,6 @@
       width: 350px;
       left: 68%;
       top: 255px;
-
       --rot: -7deg;
       --dur: 4.1s;
     }
@@ -281,7 +225,6 @@
       width: 350px;
       left: 30%;
       top: 500px;
-
       --rot: 6deg;
       --dur: 4.3s;
     }
@@ -290,7 +233,6 @@
       width: 297px;
       left: 77%;
       top: 455px;
-
       --rot: 8deg;
       --dur: 3.9s;
     }
@@ -299,7 +241,6 @@
       width: 292px;
       left: 4%;
       top: 655px;
-
       --rot: -8deg;
       --dur: 4.5s;
     }
@@ -308,7 +249,6 @@
       width: 270px;
       left: 28%;
       top: 690px;
-
       --rot: -5deg;
       --dur: 4.7s;
     }
@@ -317,7 +257,6 @@
       width: 285px;
       left: 51%;
       top: 640px;
-
       --rot: -4deg;
       --dur: 4.2s;
     }
@@ -326,7 +265,6 @@
       width: 314px;
       left: 70%;
       top: 690px;
-
       --rot: 4deg;
       --dur: 3.5s;
     }
@@ -335,7 +273,6 @@
       width: 286px;
       left: 1%;
       top: 970px;
-
       --rot: 6deg;
       --dur: 3.8s;
     }
@@ -344,7 +281,6 @@
       width: 286px;
       left: 53%;
       top: 950px;
-
       --rot: 7deg;
       --dur: 3.8s;
     }
@@ -353,7 +289,6 @@
       width: 250px;
       left: 28%;
       top: 1080px;
-
       --rot: 5deg;
       --dur: 3.6s;
     }
@@ -362,15 +297,9 @@
       width: 250px;
       left: 77%;
       top: 1110px;
-
       --rot: 7deg;
       --dur: 3.7s;
     }
-
-
-    /* ==================================================
-       GIFTS — DESKTOP
-    ================================================== */
 
     .luck {
       width: 54px;
@@ -442,21 +371,16 @@
       animation-duration: 4.3s;
     }
 
-
-    /* ==================================================
+    /* =========================
        EOS MODE
-    ================================================== */
+    ========================= */
 
     .eos-toggle {
       display: flex;
       justify-content: center;
-
       width: 100%;
-
       padding: 28px 20px 52px;
-
       background: #F1CEB2;
-
       font-family: "Satyr SP", serif;
       font-size: 24px;
       line-height: 1.2;
@@ -465,18 +389,14 @@
     .eos-toggle label {
       display: flex;
       align-items: center;
-
       gap: 12px;
-
       cursor: pointer;
     }
 
     .eos-toggle input {
       width: 20px;
       height: 20px;
-
       accent-color: #b85f2d;
-
       cursor: pointer;
     }
 
@@ -518,23 +438,18 @@
       }
     }
 
-
-    /* ==================================================
+    /* =========================
        MODAL
-    ================================================== */
+    ========================= */
 
     .modal {
       position: fixed;
       inset: 0;
-
       display: none;
       align-items: center;
       justify-content: center;
-
-      padding: 30px;
-
+      padding: 20px;
       background: rgba(0, 0, 0, 0.84);
-
       z-index: 1000;
     }
 
@@ -544,42 +459,32 @@
 
     .video-box {
       position: relative;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       width: min(900px, 92vw);
-
       aspect-ratio: 16 / 9;
-
       background: #1f1b18;
     }
 
     .video-box iframe,
     .video-box video {
       display: none;
-
       width: 100%;
       height: 100%;
-
       border: 0;
     }
 
     .video-box video {
       object-fit: contain;
-
       background: #1f1b18;
     }
 
-
-    /* ---------- CIRCLE ---------- */
+    /* CIRCLE */
 
     .video-box.circle {
       width: min(520px, 82vw);
-
       aspect-ratio: 1;
-
       background: transparent;
     }
 
@@ -587,7 +492,6 @@
     .video-box.circle video {
       border: 8px solid #b85f2d;
       border-radius: 50%;
-
       box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.35);
     }
@@ -596,47 +500,60 @@
       object-fit: cover;
     }
 
-
-    /* ---------- VERTICAL ---------- */
+    /* VERTICAL */
 
     .video-box.vertical {
-      width: min(420px, 82vw);
-
+      width: min(420px, 82vw, 45dvh);
       aspect-ratio: 9 / 16;
-
       padding: 14px;
-
       background: #1f1b18;
-
       border: 8px solid #b85f2d;
       border-radius: 24px;
-
       box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.35);
     }
 
     .video-box.vertical iframe,
     .video-box.vertical video {
+      width: 100%;
+      height: 100%;
       border-radius: 12px;
-
       object-fit: cover;
     }
 
+    .video-box.vertical .close {
+      top: 8px;
+      right: 10px;
 
-    /* ---------- HORIZONTAL ---------- */
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      border-radius: 50%;
+
+      background: rgba(31, 27, 24, 0.75);
+      color: #F1CEB2;
+
+      font-size: 34px;
+      line-height: 1;
+
+      z-index: 50;
+    }
+
+    /* HORIZONTAL */
 
     .video-box.horizontal-frame {
       width: min(900px, 92vw);
-
       aspect-ratio: 16 / 9;
-
       padding: 14px;
-
       background: #1f1b18;
-
       border: 8px solid #b85f2d;
       border-radius: 24px;
-
       box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.35);
     }
@@ -646,59 +563,42 @@
       border-radius: 12px;
     }
 
-
-    /* ---------- ROUND + TEXT ---------- */
+    /* ROUND + TEXT */
 
     .video-box.ring-circle {
       width: min(520px, 70vw);
-
       aspect-ratio: 1;
-
       background: transparent;
-
       border-radius: 50%;
-
       box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.35);
     }
 
     .video-box.ring-circle video {
       position: relative;
-
       z-index: 10;
-
       border: 8px solid #b85f2d;
       border-radius: 50%;
-
       object-fit: cover;
     }
 
     #ringTextSvg {
       position: absolute;
-
       display: none;
-
       left: 50%;
       top: 50%;
-
       width: calc(100% + 150px);
       height: calc(100% + 150px);
-
       transform: translate(-50%, -50%);
-
       overflow: visible;
-
       pointer-events: none;
-
       z-index: 5;
     }
 
     #ringTextSvg text {
       font-family: "Satyr SP", serif;
       font-size: 30px;
-
       letter-spacing: 2px;
-
       fill: #F1CEB2;
     }
 
@@ -706,68 +606,48 @@
       display: block;
     }
 
-
-    /* ==================================================
-       PHOTO
-    ================================================== */
+    /* PHOTO */
 
     .video-box.photo-mode {
       width: auto;
       max-width: 92vw;
       height: auto;
-
       aspect-ratio: auto;
-
       background: transparent;
     }
 
     #photoCard {
       position: relative;
-
       display: none;
-
       width: min(700px, 88vw);
       max-height: 82vh;
-
       overflow: hidden;
-
       background: #1f1b18;
-
       border: 8px solid #b85f2d;
       border-radius: 20px;
-
       box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.35);
     }
 
     #photoImage {
       display: block;
-
       width: 100%;
       max-height: 82vh;
-
       object-fit: contain;
-
       background: #1f1b18;
     }
 
     #photoCaption {
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: 0;
-
       padding: 45px 18px 16px;
-
       font-family: "Satyr SP", serif;
       font-size: 20px;
       line-height: 1.25;
-
       text-align: center;
-
       color: #F1CEB2;
-
       background:
         linear-gradient(
           to top,
@@ -777,56 +657,36 @@
         );
     }
 
-
-    /* ==================================================
-       MESSAGE
-    ================================================== */
+    /* MESSAGE */
 
     #message {
       display: none;
       align-items: center;
       justify-content: center;
-
       width: 100%;
       height: 100%;
-
       padding: 50px;
-
       background: #1f1b18;
-
       border: 6px solid #b85f2d;
-
       color: #c96b32;
-
       font-family: "Satyr SP", serif;
       font-size: 42px;
       line-height: 1.25;
-
       text-align: center;
     }
 
-
-    /* ==================================================
-       CLOSE
-    ================================================== */
+    /* CLOSE */
 
     .close {
       position: absolute;
-
       top: -50px;
       right: 0;
-
       border: 0;
-
       background: transparent;
-
       color: #c96b32;
-
       font-size: 42px;
       line-height: 1;
-
       cursor: pointer;
-
       z-index: 50;
     }
 
@@ -840,10 +700,9 @@
       right: 0;
     }
 
-
-    /* ==================================================
+    /* =========================
        TABLET
-    ================================================== */
+    ========================= */
 
     @media (min-width: 701px) and (max-width: 1050px) {
       .scene {
@@ -999,21 +858,18 @@
       }
     }
 
-
-    /* ==================================================
+    /* =========================
        MOBILE
-    ================================================== */
+    ========================= */
 
     @media (max-width: 700px) {
       .scene {
         min-height: 2020px;
-
         padding-top: 160px;
       }
 
       .title {
         top: 22px;
-
         width: 94%;
       }
 
@@ -1027,19 +883,25 @@
 
       .eos-toggle {
         padding: 22px 16px 40px;
-
         font-size: 19px;
       }
-
-
-      /* ---------- MODAL MOBILE ---------- */
 
       .video-box.circle {
         width: min(360px, 82vw);
       }
 
       .video-box.vertical {
-        width: min(330px, 82vw);
+        width: min(330px, 82vw, 43dvh);
+      }
+
+      .video-box.vertical .close {
+        top: 6px;
+        right: 6px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 30px;
       }
 
       .video-box.horizontal-frame {
@@ -1075,24 +937,16 @@
 
       #photoCaption {
         padding: 40px 12px 12px;
-
         font-size: 16px;
       }
 
       #message {
         padding: 30px;
-
         font-size: 28px;
       }
 
-
-      /* ==================================================
-         CHARACTERS MOBILE
-      ================================================== */
-
       .eos {
         width: min(220px, 62vw);
-
         left: 2%;
         right: auto;
         top: 185px;
@@ -1100,7 +954,6 @@
 
       .artemis {
         width: min(170px, 48vw);
-
         left: auto;
         right: 2%;
         top: 210px;
@@ -1108,23 +961,22 @@
 
       .demeter {
         width: min(255px, 72vw);
-
         left: 2%;
         right: auto;
         top: 355px;
+        z-index: 10;
       }
 
       .themis {
         width: min(235px, 64vw);
-
         left: auto;
         right: 2%;
         top: 385px;
+        z-index: 13;
       }
 
       .hestia {
         width: min(255px, 72vw);
-
         left: 20%;
         right: auto;
         top: 595px;
@@ -1132,7 +984,6 @@
 
       .circe {
         width: min(193px, 54vw);
-
         left: auto;
         right: 2%;
         top: 735px;
@@ -1140,7 +991,6 @@
 
       .hecate {
         width: min(204px, 57vw);
-
         left: 2%;
         right: auto;
         top: 790px;
@@ -1148,7 +998,6 @@
 
       .iris {
         width: min(185px, 52vw);
-
         left: auto;
         right: 2%;
         top: 925px;
@@ -1156,7 +1005,6 @@
 
       .apollo {
         width: min(200px, 56vw);
-
         left: 3%;
         right: auto;
         top: 1045px;
@@ -1164,21 +1012,13 @@
 
       .nike {
         width: min(215px, 60vw);
-
         left: auto;
         right: 1%;
         top: 1115px;
       }
 
-
-      /* ==================================================
-         LOWER MOBILE GROUP
-         Плотный зигзаг с небольшим наложением
-      ================================================== */
-
       .hermes {
         width: min(198px, 55vw);
-
         left: 3%;
         right: auto;
         top: 1300px;
@@ -1186,7 +1026,6 @@
 
       .persephone {
         width: min(175px, 49vw);
-
         left: auto;
         right: 3%;
         top: 1435px;
@@ -1194,7 +1033,6 @@
 
       .selene {
         width: min(198px, 55vw);
-
         left: 4%;
         right: auto;
         top: 1570px;
@@ -1202,35 +1040,27 @@
 
       .cassandra {
         width: min(175px, 49vw);
-
         left: auto;
         right: 4%;
         top: 1715px;
       }
 
-
-      /* ==================================================
-         GIFTS MOBILE
-      ================================================== */
-
       .luck {
         width: 42px;
-
         left: 45%;
         right: auto;
         top: 325px;
       }
 
-.love {
-  width: 44px;
-  left: auto;
-  right: 20%;
-  top: 1355px;
-}
+      .love {
+        width: 44px;
+        left: auto;
+        right: 20%;
+        top: 1355px;
+      }
 
       .rest {
         width: 40px;
-
         left: 8%;
         right: auto;
         top: 680px;
@@ -1238,7 +1068,6 @@
 
       .joy {
         width: 44px;
-
         left: auto;
         right: 7%;
         top: 670px;
@@ -1246,7 +1075,6 @@
 
       .star {
         width: 42px;
-
         left: auto;
         right: 13%;
         top: 920px;
@@ -1254,7 +1082,6 @@
 
       .bonus {
         width: 44px;
-
         left: 14%;
         right: auto;
         top: 975px;
@@ -1262,7 +1089,6 @@
 
       .adventure {
         width: 44px;
-
         left: 43%;
         right: auto;
         top: 1220px;
@@ -1270,7 +1096,6 @@
 
       .surprise {
         width: 43px;
-
         left: 44%;
         right: auto;
         top: 1035px;
@@ -1278,7 +1103,6 @@
 
       .secret {
         width: 41px;
-
         left: 40%;
         right: auto;
         top: 1510px;
@@ -1286,17 +1110,15 @@
 
       .treasure {
         width: 44px;
-
         left: auto;
         right: 7%;
         top: 1640px;
       }
     }
 
-
-    /* ==================================================
+    /* =========================
        FULL HD
-    ================================================== */
+    ========================= */
 
     @media (min-width: 1500px) {
       .scene {
@@ -1464,9 +1286,7 @@
     </div>
 
 
-    <!-- ==================================================
-         GIFTS
-    ================================================== -->
+    <!-- GIFTS -->
 
     <div
       class="greeting luck"
@@ -1561,9 +1381,7 @@
     </div>
 
 
-    <!-- ==================================================
-         CHARACTERS
-    ================================================== -->
+    <!-- CHARACTERS -->
 
     <div
       class="object eos"
@@ -1601,13 +1419,13 @@
     </div>
 
 
-<div
-  class="object persephone"
-  data-video="https://www.youtube.com/embed/MkJE5lJOJaw"
-  data-format="vertical"
->
-  <img src="./persephone.png" alt="Persephone">
-</div>
+    <div
+      class="object persephone"
+      data-video="https://www.youtube.com/embed/MkJE5lJOJaw"
+      data-format="vertical"
+    >
+      <img src="./persephone.png" alt="Persephone">
+    </div>
 
 
     <div
@@ -1689,9 +1507,7 @@
   </main>
 
 
-  <!-- ==================================================
-       EOS MODE
-  ================================================== -->
+  <!-- EOS MODE -->
 
   <div class="eos-toggle">
     <label>
@@ -1701,9 +1517,7 @@
   </div>
 
 
-  <!-- ==================================================
-       MODAL
-  ================================================== -->
+  <!-- MODAL -->
 
   <div class="modal" id="modal">
 
@@ -1797,7 +1611,6 @@
     const closeButton = document.getElementById("close");
     const eosMode = document.getElementById("eosMode");
 
-
     const modalClasses = [
       "circle",
       "vertical",
@@ -1805,7 +1618,6 @@
       "ring-circle",
       "photo-mode"
     ];
-
 
     function resetModal() {
       youtubeVideo.src = "";
@@ -1828,7 +1640,6 @@
       videoBox.classList.remove(...modalClasses);
     }
 
-
     function applyFormat(shape, format) {
       if (shape === "circle") {
         videoBox.classList.add("circle");
@@ -1839,17 +1650,14 @@
       }
     }
 
-
     function showModal() {
       modal.classList.add("active");
     }
-
 
     function closeModal() {
       modal.classList.remove("active");
       resetModal();
     }
-
 
     function openObject(object) {
       const {
@@ -1865,7 +1673,6 @@
 
       resetModal();
 
-
       if (photo) {
         videoBox.classList.add("photo-mode");
 
@@ -1877,7 +1684,6 @@
         showModal();
         return;
       }
-
 
       if (videoFile) {
         applyFormat(shape, format);
@@ -1893,7 +1699,6 @@
 
         return;
       }
-
 
       if (videoURL) {
         applyFormat(shape, format);
@@ -1912,7 +1717,6 @@
         return;
       }
 
-
       if (messageText) {
         message.textContent = messageText;
         message.style.display = "flex";
@@ -1921,7 +1725,6 @@
       }
     }
 
-
     clickableObjects.forEach(object => {
       object.addEventListener(
         "click",
@@ -1929,12 +1732,10 @@
       );
     });
 
-
     closeButton.addEventListener(
       "click",
       closeModal
     );
-
 
     modal.addEventListener(
       "click",
@@ -1945,7 +1746,6 @@
       }
     );
 
-
     document.addEventListener(
       "keydown",
       event => {
@@ -1954,7 +1754,6 @@
         }
       }
     );
-
 
     eosMode.addEventListener(
       "change",
