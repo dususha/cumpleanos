@@ -40,7 +40,7 @@
     .scene {
       position: relative;
       width: 100%;
-      min-height: 1600px;
+      min-height: 1540px;
       padding-top: 180px;
       overflow: hidden;
     }
@@ -291,7 +291,12 @@
       top: 1080px;
       --rot: 5deg;
       --dur: 3.6s;
+      z-index: 12;
     }
+
+    /* =========================
+       GIFTS — DESKTOP
+    ========================= */
 
     .luck {
       width: 54px;
@@ -367,16 +372,24 @@
        EOS MODE
     ========================= */
 
-   .eos-toggle {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 12px 20px 18px;
-  background: #F1CEB2;
-  font-family: "Satyr SP", serif;
-  font-size: 22px;
-  line-height: 1.2;
-}
+    .eos-toggle {
+      position: relative;
+      z-index: 5;
+
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      margin-top: -65px;
+
+      padding: 12px 20px 22px;
+
+      background: #F1CEB2;
+
+      font-family: "Satyr SP", serif;
+      font-size: 22px;
+      line-height: 1.2;
+    }
 
     .eos-toggle label {
       display: flex;
@@ -640,6 +653,7 @@
       line-height: 1.25;
       text-align: center;
       color: #F1CEB2;
+
       background:
         linear-gradient(
           to top,
@@ -698,7 +712,7 @@
 
     @media (min-width: 701px) and (max-width: 1050px) {
       .scene {
-        min-height: 1520px;
+        min-height: 1510px;
       }
 
       .title h1 {
@@ -780,7 +794,12 @@
       .persephone {
         width: 215px;
         left: 28%;
-        top: 1140px;
+        top: 1110px;
+        z-index: 12;
+      }
+
+      .eos-toggle {
+        margin-top: -60px;
       }
 
       .luck {
@@ -849,10 +868,10 @@
     ========================= */
 
     @media (max-width: 700px) {
- .scene {
-  min-height: 1740px;
-  padding-top: 160px;
-}
+      .scene {
+        min-height: 1690px;
+        padding-top: 160px;
+      }
 
       .title {
         top: 22px;
@@ -867,10 +886,11 @@
         font-size: 15px;
       }
 
-.eos-toggle {
-  padding: 8px 16px 14px;
-  font-size: 18px;
-}
+      .eos-toggle {
+        margin-top: -85px;
+        padding: 8px 16px 16px;
+        font-size: 18px;
+      }
 
       .video-box.circle {
         width: min(360px, 82vw);
@@ -883,10 +903,8 @@
       .video-box.vertical .close {
         top: 6px;
         right: 6px;
-
         width: 38px;
         height: 38px;
-
         font-size: 30px;
       }
 
@@ -1014,14 +1032,15 @@
         width: min(175px, 49vw);
         left: auto;
         right: 3%;
-        top: 1435px;
+        top: 1395px;
+        z-index: 12;
       }
 
       .selene {
         width: min(198px, 55vw);
         left: 4%;
         right: auto;
-        top: 1570px;
+        top: 1525px;
       }
 
       .luck {
@@ -1091,7 +1110,7 @@
         width: 44px;
         left: auto;
         right: 7%;
-        top: 1640px;
+        top: 1605px;
       }
     }
 
@@ -1100,9 +1119,13 @@
     ========================= */
 
     @media (min-width: 1500px) {
-    .scene {
-  min-height: 1480px;
-}
+      .scene {
+        min-height: 1510px;
+      }
+
+      .eos-toggle {
+        margin-top: -70px;
+      }
 
       .eos {
         width: 430px;
@@ -1179,7 +1202,8 @@
       .persephone {
         width: 290px;
         left: 27%;
-        top: 1110px;
+        top: 1070px;
+        z-index: 12;
       }
 
       .luck {
@@ -1453,6 +1477,7 @@
     >
       <img src="./circe.png" alt="Circe">
     </div>
+
 
     <div
       class="object apollo"
